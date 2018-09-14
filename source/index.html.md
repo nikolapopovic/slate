@@ -6,9 +6,10 @@ language_tabs: # must be one of https://git.io/vQNgJ
   
 includes:
   - home
-  - theme-engine
-  - endpoints
-  - objects
+  - getting-started
+  - the-editor
+  - switching
+  - changelog
 
 search: true
 ---
