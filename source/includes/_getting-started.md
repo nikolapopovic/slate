@@ -8,7 +8,7 @@ The customer portal is powered by a theme engine which allows you to customize t
 
 Currently in `BETA`, the Theme Engine will be an update to the Customer Portal which will allow you to completely customize the pages their customers use to manage their subscription beyond simply adding HTML, CSS and JavaScript.
 
-You'll have access to use liquid code and an array of objects and filters like Shopify and create a truly unique, personal, and branded experience.
+You'll have access to use jijna code and an array of objects and filters like Shopify and create a truly unique, personal, and branded experience.
 
 
 ## Getting help

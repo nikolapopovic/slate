@@ -6,8 +6,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 includes:
   - getting-started
-  - the-editor
   - switching
+  - the-editor
   - changelog
   - template-syntax-and-semantics
   - shop-endpoints
