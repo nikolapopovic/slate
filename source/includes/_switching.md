@@ -1,4 +1,4 @@
-# Switching to the Theme Engine
+# Enabling the Theme Engine
 
 We designed the theme editor with the intent of the merchant choosing their rollout procedure.
 

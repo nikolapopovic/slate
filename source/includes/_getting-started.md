@@ -1,10 +1,19 @@
+
 # The Theme Engine
 
-Currently in `BETA`, the theme engine is a powerful new feature with lots of moving parts. This documentation is provided to help provide you, the designer, to utilize as many features as possible to get the exact results you're looking for.
-
-## What is this?
+## About the theme engine
 
 The customer portal is powered by a theme engine which allows you to customize the views to your needs. It is composed of a set of endpoints that provide specific functionality. Each endpoint is associated with a required asset that you can customize to your liking. The endpoint also has a set of objects that can be used to customize the user experience.
+
+
+Currently in `BETA`, the Theme Engine will be an update to the Customer Portal which will allow you to completely customize the pages their customers use to manage their subscription beyond simply adding HTML, CSS and JavaScript.
+
+You'll have access to use liquid code and an array of objects and filters like Shopify and create a truly unique, personal, and branded experience.
+
+
+## Getting help
+
+If you can't find what you're looking for in this documentation, please see our [Knowledge Base](http://support.rechargepayments.com) or contact <support@rechargepayments.com>.
 
 ## Checklist
 
