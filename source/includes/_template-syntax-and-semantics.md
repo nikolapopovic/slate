@@ -8,13 +8,6 @@ There are a few possible types of delimiters that can used in our templates. The
 {# ... #} for Comments not included in the template output
 ```
 
-### Main directory
-
-* [Control Flow Tags](#control-flow-tags)
-* [Iteration Tags](#iteration-tags)
-* [Theme Tags](#theme-tags)
-* [Variable Tags](#variable-tags)
-
 ## Control Flow Tags
 
 Control Flow Tags determine which block of code should be executed.
@@ -22,7 +15,7 @@ Control Flow Tags determine which block of code should be executed.
 ### Directory
 
 * [if](#if)
-* [elsif / else](#elsif--else)
+* [elif / else](#elif--else)
 
 ### if 
 

@@ -20,15 +20,15 @@ Welcome {{customer.name}}
 > Example output
 
 ```html
-Welcome Jimmy Charge
+Welcome Mike Flynn
 
-Jimmy Charge
-jimmy@rechargeapps.com
+Mike Flynn
+mike@gmail.com
 
-123 Street Rd
-Apt 2
-Santa Monica, CA
-12352
+3030 Nebraska Avenue
+#301
+Los Angeles, California
+90404
 United States
 ```
 
@@ -36,6 +36,7 @@ Property | Definition
 --------- | -------
 <b>first_name</b> <br> string| `"first_name": "Mike"`<br>  The customer's first name.
 <b>last_name</b> <br> string| `"last_name": "Flynn"`<br>  The customer's last name.
+<b>name</b> <br> string| `"name": "Mike Flynn"`<br>  The customer's name.
 <b>email</b> <br> string|  `"email": "mike@gmail.com"` <br> The email address of the customer.
 <b>hash</b>  <br> string |  `"hash": "143806234a9ff87a8d9e"` <br> The unique string identifier used in a customers portal link.
 <b>billing_first_name</b> <br> string| `"billing_first_name": "Mike"`<br>  The customer's billing first name.

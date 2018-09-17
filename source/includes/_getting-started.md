@@ -20,7 +20,7 @@ To get started with the Theme Editor in the Beta phase, please review the follow
 
 <img src="images/shop.png">
 
-## Directory
+### Directory
 
 ### The theme engine
 
