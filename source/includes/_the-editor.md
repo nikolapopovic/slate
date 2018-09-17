@@ -1,4 +1,4 @@
-# The Theme editor
+# Using the Theme Engine
 The ReCharge theme editor will allow you to customize the interface of your store's ReCharge Customer Portal. This portal is a series of pages and controls that allow your customers to view or modify their subscription, change their billing information, or review their order history. With the editor, you'll be able to tailor the look and feel of this portal to fit your store's style and branding.
 
 ## Accessing the feature

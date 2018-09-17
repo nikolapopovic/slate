@@ -1,16 +1,6 @@
 # Welcome to ReCharge Theme Engine docs
 
-## Getting help
 
-If you can't find what you're looking for in this documentation, please see our [Knowledge Base](http://support.rechargepayments.com) or contact <support@rechargepayments.com>.
-
-## About theme engine
-
-Currently in `BETA`, the Theme Engine will be an update to the Customer Portal which will allow you to completely customize the pages their customers use to manage their subscription beyond simply adding HTML, CSS and JavaScript.
-
-You'll have access to use liquid code and an array of objects and filters like Shopify and create a truly unique, personal, and branded experience.
-
-[Start here](https://github.com/SocalProofit/ReCharge-Docs/wiki/Theme-engine%3A-Getting-Started)
 
 ## The widget
 
