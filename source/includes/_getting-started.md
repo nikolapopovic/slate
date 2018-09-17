@@ -18,4 +18,4 @@ To get started with the Theme Editor in the Beta phase, please review the follow
 
 ## ReCharge object hierarchy
 
-<img src="images/shop.png">
+![](images/shop.png)
