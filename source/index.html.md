@@ -10,6 +10,9 @@ includes:
   - the-editor
   - switching
   - changelog
+  - template-syntax-and-semantics
+  - shop-endpoints
+  - customer-object
 
 search: true
 ---
