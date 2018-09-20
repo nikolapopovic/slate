@@ -1,6 +1,7 @@
 # Customer Object
-
+<aside class="notice">
 Provides essential customer information, as well as associated billing information.
+</aside>
 
 > Example input
 

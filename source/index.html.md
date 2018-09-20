@@ -12,6 +12,7 @@ includes:
   - template-syntax-and-semantics
   - shop-endpoints
   - customer-object
+  - math-filters
 
 search: true
 ---

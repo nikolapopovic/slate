@@ -1,6 +1,8 @@
 # Template syntax and semantics
 
+<aside class="notice">
 There are a few possible types of delimiters that can used in our templates. The delimiters are configured as follows:
+</aside>
 
 ```liquid
 {% ... %} for Statements

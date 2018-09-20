@@ -1,8 +1,7 @@
 # Shop endpoints
-
-Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
-
-## Endpoints
+<aside class="notice">
+  Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
+</aside>
 
 > GET `{{ show_store_url }}`
 <br>
@@ -58,7 +57,7 @@ $.ajax({
 }
 ```
 
-### shop
+### Shop
 
 Show current customer's information.
 
