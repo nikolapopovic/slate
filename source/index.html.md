@@ -11,6 +11,11 @@ includes:
   - changelog
   - template-syntax-and-semantics
   - shop-endpoints
+  - customer-endpoints
+  - addresses-endpoints
+  - subscription-endpoints
+  - order-endpoints
+  - search-endpoints
   - customer-object
   - math-filters
 
