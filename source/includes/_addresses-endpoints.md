@@ -4,6 +4,11 @@
   Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
 </aside>
 
+<aside class="notice">
+  Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
+</aside>
+
+
 #### Directory
 * [addresses](#addresses)
 * [address](#address)
