@@ -1,10 +1,11 @@
-# Order endpoints
+# Orders endpoint
 
 <aside class="notice">
   Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
 </aside>
 
-#### Directory
+**Directory**
+
 * [orders](#orders)
 * [order](#order)
 
@@ -19,7 +20,8 @@ List history of orders placed by the current customer.
 
 **Template file:** `orders.html`
 
-#### Available objects
+**Available objects**
+
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
 * [Orders](Theme-objects%3A-Orders)
@@ -32,7 +34,7 @@ List history of orders placed by the current customer.
 $.ajax({
   url: '{{ list_orders_url }}',
   type: 'get',
-  dataType: 'json',
+  dataType: 'json'
 }).done(function(response) {
   // Successful request made
   console.log(response.responseJSON);
@@ -150,7 +152,8 @@ Show details for the current order.
 
 **Template file:** `order.html`
 
-#### Available objects
+**Available objects**
+
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
 * [Order](Theme-objects%3A-Order)
@@ -163,7 +166,7 @@ Show details for the current order.
 $.ajax({
   url: '{{ order | show_order_url }}',
   type: 'get',
-  dataType: 'json',
+  dataType: 'json'
 }).done(function(response) {
   // Successful request made
   console.log(response.responseJSON);

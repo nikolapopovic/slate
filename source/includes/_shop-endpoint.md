@@ -1,4 +1,4 @@
-# Shop endpoints
+# Shop endpoint
 
 <aside class="notice">
   Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
@@ -70,6 +70,7 @@ Show current customer's information.
 
 **Template file:** `shop.html`
 
-#### Available objects
+**Available objects**
+
 * [Store](Theme-objects%3A-Store)
 

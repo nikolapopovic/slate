@@ -1,6 +1,6 @@
 # Math filters
 
-### Directory
+**Directory**
 
 * [abs](#abs)
 * [ceil](#ceil)
@@ -26,7 +26,6 @@
 17
 ```
 
-
 ## ceil
 
 > Example input
@@ -40,7 +39,6 @@
 ```html
 5
 ```
-
 
 ## divided_by
 
@@ -56,7 +54,6 @@
 20
 ```
 
-
 ## floor
 
 > Example input
@@ -70,7 +67,6 @@
 ```html
 4
 ```
-
 
 ## minus
 
@@ -86,7 +82,6 @@
 185
 ```
 
-
 ## modulo
 
 > Example input
@@ -100,7 +95,6 @@
 ```html
 2
 ```
-
 
 ## plus
 
@@ -116,7 +110,6 @@
 215
 ```
 
-
 ## round
 
 > Example input
@@ -130,7 +123,6 @@
 ```html
 5
 ```
-
 
 ## times
 

@@ -1,15 +1,11 @@
-# Address endpoints
+# Addresses endpoint
 
 <aside class="notice">
   Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
 </aside>
 
-<aside class="notice">
-  Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
-</aside>
+**Directory**
 
-
-#### Directory
 * [addresses](#addresses)
 * [address](#address)
 * [address_edit](#address_edit)
@@ -28,7 +24,8 @@ List all addresses for the current customer.
 
 **Template file:** `addresses.html`
 
-#### Available objects
+**Available objects**
+
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
 * [Addresses](Theme-objects%3A-Addresses)
@@ -127,7 +124,8 @@ Show details for the current address.
 
 **Template file:** `address.html`
 
-#### Available objects
+**Available objects**
+
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
 * [Address](Theme-objects%3A-Address)
@@ -204,7 +202,8 @@ Form to edit and update the current address.
 
 **Template file:** `address_edit.html`
 
-#### Available objects
+**Available objects**
+
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
 * [Address](Theme-objects%3A-Address)
@@ -284,7 +283,7 @@ $.ajax({
 }
 ```
 
-#### Available properties
+**Available properties**
 
 |Input| Type| Name attribute|
 ---|---|---
@@ -313,7 +312,8 @@ Page with form to create a new address for current customer.
 
 **Template file:** `address_new.html`
 
-#### Available objects
+**Available objects**
+
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
 * [Addresses](Theme-objects%3A-Addresses)
@@ -393,7 +393,7 @@ $.ajax({
 }
 ```
 
-#### Available properties
+**Available properties**
 
 |Input| Type| Name attribute|
 ---|---|---
@@ -442,7 +442,7 @@ $.ajax({
 });
 ```
 
-#### Available properties
+**Available properties**
 
 |Input| Type| Name attribute|
 ---|---|---

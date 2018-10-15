@@ -1,10 +1,11 @@
-# Customer endpoints
+# Customers endpoint
 
 <aside class="notice">
   Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
 </aside>
 
-#### Directory
+**Directory**
+
 * [customer](#customer)
 * [customer_edit](#customer_edit)
 
@@ -82,7 +83,8 @@ $.ajax({
 
 **Template file:** `customer.html`
 
-#### Available objects
+**Available objects**
+
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
 * [Addresses](Theme-objects%3A-Address)
@@ -99,7 +101,8 @@ Show current customer's information.
 
 **Template file:** `customer_edit.html`
 
-#### Available objects
+**Available objects**
+
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
 * [Addresses](Theme-objects%3A-Address)
