@@ -19,6 +19,7 @@ includes:
   - delivery-schedule-endpoint
   - customer-object
   - address-object
+  - subscription-object
   - math-filters
 
 search: true
