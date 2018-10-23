@@ -14,22 +14,6 @@
 * [address_remove_discount](#address_remove_discount)
 
 ## addresses
-List all addresses for the current customer.
-
-**URL:** `{{ list_address_url }}`
-
-**Methods accepted:** `GET`
-
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/addresses`
-
-**Template file:** `addresses.html`
-
-**Available objects**
-
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Addresses](Theme-objects%3A-Addresses)
-* [Subscriptions](Theme-objects%3A-Subscriptions)
 
 > GET `{{ list_address_url }}`
 <br>
@@ -50,9 +34,6 @@ $.ajax({
 ```
 
 > Example output
-
-Response will be multiple objects. The object(s) requested and the customer object.
-
 
 ```javascript
 {
@@ -110,6 +91,23 @@ Response will be multiple objects. The object(s) requested and the customer obje
   }
 }
 ```
+
+List all addresses for the current customer.
+
+**URL:** `{{ list_address_url }}`
+
+**Methods accepted:** `GET`
+
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/addresses`
+
+**Template file:** `addresses.html`
+
+**Available objects**
+
+* [Store](Theme-objects%3A-Store)
+* [Customer](Theme-objects%3A-Customer)
+* [Addresses](Theme-objects%3A-Addresses)
+* [Subscriptions](Theme-objects%3A-Subscriptions)
 
 If you perform a GET request with the data type of `json` on just about any URL, or append the `.json` extension to the URL, you'll receive a JSON object of the data available.
 

@@ -3,11 +3,10 @@
 > Example input
 
 ```liquid
-Product: {{ subscription.product_title }} {{ subscription.variant_title }}<br>
-Status: {{ subscription.status }}<br>
-Price: {{ subscription.price }}<br>
-{{ subscription.zip }} {{ subscription.city }} {{ subscription.province }}<br>
-{{ subscription.country }}<br>
+Product: {{ subscription.product_title }} {{ subscription.variant_title }}
+Status: {{ subscription.status }}
+Price: {{ subscription.price }}
+{{ subscription.country }}
 {{ subscription.phone }}
 ```
 

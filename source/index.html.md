@@ -20,6 +20,7 @@ includes:
   - customer-object
   - address-object
   - subscription-object
+  - discount-object
   - math-filters
 
 search: true
