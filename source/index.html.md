@@ -17,9 +17,6 @@ includes:
   - orders-endpoint
   - search-endpoint
   - delivery-schedule-endpoint
-  - customer-object
-  - address-object
-  - subscription-object
   - discount-object
   - math-filters
 

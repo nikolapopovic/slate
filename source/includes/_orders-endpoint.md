@@ -1,13 +1,18 @@
-# Orders endpoint
+# Orders
 
 <aside class="notice">
-  Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
+Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
 </aside>
 
-**Directory**
+### Order properties
 
-* [orders](#orders)
-* [order](#order)
+Property | Definition
+--------- | -------
+<b>customer_id</b> <br> integer| `"customer_id": 8059036`<br> The unique numeric identifier of the customer.
+<b>first_name</b> <br> string| `"first_name": "Recharge"`<br> The first name of the customer.
+<b>last_name</b> <br> string| `"last_name": "Test"`<br> The last name of the customer.
+<b>email</b> <br> string|  `"email": "baresupplements.myshopify.com"` <br> The street associated with the address.
+<b>processed_at</b>  <br> datetime |  `"processed_at": "2018-02-15T11:57:19"` <br> The date when the order was submitted.
 
 ## orders
 List history of orders placed by the current customer.
