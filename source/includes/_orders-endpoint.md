@@ -12,7 +12,19 @@ Property | Definition
 <b>first_name</b> <br> string| `"first_name": "Recharge"`<br> The first name of the customer.
 <b>last_name</b> <br> string| `"last_name": "Test"`<br> The last name of the customer.
 <b>email</b> <br> string|  `"email": "baresupplements.myshopify.com"` <br> The street associated with the address.
-<b>processed_at</b>  <br> datetime |  `"processed_at": "2018-02-15T11:57:19"` <br> The date when the order was submitted.
+<b>processed_at</b>  <br> datetime|  `"processed_at": "2018-02-15T11:57:19"` <br> The date when the order was submitted.
+<b>scheduled_at</b>  <br> datetime|  `"scheduled_at": "2018-02-15T00:00:00"` <br> The date when the order will ship.
+<b>status</b>  <br> string|  `"status": "SUCCESS"` <br> The status of creating the order within Shopify. The valid values are “SUCCESS”, “QUEUED”, “ERROR”, “REFUNDED”, “SKIPPED”.
+<b>type</b>  <br> string|  `"type": "CHECKOUT"` <br> Shows if order was made from checkout or a recurring charge. The valid values are “CHECKOUT” or “RECURRING”.
+<b>total_price</b>  <br> string|  `"total_price": "11,59 US$"` <br> The sum of all of the prices of the items in the order with taxes and discounts included (must be positive).
+<b>shopify_order_id</b>  <br> integer|  `"shopify_order_id": 359467483200` <br> The unique numeric identifier within Shopify for the order.
+<b>shopify_order_number</b>  <br> integer|  `"shopify_order_number": 1001` <br> The unique order number within Shopify.
+<b>id</b>  <br> integer|  `"id": 30999220` <br> The unique numeric identifier for the order.
+<b>charge_id</b>  <br> integer|  `"charge_id": 41955283` <br> The unique numeric identifier of the charge.
+<b>charge_status</b>  <br> string|  `"charge_status": "SUCCESS"` <br> The valid values are “SUCCESS”, “REFUNDED”, “PARTIALLY_REFUNDED”.
+<b>is_prepaid</b>  <br> integer|  `"is_prepaid": 0` <br> The order that has been paid for a pre-determined number of months. 0=No, 1=Yes.
+<b>payment_processor</b>  <br> string|  `"payment_processor": 30999220` <br> The valid values are “braintree”, “stripe”, “authorize”.
+<b>line_items</b> <br> string|  `"price": 4.5`<br> `"product_title": "Bricks 10.00% Off Auto renew"`<br> `"quantity": 1`<br> `"quantity": 1`<br> `"shopify_product_id": 505472712768`<br> `"shopify_variant_id": 5420805816384`<br> `"subscription_id": 11770822`<br> `"title": "Bricks 10.00% Off Auto renew (Ships every 30 days)"`<br> `"variant_title": "1"`<br> `"properties": { "name":"shipping_interval_frequency", "value":"30"}`<br>
 
 ## orders
 List history of orders placed by the current customer.
