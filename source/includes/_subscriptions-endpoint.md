@@ -4,22 +4,6 @@
 Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
 </aside>
 
-> Example input
-
-```liquid
-Product: {{ subscription.product_title }} {{ subscription.variant_title }}
-Status: {{ subscription.status }}
-Price: {{ subscription.price }}
-{{ subscription.country }}
-{{ subscription.phone }}
-```
-
-> Example output
-
-```html
-
-```
-
 ### Subscription properties
 
 Property | Definition
@@ -60,6 +44,110 @@ Property | Definition
 ## Create subscription
 A form to create a new subscription for the current customer.
 
+> POST `{{ create_subscription_url }}`
+<br>
+> Example input
+
+```javascript
+$.ajax({
+  url: '{{ create_subscription_url }}',
+  type: 'post',
+  dataType: 'json',
+  data: {
+    shopify_variant_id: 5424189177920,
+    quantity: 1,
+    order_interval_frequency: '1',
+    order_interval_unit: 'month',
+    next_charge_date: '2018-12-26',
+    address_id: 18586680
+  }
+}).done(function(response) {
+  // Successful request made
+  console.log(response.responseJSON);
+}).fail(function(response) {
+  // Request failed
+  console.log(response.responseJSON.errors);
+});
+```
+
+> Example output
+
+```javascript
+{  
+   "customer":{  
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+   },
+   "subscription":{  
+      "address":{  
+         "address1":"3030 Nebraska Avenue",
+         "address2":"",
+         "cart_note":"",
+         "city":"Santa Monica",
+         "company":"ReCharge",
+         "country":"United States",
+         "discount_id":null,
+         "first_name":"Test",
+         "id":18586680,
+         "last_name":"Tiege",
+         "phone":"",
+         "province":"California",
+         "zip":"90025"
+      },
+      "address_id":18586680,
+      "allow_date_selection":true,
+      "allow_schedule_edit":true,
+      "charge_interval_frequency":"1",
+      "charge_interval_unit":"month",
+      "charges_made_on_item":0,
+      "id":25769634,
+      "interval_options":{  
+         "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+      },
+      "is_active":true,
+      "is_cancelled":false,
+      "is_expired":false,
+      "is_one_time_product":false,
+      "is_skippable":true,
+      "is_skipped":false,
+      "is_swappable":false,
+      "modifiable_properties":[ ],
+      "next_charge_scheduled_at":"2018-12-26T00:00:00",
+      "number_of_charges":0,
+      "number_of_charges_until_expiration":null,
+      "order_interval_frequency":"1",
+      "order_interval_unit":"month",
+      "price":7000,
+      "product_title":"Bare Box - 3 Month Plan  Auto renew",
+      "product_variant_title":"Bare Box - 3 Month Plan  Auto renew - x-small",
+      "properties":[ ],
+      "quantity":1,
+      "shopify_product_id":506020921408,
+      "shopify_variant_id":5424189177920,
+      "status":"ACTIVE",
+      "variant_title":"x-small"
+   }
+}
+```
+
 **URL:** `{{ create_subscription_url }}`
 
 **Methods accepted:** `POST`
@@ -88,49 +176,8 @@ A form to create a new subscription for the current customer.
 
 **GET** via AJAX is not supported on this endpoint. Please refer to `subscription/<id>`
 
-> POST `{{ create_subscription_url }}`
-<br>
-> Example input
-
-```javascript
-$.ajax({
-  url: '{{ create_subscription_url }}',
-  type: 'post',
-  dataType: 'json',
-  data: {
-    shopify_variant_id: 16347635201,
-    quantity: 1,
-    order_interval_frequency: '1',
-    order_interval_unit: 'month',
-    next_charge_date: '2018-09-26',
-    address_id: 325524
-  }
-}).done(function(response) {
-  // Successful request made
-  console.log(response.responseJSON);
-}).fail(function(response) {
-  // Request failed
-  console.log(response.responseJSON.errors);
-});
-```
-
 ## Retrieve subscription
 Show details for the current subscription.
-
-**URL:** `{{ subscription | show_subscription_url }}` or `{{ subscription.id | show_subscription_url }}`
-
-**Methods accepted:** `GET`
-
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>`
-
-**Template file:** `subscription.html`
-
-**Available objects**
-
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Subscription](Theme-objects%3A-Subscription)
-* [Variants](Theme-objects%3A-Variants)
 
 > GET `{{ subscription | show_subscription_url }}`
 <br>
@@ -155,70 +202,70 @@ $.ajax({
 ```javascript
 {  
    "customer":{  
-      "billing_address1":"3030 nebraska street",
+      "billing_address1":"607 Midvale Ave",
       "billing_address2":"",
       "billing_city":"Los Angeles",
-      "billing_company":"Recharge",
+      "billing_company":"ReCharge",
       "billing_country":"United States",
-      "billing_first_name":"Test",
-      "billing_last_name":"Recharge",
-      "billing_phone":"3103103101",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
       "billing_province":"California",
-      "billing_zip":"90025",
+      "billing_zip":"90024",
       "customer_card":null,
       "customer_payment_type":"credit",
-      "email":"lmlorem@yahoo.com",
-      "first_name":"Test",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
       "has_credit_card_purchase":true,
       "has_error_charge":false,
-      "hash":"288243b8e422869a44d9fe",
-      "last_name":"Recharge",
-      "name":"Test Recharge",
-      "shopify_customer_id":"2586884299"
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
    },
    "subscription":{  
       "address":{  
-         "address1":"Cr 35 No 29",
-         "address2":"",
+         "address1":"1933 Manning",
+         "address2":"204",
          "cart_note":null,
-         "city":"Bogota",
-         "company":"",
-         "country":"Colombia",
-         "first_name":"Lorena the third",
-         "id":325524,
-         "last_name":"Maldonado",
-         "phone":"0868758888",
-         "province":"",
-         "zip":""
+         "city":"los angeles",
+         "company":"bootstrap",
+         "country":"United States",
+         "discount_id":null,
+         "first_name":"Recharge",
+         "id":7976732,
+         "last_name":"Test",
+         "phone":"3103103101",
+         "province":"California",
+         "zip":"90025"
       },
-      "address_id":325524,
-      "allow_date_selection":false,
+      "address_id":7976732,
+      "allow_date_selection":true,
       "allow_schedule_edit":true,
-      "charge_interval_frequency":"9",
+      "charge_interval_frequency":"1",
       "charge_interval_unit":"month",
       "charges_made_on_item":1,
-      "id":412339,
+      "id":11959568,
       "interval_options":{  
          "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
       },
+      "is_active":true,
+      "is_cancelled":false,
+      "is_expired":false,
+      "is_one_time_product":false,
       "is_skippable":true,
       "is_skipped":false,
-      "modifiable_properties":[  
-
-      ],
-      "next_charge_scheduled_at":null,
+      "is_swappable":false,
+      "modifiable_properties":[ ],
+      "next_charge_scheduled_at":"2018-11-16T00:00:00",
       "number_of_charges":1,
-      "number_of_charges_until_expiration":null,
+      "number_of_charges_until_expiration":5,
       "order_interval_frequency":"1",
       "order_interval_unit":"month",
-      "price":340000,
-      "product_title":"lorenaupdate",
-      "product_variant_title":"lorenaupdate - 2 / 3",
+      "price":1039,
+      "product_title":"Bare Sleep  20.00% Off Auto renew",
+      "product_variant_title":"Bare Sleep  20.00% Off Auto renew",
       "properties":[  
-         {  
-            "name":"subscription_id",
-            "value":"13189"
-         },
          {  
             "name":"shipping_interval_frequency",
             "value":"1"
@@ -228,17 +275,134 @@ $.ajax({
             "value":"Months"
          }
       ],
-      "quantity":1,
-      "shopify_product_id":2147483647,
-      "shopify_variant_id":16347635201,
-      "status":"CANCELLED",
-      "variant_title":"2 / 3"
+      "quantity":2,
+      "shopify_product_id":505545949248,
+      "shopify_variant_id":5421270171712,
+      "status":"ACTIVE",
+      "variant_title":""
    }
 }
 ```
 
+**URL:** `{{ subscription | show_subscription_url }}` or `{{ subscription.id | show_subscription_url }}`
+
+**Methods accepted:** `GET`
+
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>`
+
+**Template file:** `subscription.html`
+
+**Available objects**
+
+* [Store](Theme-objects%3A-Store)
+* [Customer](Theme-objects%3A-Customer)
+* [Subscription](Theme-objects%3A-Subscription)
+* [Variants](Theme-objects%3A-Variants)
+
 ## Update subscription
 Edit the properties of the current subscription.
+
+> POST `{{ subscription | update_subscription_url }}`
+<br>
+> Example input
+
+```javascript
+$.ajax({
+  url: '{{ subscription | update_subscription_url }}',
+  type: 'post',
+  dataType: 'json',
+  data: {
+    order_interval_frequency: 2,
+    order_interval_unit: 'week',
+    shopify_variant_id: 5421828603968,
+    quantity: 2
+  }
+}).done(function(response) {
+  // Successful request made
+  console.log(response.responseJSON);
+}).fail(function(response) {
+  // Request failed
+  console.log(response.responseJSON.errors);
+});
+```
+
+> Example output
+
+```javascript
+{  
+   "customer":{  
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+   },
+   "subscription":{  
+      "address":{  
+         "address1":"3030 Nebraska Avenue",
+         "address2":"",
+         "cart_note":"",
+         "city":"Santa Monica",
+         "company":"ReCharge",
+         "country":"United States",
+         "discount_id":null,
+         "first_name":"Test",
+         "id":18586680,
+         "last_name":"Tiege",
+         "phone":"",
+         "province":"California",
+         "zip":"90025"
+      },
+      "address_id":18586680,
+      "allow_date_selection":true,
+      "allow_schedule_edit":true,
+      "charge_interval_frequency":"2",
+      "charge_interval_unit":"week",
+      "charges_made_on_item":0,
+      "id":25771863,
+      "interval_options":{  
+         "week":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+      },
+      "is_active":true,
+      "is_cancelled":false,
+      "is_expired":false,
+      "is_one_time_product":false,
+      "is_skippable":true,
+      "is_skipped":false,
+      "is_swappable":false,
+      "modifiable_properties":[ ],
+      "next_charge_scheduled_at":"2018-12-26T00:00:00",
+      "number_of_charges":0,
+      "number_of_charges_until_expiration":null,
+      "order_interval_frequency":"2",
+      "order_interval_unit":"week",
+      "price":1039,
+      "product_title":"Bare Glow  20.00% Off Auto renew",
+      "product_variant_title":"Bare Glow  20.00% Off Auto renew",
+      "properties":[ ],
+      "quantity":2,
+      "shopify_product_id":505640779840,
+      "shopify_variant_id":5421828603968,
+      "status":"ACTIVE",
+      "variant_title":""
+   }
+}
+```
 
 **URL:** `{{ subscription | update_subscription_url }}` or `{{ subscription.id | update_subscription_url }}`
 
@@ -257,31 +421,22 @@ Edit the properties of the current subscription.
 
 **Available properties**
 
-|Input| Type| Name attribute|
-|-|-|-|
-|Interval (*mandatory*)| integer | order_interval_frequency|
-|Interval type (*mandatory*)| text| order_interval_unit|
-|Variant (*mandatory*)| text| shopify_variant_id|
-|Quantity (*mandatory*)| text| quantity|
-|Date (*mandatory*)| text| next_charge_date|
-
 **GET** via AJAX is not supported on this endpoint. Please refer to `subscription/<id>`
 
-> POST `{{ subscription | update_subscription_url }}`
+## Change next charge date
+Set the date of the subscription's next charge.
+
+> POST `{{ subscription | subscription_charge_date_url }}`
 <br>
 > Example input
 
 ```javascript
 $.ajax({
-  url: '{{ subscription | update_subscription_url }}',
+  url: '{{ subscription | subscription_charge_date_url }}',
   type: 'post',
   dataType: 'json',
   data: {
-    order_interval_frequency: 30,
-    order_interval_unit: 'day',
-    shopify_variant_id: 14618440138809,
-    quantity: 1,
-    next_charge_date: '2019-10-10T00:00:00'
+    next_charge_date: "2018-12-23"
   }
 }).done(function(response) {
   // Successful request made
@@ -292,8 +447,83 @@ $.ajax({
 });
 ```
 
-## Change next charge date
-Set the date of the subscription's next charge.
+> Example output
+
+```javascript
+{  
+   "customer":{  
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+   },
+   "subscription":{  
+      "address":{  
+         "address1":"3030 Nebraska Avenue",
+         "address2":"",
+         "cart_note":"",
+         "city":"Santa Monica",
+         "company":"ReCharge",
+         "country":"United States",
+         "discount_id":null,
+         "first_name":"Test",
+         "id":18586680,
+         "last_name":"Tiege",
+         "phone":"",
+         "province":"California",
+         "zip":"90025"
+      },
+      "address_id":18586680,
+      "allow_date_selection":true,
+      "allow_schedule_edit":true,
+      "charge_interval_frequency":"1",
+      "charge_interval_unit":"month",
+      "charges_made_on_item":0,
+      "id":25769358,
+      "interval_options":{  
+         "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+      },
+      "is_active":true,
+      "is_cancelled":false,
+      "is_expired":false,
+      "is_one_time_product":false,
+      "is_skippable":true,
+      "is_skipped":false,
+      "is_swappable":false,
+      "modifiable_properties":[ ],
+      "next_charge_scheduled_at":"2018-12-23T00:00:00",
+      "number_of_charges":0,
+      "number_of_charges_until_expiration":null,
+      "order_interval_frequency":"1",
+      "order_interval_unit":"month",
+      "price":7000,
+      "product_title":"Bare Box - 3 Month Plan  Auto renew",
+      "product_variant_title":"Bare Box - 3 Month Plan  Auto renew - x-small",
+      "properties":[ ],
+      "quantity":1,
+      "shopify_product_id":506020921408,
+      "shopify_variant_id":5424189177920,
+      "status":"ACTIVE",
+      "variant_title":"x-small"
+   }
+}
+```
 
 **URL:** `{{ subscription | subscription_charge_date_url }}` or `{{ subscription.id | subscription_charge_date_url }}`
 
@@ -313,45 +543,8 @@ Set the date of the subscription's next charge.
 
 **GET** via AJAX is not supported on this endpoint. Please refer to `subscription/<id>`
 
-> POST `{{ subscription | subscription_charge_date_url }}`
-<br>
-> Example input
-
-```javascript
-$.ajax({
-  url: '{{ subscription | subscription_charge_date_url }}',
-  type: 'post',
-  dataType: 'json',
-  data: {
-    next_charge_date: "2018-11-24",
-  }
-}).done(function(response) {
-  // Successful request made
-  console.log(response.responseJSON);
-}).fail(function(response) {
-  // Request failed
-  console.log(response.responseJSON.errors);
-});
-```
-
 ## Cancel subscription
 Cancel the current subscription.
-
-**URL:** `{{ subscription | cancel_subscription_url }}` or `{{ subscription.id | cancel_subscription_url }}`
-
-**Methods accepted:** `GET, POST`
-
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>/cancel`
-
-**Template file:** `subscription_cancel.html`
-
-**Available objects**
-
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Subscription](Theme-objects%3A-Subscription)
-* [Retention strategies](Theme-objects%3A-Retention-strategies)
-* [Variants](Theme-objects%3A-Variants)
 
 > GET `{{ subscription | cancel_subscription_url }}`
 <br>
@@ -376,193 +569,148 @@ $.ajax({
 ```javascript
 {  
    "customer":{  
-      "billing_address1":"3030 nebraska street",
+      "billing_address1":"607 Midvale Ave",
       "billing_address2":"",
       "billing_city":"Los Angeles",
-      "billing_company":"Recharge",
+      "billing_company":"ReCharge",
       "billing_country":"United States",
-      "billing_first_name":"Test",
-      "billing_last_name":"Recharge",
-      "billing_phone":"3103103101",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
       "billing_province":"California",
-      "billing_zip":"90025",
+      "billing_zip":"90024",
       "customer_card":null,
       "customer_payment_type":"credit",
-      "email":"lmlorem@yahoo.com",
-      "first_name":"Test",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
       "has_credit_card_purchase":true,
       "has_error_charge":false,
-      "hash":"288243b8e422869a44d9fe",
-      "last_name":"Recharge",
-      "name":"Test Recharge",
-      "shopify_customer_id":"2586884299"
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
    },
    "retention_strategies":[  
       {  
          "discount_code":null,
-         "id":444616,
-         "incentive_type":null,
-         "prevention_text":"Please help us process your request by telling us why you're cancelling",
+         "id":764562,
+         "incentive_type":"",
+         "prevention_text":"Please help us process your request by telling us why you're cancelling.",
          "reason":"This is too expensive"
       },
       {  
          "discount_code":null,
-         "id":444619,
-         "incentive_type":null,
-         "prevention_text":"Please help us process your request by telling us why you're cancelling",
+         "id":764568,
+         "incentive_type":"",
+         "prevention_text":"Would you care to provide any additional details?",
          "reason":"This was created by accident"
       },
       {  
-         "discount_code":"",
-         "id":444622,
-         "incentive_type":"delay_subscription",
-         "prevention_text":"Please help us process your request by telling us why you're cancelling",
+         "discount_code":null,
+         "id":764574,
+         "incentive_type":"skip_charge",
+         "prevention_text":"If you have more than you need, we can skip your upcoming order.",
          "reason":"I already have more than I need"
       },
       {  
-         "discount_code":"",
-         "id":444625,
-         "incentive_type":"delay_subscription",
-         "prevention_text":"Please help us process your request by telling us why you're cancelling",
+         "discount_code":null,
+         "id":764580,
+         "incentive_type":"",
+         "prevention_text":"Please help us process your request by telling us why you're cancelling.",
          "reason":"I need it sooner"
       },
       {  
          "discount_code":null,
-         "id":444628,
-         "incentive_type":null,
-         "prevention_text":"Please help us process your request by telling us why you're cancelling",
+         "id":764586,
+         "incentive_type":"",
+         "prevention_text":"Please help us process your request by telling us why you're cancelling.",
          "reason":"I no longer use this product"
       },
       {  
          "discount_code":null,
-         "id":444631,
-         "incentive_type":null,
-         "prevention_text":"Please help us process your request by telling us why you're cancelling",
-         "reason":"I want a different product"
+         "id":764592,
+         "incentive_type":"swap_product",
+         "prevention_text":"Would you like to swap the product out for another item?",
+         "reason":"I want a different product or variety"
       },
       {  
          "discount_code":null,
-         "id":444634,
-         "incentive_type":null,
-         "prevention_text":"Please help us process your request by telling us why you're cancelling",
-         "reason":"I want a different flavor/scent/count"
-      },
-      {  
-         "discount_code":null,
-         "id":444637,
-         "incentive_type":null,
-         "prevention_text":"Please help us process your request by telling us why you're cancelling",
-         "reason":"Other Reason"
-      },
-      {  
-         "discount_code":"diskauntzaretension",
-         "id":545692,
-         "incentive_type":"discount",
-         "prevention_text":"",
-         "reason":"discount_for_product3"
-      },
-      {  
-         "discount_code":"diskauntzasub",
-         "id":545737,
-         "incentive_type":"discount",
-         "prevention_text":"",
-         "reason":"discount_for_all_products"
-      },
-      {  
-         "discount_code":"DISKAUNTZARETENSION2",
-         "id":546853,
-         "incentive_type":"discount",
-         "prevention_text":"",
-         "reason":"discount_for_product3 v2"
-      },
-      {  
-         "discount_code":"DISKAUNTZARETENSION3",
-         "id":546940,
-         "incentive_type":"discount",
-         "prevention_text":"",
-         "reason":"discount_for_product3 v3"
+         "id":764598,
+         "incentive_type":"",
+         "prevention_text":"Please help us process your request by telling us why you're cancelling.",
+         "reason":"Other reason"
       }
    ],
    "subscription":{  
       "address":{  
-         "address1":"Cr 35 No 29",
+         "address1":"3030 Nebraska Avenue",
          "address2":"",
-         "cart_note":null,
-         "city":"Bogota",
-         "company":"",
-         "country":"Colombia",
-         "first_name":"Lorena the third",
-         "id":325524,
-         "last_name":"Maldonado",
-         "phone":"0868758888",
-         "province":"",
-         "zip":""
+         "cart_note":"",
+         "city":"Santa Monica",
+         "company":"ReCharge",
+         "country":"United States",
+         "discount_id":null,
+         "first_name":"Test",
+         "id":18586680,
+         "last_name":"Tiege",
+         "phone":"",
+         "province":"California",
+         "zip":"90025"
       },
-      "address_id":325524,
-      "allow_date_selection":false,
+      "address_id":18586680,
+      "allow_date_selection":true,
       "allow_schedule_edit":true,
-      "charge_interval_frequency":"9",
+      "charge_interval_frequency":"1",
       "charge_interval_unit":"month",
-      "charges_made_on_item":1,
-      "id":412339,
+      "charges_made_on_item":0,
+      "id":25769358,
       "interval_options":{  
          "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
       },
+      "is_active":true,
+      "is_cancelled":false,
+      "is_expired":false,
+      "is_one_time_product":false,
       "is_skippable":true,
       "is_skipped":false,
-      "modifiable_properties":[  
-
-      ],
-      "next_charge_scheduled_at":null,
-      "number_of_charges":1,
+      "is_swappable":false,
+      "modifiable_properties":[ ],
+      "next_charge_scheduled_at":"2018-12-23T00:00:00",
+      "number_of_charges":0,
       "number_of_charges_until_expiration":null,
       "order_interval_frequency":"1",
       "order_interval_unit":"month",
-      "price":340000,
-      "product_title":"lorenaupdate",
-      "product_variant_title":"lorenaupdate - 2 / 3",
-      "properties":[  
-         {  
-            "name":"subscription_id",
-            "value":"13189"
-         },
-         {  
-            "name":"shipping_interval_frequency",
-            "value":"1"
-         },
-         {  
-            "name":"shipping_interval_unit_type",
-            "value":"Months"
-         }
-      ],
+      "price":7000,
+      "product_title":"Bare Box - 3 Month Plan  Auto renew",
+      "product_variant_title":"Bare Box - 3 Month Plan  Auto renew - x-small",
+      "properties":[ ],
       "quantity":1,
-      "shopify_product_id":2147483647,
-      "shopify_variant_id":16347635201,
-      "status":"CANCELLED",
-      "variant_title":"2 / 3"
+      "shopify_product_id":506020921408,
+      "shopify_variant_id":5424189177920,
+      "status":"ACTIVE",
+      "variant_title":"x-small"
    }
 }
 ```
 
-## Retention strategy
-Cancel the current subscription providing retention strategy.
+**URL:** `{{ subscription | cancel_subscription_url }}` or `{{ subscription.id | cancel_subscription_url }}`
 
-**URL:** `{{ subscription | retention_strategy_url(retention_strategy) }}`
+**Methods accepted:** `GET, POST`
 
-**Methods accepted:** `POST`
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>/cancel`
 
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>/cancel/<int:retention_strategy_id>`
-
-**Template file:** `subscription_retention_strategy.html`
+**Template file:** `subscription_cancel.html`
 
 **Available objects**
 
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
-* [Address](Theme-objects%3A-Address)
 * [Subscription](Theme-objects%3A-Subscription)
-* [Variants](Theme-objects%3A-Variants)
 * [Retention strategies](Theme-objects%3A-Retention-strategies)
+* [Variants](Theme-objects%3A-Variants)
+
+## Retention strategy
+Cancel the current subscription providing retention strategy.
 
 > POST `{{ subscription | retention_strategy_url(retention_strategy) }}`
 <br>
@@ -587,107 +735,98 @@ $.ajax({
 ```javascript
 {  
    "customer":{  
-      "billing_address1":"3030 nebraska street",
+      "billing_address1":"607 Midvale Ave",
       "billing_address2":"",
       "billing_city":"Los Angeles",
-      "billing_company":"Recharge",
+      "billing_company":"ReCharge",
       "billing_country":"United States",
-      "billing_first_name":"Test",
-      "billing_last_name":"Recharge",
-      "billing_phone":"3103103101",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
       "billing_province":"California",
-      "billing_zip":"90025",
+      "billing_zip":"90024",
       "customer_card":null,
       "customer_payment_type":"credit",
-      "email":"lmlorem@yahoo.com",
-      "first_name":"Test",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
       "has_credit_card_purchase":true,
       "has_error_charge":false,
-      "hash":"288243b8e422869a44d9fe",
-      "last_name":"Recharge",
-      "name":"Test Recharge",
-      "shopify_customer_id":"2586884299"
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
    },
    "subscription":{  
       "address":{  
-         "address1":"Cr 35 No 29",
+         "address1":"3030 Nebraska Avenue",
          "address2":"",
-         "cart_note":null,
-         "city":"Bogota",
-         "company":"",
-         "country":"Colombia",
-         "first_name":"Lorena the third",
-         "id":325524,
-         "last_name":"Maldonado",
-         "phone":"0868758888",
-         "province":"",
-         "zip":""
+         "cart_note":"",
+         "city":"Santa Monica",
+         "company":"ReCharge",
+         "country":"United States",
+         "discount_id":null,
+         "first_name":"Test",
+         "id":18586680,
+         "last_name":"Tiege",
+         "phone":"",
+         "province":"California",
+         "zip":"90025"
       },
-      "address_id":325524,
-      "allow_date_selection":false,
+      "address_id":18586680,
+      "allow_date_selection":true,
       "allow_schedule_edit":true,
-      "charge_interval_frequency":"9",
+      "charge_interval_frequency":"1",
       "charge_interval_unit":"month",
-      "charges_made_on_item":1,
-      "id":412339,
+      "charges_made_on_item":0,
+      "id":25769358,
       "interval_options":{  
          "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
       },
+      "is_active":false,
+      "is_cancelled":true,
+      "is_expired":false,
+      "is_one_time_product":false,
       "is_skippable":true,
       "is_skipped":false,
-      "modifiable_properties":[  
-
-      ],
+      "is_swappable":false,
+      "modifiable_properties":[ ],
       "next_charge_scheduled_at":null,
-      "number_of_charges":1,
+      "number_of_charges":0,
       "number_of_charges_until_expiration":null,
       "order_interval_frequency":"1",
       "order_interval_unit":"month",
-      "price":340000,
-      "product_title":"lorenaupdate",
-      "product_variant_title":"lorenaupdate - 2 / 3",
-      "properties":[  
-         {  
-            "name":"subscription_id",
-            "value":"13189"
-         },
-         {  
-            "name":"shipping_interval_frequency",
-            "value":"1"
-         },
-         {  
-            "name":"shipping_interval_unit_type",
-            "value":"Months"
-         }
-      ],
+      "price":7000,
+      "product_title":"Bare Box - 3 Month Plan  Auto renew",
+      "product_variant_title":"Bare Box - 3 Month Plan  Auto renew - x-small",
+      "properties":[ ],
       "quantity":1,
-      "shopify_product_id":2147483647,
-      "shopify_variant_id":16347635201,
+      "shopify_product_id":506020921408,
+      "shopify_variant_id":5424189177920,
       "status":"CANCELLED",
-      "variant_title":"2 / 3"
+      "variant_title":"x-small"
    }
 }
 ```
 
-## Activate subscription
-Activate or re-activate the current subscription
-
-**URL:** `{{ subscription | activate_subscription_url }}` or `{{ subscription.id | activate_subscription_url }}`
+**URL:** `{{ subscription | retention_strategy_url(retention_strategy) }}`
 
 **Methods accepted:** `POST`
 
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>/activate`
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>/cancel/<int:retention_strategy_id>`
 
-**Template file:** `subscription_activate.html`
+**Template file:** `subscription_retention_strategy.html`
 
 **Available objects**
 
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
+* [Address](Theme-objects%3A-Address)
 * [Subscription](Theme-objects%3A-Subscription)
 * [Variants](Theme-objects%3A-Variants)
+* [Retention strategies](Theme-objects%3A-Retention-strategies)
 
-**GET** via AJAX is not supported on this endpoint. Please refer to `subscription/<id>`
+## Activate subscription
+Activate or re-activate the current subscription
 
 > POST `{{ subscription | activate_subscription_url }}`
 <br>
@@ -707,23 +846,103 @@ $.ajax({
 });
 ```
 
-## List subscriptions
-List all subscriptions for the current customer.
+> Example output
 
-**URL:** `{{ list_subscriptions_url }}`
+```javascript
+{  
+   "customer":{  
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+   },
+   "subscription":{  
+      "address":{  
+         "address1":"3030 Nebraska Avenue",
+         "address2":"",
+         "cart_note":"",
+         "city":"Santa Monica",
+         "company":"ReCharge",
+         "country":"United States",
+         "discount_id":null,
+         "first_name":"Test",
+         "id":18586680,
+         "last_name":"Tiege",
+         "phone":"",
+         "province":"California",
+         "zip":"90025"
+      },
+      "address_id":18586680,
+      "allow_date_selection":true,
+      "allow_schedule_edit":true,
+      "charge_interval_frequency":"1",
+      "charge_interval_unit":"month",
+      "charges_made_on_item":0,
+      "id":25769358,
+      "interval_options":{  
+         "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+      },
+      "is_active":true,
+      "is_cancelled":false,
+      "is_expired":false,
+      "is_one_time_product":false,
+      "is_skippable":true,
+      "is_skipped":false,
+      "is_swappable":false,
+      "modifiable_properties":[ ],
+      "next_charge_scheduled_at":"2018-12-26T00:00:00",
+      "number_of_charges":0,
+      "number_of_charges_until_expiration":null,
+      "order_interval_frequency":"1",
+      "order_interval_unit":"month",
+      "price":7000,
+      "product_title":"Bare Box - 3 Month Plan  Auto renew",
+      "product_variant_title":"Bare Box - 3 Month Plan  Auto renew - x-small",
+      "properties":[ ],
+      "quantity":1,
+      "shopify_product_id":506020921408,
+      "shopify_variant_id":5424189177920,
+      "status":"ACTIVE",
+      "variant_title":"x-small"
+   }
+}
+```
 
-**Methods accepted:** `GET`
+**URL:** `{{ subscription | activate_subscription_url }}` or `{{ subscription.id | activate_subscription_url }}`
 
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions`
+**Methods accepted:** `POST`
 
-**Template file:** `subscriptions.html`
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>/activate`
+
+**Template file:** `subscription_activate.html`
 
 **Available objects**
 
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
-* [Addresses](Theme-objects%3A-Addresses)
-* [Subscriptions](Theme-objects%3A-Subscriptions)
+* [Subscription](Theme-objects%3A-Subscription)
+* [Variants](Theme-objects%3A-Variants)
+
+**GET** via AJAX is not supported on this endpoint. Please refer to `subscription/<id>`
+
+## List subscriptions
+List all subscriptions for the current customer.
 
 > GET `{{ list_subscriptions_url }}`
 <br>
@@ -748,129 +967,118 @@ $.ajax({
 ```javascript
 {  
    "customer":{  
-      "billing_address1":"3030 nebraska street",
+      "billing_address1":"607 Midvale Ave",
       "billing_address2":"",
       "billing_city":"Los Angeles",
-      "billing_company":"Recharge",
+      "billing_company":"ReCharge",
       "billing_country":"United States",
-      "billing_first_name":"Test",
-      "billing_last_name":"Recharge",
-      "billing_phone":"3103103101",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
       "billing_province":"California",
-      "billing_zip":"90025",
+      "billing_zip":"90024",
       "customer_card":null,
       "customer_payment_type":"credit",
-      "email":"lmlorem@yahoo.com",
-      "first_name":"Test",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
       "has_credit_card_purchase":true,
       "has_error_charge":false,
-      "hash":"288243b8e422869a44d9fe",
-      "last_name":"Recharge",
-      "name":"Test Recharge",
-      "shopify_customer_id":"2586884299"
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
    },
    "subscriptions":[  
       {  
          "address":{  
-            "address1":"cll 25 no 39",
-            "address2":"",
+            "address1":"1933 Manning",
+            "address2":"204",
             "cart_note":null,
-            "city":"Bogota",
-            "company":"testy",
-            "country":"Colombia",
-            "first_name":"Lorena the second",
-            "id":306399,
-            "last_name":"Maldonado Perez",
-            "phone":"0868758888",
-            "province":"",
-            "zip":""
+            "city":"los angeles",
+            "company":"bootstrap",
+            "country":"United States",
+            "discount_id":null,
+            "first_name":"Recharge",
+            "id":7976732,
+            "last_name":"Test",
+            "phone":"3103103101",
+            "province":"California",
+            "zip":"90025"
          },
-         "address_id":306399,
-         "allow_date_selection":false,
+         "address_id":7976732,
+         "allow_date_selection":true,
          "allow_schedule_edit":true,
-         "charge_interval_frequency":"12",
-         "charge_interval_unit":"week",
+         "charge_interval_frequency":null,
+         "charge_interval_unit":"",
          "charges_made_on_item":1,
-         "id":385159,
-         "interval_options":{  
-            "week":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
-         },
-         "is_skippable":true,
+         "id":11959565,
+         "interval_options":{ },
+         "is_active":false,
+         "is_cancelled":false,
+         "is_expired":false,
+         "is_one_time_product":true,
+         "is_skippable":false,
          "is_skipped":false,
-         "modifiable_properties":[  
-
-         ],
+         "is_swappable":false,
+         "modifiable_properties":[ ],
          "next_charge_scheduled_at":null,
          "number_of_charges":1,
          "number_of_charges_until_expiration":null,
-         "order_interval_frequency":"2",
-         "order_interval_unit":"week",
-         "price":300000,
-         "product_title":"lorenaupdate",
-         "product_variant_title":"lorenaupdate",
-         "properties":[  
-            {  
-               "name":"subscription_id",
-               "value":"13189"
-            },
-            {  
-               "name":"shipping_interval_frequency",
-               "value":"2"
-            },
-            {  
-               "name":"shipping_interval_unit_type",
-               "value":"Months"
-            }
-         ],
+         "order_interval_frequency":null,
+         "order_interval_unit":"",
+         "price":1299,
+         "product_title":"Bare Sleep",
+         "product_variant_title":"Bare Sleep",
+         "properties":[ ],
          "quantity":1,
-         "shopify_product_id":2147483647,
-         "shopify_variant_id":16347635201,
-         "status":"CANCELLED",
+         "shopify_product_id":505545949248,
+         "shopify_variant_id":5421270171712,
+         "status":"ONETIME",
          "variant_title":""
       },
       {  
          "address":{  
-            "address1":"Cr 35 No 29",
-            "address2":"",
+            "address1":"1933 Manning",
+            "address2":"204",
             "cart_note":null,
-            "city":"Bogota",
-            "company":"",
-            "country":"Colombia",
-            "first_name":"Lorena the third",
-            "id":325524,
-            "last_name":"Maldonado",
-            "phone":"0868758888",
-            "province":"",
-            "zip":""
+            "city":"los angeles",
+            "company":"bootstrap",
+            "country":"United States",
+            "discount_id":null,
+            "first_name":"Recharge",
+            "id":7976732,
+            "last_name":"Test",
+            "phone":"3103103101",
+            "province":"California",
+            "zip":"90025"
          },
-         "address_id":325524,
-         "allow_date_selection":false,
+         "address_id":7976732,
+         "allow_date_selection":true,
          "allow_schedule_edit":true,
-         "charge_interval_frequency":"9",
+         "charge_interval_frequency":"1",
          "charge_interval_unit":"month",
          "charges_made_on_item":1,
-         "id":412339,
+         "id":11959568,
          "interval_options":{  
             "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
          },
+         "is_active":true,
+         "is_cancelled":false,
+         "is_expired":false,
+         "is_one_time_product":false,
          "is_skippable":true,
          "is_skipped":false,
-         "modifiable_properties":[  
-
-         ],
-         "next_charge_scheduled_at":null,
+         "is_swappable":false,
+         "modifiable_properties":[ ],
+         "next_charge_scheduled_at":"2018-11-29T00:00:00",
          "number_of_charges":1,
-         "number_of_charges_until_expiration":null,
+         "number_of_charges_until_expiration":5,
          "order_interval_frequency":"1",
          "order_interval_unit":"month",
-         "price":340000,
-         "product_title":"lorenaupdate",
-         "product_variant_title":"lorenaupdate - 2 / 3",
+         "price":7000,
+         "product_title":"Bare Box - 3 Month Plan  Auto renew",
+         "product_variant_title":"Bare Box - 3 Month Plan  Auto renew - x-small",
          "properties":[  
-            {  
-               "name":"subscription_id",
-               "value":"13189"
-            },
             {  
                "name":"shipping_interval_frequency",
                "value":"1"
@@ -881,14 +1089,176 @@ $.ajax({
             }
          ],
          "quantity":1,
-         "shopify_product_id":2147483647,
-         "shopify_variant_id":16347635201,
-         "status":"CANCELLED",
-         "variant_title":"2 / 3"
+         "shopify_product_id":506020921408,
+         "shopify_variant_id":5424189177920,
+         "status":"ACTIVE",
+         "variant_title":"x-small"
+      },
+      {  
+         "address":{  
+            "address1":"3030 Nebraska Avenue",
+            "address2":"",
+            "cart_note":"",
+            "city":"Santa Monica",
+            "company":"ReCharge",
+            "country":"United States",
+            "discount_id":null,
+            "first_name":"Test",
+            "id":18586680,
+            "last_name":"Tiege",
+            "phone":"",
+            "province":"California",
+            "zip":"90025"
+         },
+         "address_id":18586680,
+         "allow_date_selection":true,
+         "allow_schedule_edit":true,
+         "charge_interval_frequency":"1",
+         "charge_interval_unit":"month",
+         "charges_made_on_item":0,
+         "id":25769358,
+         "interval_options":{  
+            "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+         },
+         "is_active":true,
+         "is_cancelled":false,
+         "is_expired":false,
+         "is_one_time_product":false,
+         "is_skippable":true,
+         "is_skipped":false,
+         "is_swappable":false,
+         "modifiable_properties":[ ],
+         "next_charge_scheduled_at":"2018-12-26T00:00:00",
+         "number_of_charges":0,
+         "number_of_charges_until_expiration":null,
+         "order_interval_frequency":"1",
+         "order_interval_unit":"month",
+         "price":7000,
+         "product_title":"Bare Box - 3 Month Plan  Auto renew",
+         "product_variant_title":"Bare Box - 3 Month Plan  Auto renew - x-small",
+         "properties":[ ],
+         "quantity":1,
+         "shopify_product_id":506020921408,
+         "shopify_variant_id":5424189177920,
+         "status":"ACTIVE",
+         "variant_title":"x-small"
+      },
+      {  
+         "address":{  
+            "address1":"3030 Nebraska Avenue",
+            "address2":"",
+            "cart_note":"",
+            "city":"Santa Monica",
+            "company":"ReCharge",
+            "country":"United States",
+            "discount_id":null,
+            "first_name":"Test",
+            "id":18586680,
+            "last_name":"Tiege",
+            "phone":"",
+            "province":"California",
+            "zip":"90025"
+         },
+         "address_id":18586680,
+         "allow_date_selection":true,
+         "allow_schedule_edit":true,
+         "charge_interval_frequency":"1",
+         "charge_interval_unit":"month",
+         "charges_made_on_item":0,
+         "id":25769634,
+         "interval_options":{  
+            "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+         },
+         "is_active":true,
+         "is_cancelled":false,
+         "is_expired":false,
+         "is_one_time_product":false,
+         "is_skippable":true,
+         "is_skipped":false,
+         "is_swappable":false,
+         "modifiable_properties":[ ],
+         "next_charge_scheduled_at":"2018-12-26T00:00:00",
+         "number_of_charges":0,
+         "number_of_charges_until_expiration":null,
+         "order_interval_frequency":"1",
+         "order_interval_unit":"month",
+         "price":7000,
+         "product_title":"Bare Box - 3 Month Plan  Auto renew",
+         "product_variant_title":"Bare Box - 3 Month Plan  Auto renew - x-small",
+         "properties":[ ],
+         "quantity":1,
+         "shopify_product_id":506020921408,
+         "shopify_variant_id":5424189177920,
+         "status":"ACTIVE",
+         "variant_title":"x-small"
+      },
+      {  
+         "address":{  
+            "address1":"3030 Nebraska Avenue",
+            "address2":"",
+            "cart_note":"",
+            "city":"Santa Monica",
+            "company":"ReCharge",
+            "country":"United States",
+            "discount_id":null,
+            "first_name":"Test",
+            "id":18586680,
+            "last_name":"Tiege",
+            "phone":"",
+            "province":"California",
+            "zip":"90025"
+         },
+         "address_id":18586680,
+         "allow_date_selection":true,
+         "allow_schedule_edit":true,
+         "charge_interval_frequency":"2",
+         "charge_interval_unit":"week",
+         "charges_made_on_item":0,
+         "id":25771863,
+         "interval_options":{  
+            "week":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+         },
+         "is_active":true,
+         "is_cancelled":false,
+         "is_expired":false,
+         "is_one_time_product":false,
+         "is_skippable":true,
+         "is_skipped":false,
+         "is_swappable":false,
+         "modifiable_properties":[ ],
+         "next_charge_scheduled_at":"2018-12-26T00:00:00",
+         "number_of_charges":0,
+         "number_of_charges_until_expiration":null,
+         "order_interval_frequency":"2",
+         "order_interval_unit":"week",
+         "price":1039,
+         "product_title":"Bare Glow  20.00% Off Auto renew",
+         "product_variant_title":"Bare Glow  20.00% Off Auto renew",
+         "properties":[ ],
+         "quantity":2,
+         "shopify_product_id":505640779840,
+         "shopify_variant_id":5421828603968,
+         "status":"ACTIVE",
+         "variant_title":""
       }
    ]
 }
 ```
+
+**URL:** `{{ list_subscriptions_url }}`
+
+**Methods accepted:** `GET`
+
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions`
+
+**Template file:** `subscriptions.html`
+
+**Available objects**
+
+* [Store](Theme-objects%3A-Store)
+* [Customer](Theme-objects%3A-Customer)
+* [Addresses](Theme-objects%3A-Addresses)
+* [Subscriptions](Theme-objects%3A-Subscriptions)
 
 ## Skip subscription
 
@@ -935,6 +1305,179 @@ $.ajax({
 
 ## Delete one time product (BETA)
 
+> POST `{{ subscription | delete_one_time_product_url }}`
+<br>
+> Example input
+
+```javascript
+$.ajax({
+  url: '{{ subscription | delete_one_time_product_url }}',
+  type: 'post',
+  dataType: 'json'
+}).done(function(response) {
+  // Successful request made
+  console.log(response.responseJSON);
+}).fail(function(response) {
+  // Request failed
+  console.log(response.responseJSON.errors);
+});
+```
+
+> Example output
+
+```javascript
+{  
+   "address":{  
+      "address1":"1933 Manning",
+      "address2":"204",
+      "cart_note":null,
+      "city":"los angeles",
+      "company":"bootstrap",
+      "country":"United States",
+      "discount_id":null,
+      "first_name":"Recharge",
+      "id":7976732,
+      "last_name":"Test",
+      "phone":"3103103101",
+      "province":"California",
+      "subscriptions":[  
+         {  
+            "address_id":7976732,
+            "allow_date_selection":true,
+            "allow_schedule_edit":true,
+            "charge_interval_frequency":null,
+            "charge_interval_unit":"",
+            "charges_made_on_item":1,
+            "id":11959565,
+            "interval_options":{ },
+            "is_active":false,
+            "is_cancelled":true,
+            "is_expired":false,
+            "is_one_time_product":false,
+            "is_skippable":true,
+            "is_skipped":false,
+            "is_swappable":false,
+            "modifiable_properties":[ ],
+            "next_charge_scheduled_at":null,
+            "number_of_charges":1,
+            "number_of_charges_until_expiration":null,
+            "order_interval_frequency":null,
+            "order_interval_unit":"",
+            "price":1299,
+            "product_title":"Bare Sleep",
+            "product_variant_title":"Bare Sleep",
+            "properties":[ ],
+            "quantity":1,
+            "shopify_product_id":505545949248,
+            "shopify_variant_id":5421270171712,
+            "status":"CANCELLED",
+            "variant_title":""
+         },
+         {  
+            "address_id":7976732,
+            "allow_date_selection":true,
+            "allow_schedule_edit":true,
+            "charge_interval_frequency":"1",
+            "charge_interval_unit":"month",
+            "charges_made_on_item":1,
+            "id":11959568,
+            "interval_options":{  
+               "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            },
+            "is_active":true,
+            "is_cancelled":false,
+            "is_expired":false,
+            "is_one_time_product":false,
+            "is_skippable":true,
+            "is_skipped":false,
+            "is_swappable":false,
+            "modifiable_properties":[ ],
+            "next_charge_scheduled_at":"2018-11-29T00:00:00",
+            "number_of_charges":1,
+            "number_of_charges_until_expiration":5,
+            "order_interval_frequency":"1",
+            "order_interval_unit":"month",
+            "price":7000,
+            "product_title":"Bare Box - 3 Month Plan  Auto renew",
+            "product_variant_title":"Bare Box - 3 Month Plan  Auto renew - x-small",
+            "properties":[  
+               {  
+                  "name":"shipping_interval_frequency",
+                  "value":"1"
+               },
+               {  
+                  "name":"shipping_interval_unit_type",
+                  "value":"Months"
+               }
+            ],
+            "quantity":1,
+            "shopify_product_id":506020921408,
+            "shopify_variant_id":5424189177920,
+            "status":"ACTIVE",
+            "variant_title":"x-small"
+         },
+         {  
+            "address_id":7976732,
+            "allow_date_selection":true,
+            "allow_schedule_edit":true,
+            "charge_interval_frequency":"1",
+            "charge_interval_unit":"month",
+            "charges_made_on_item":0,
+            "id":24221373,
+            "interval_options":{  
+               "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            },
+            "is_active":false,
+            "is_cancelled":true,
+            "is_expired":false,
+            "is_one_time_product":false,
+            "is_skippable":true,
+            "is_skipped":false,
+            "is_swappable":false,
+            "modifiable_properties":[ ],
+            "next_charge_scheduled_at":null,
+            "number_of_charges":0,
+            "number_of_charges_until_expiration":null,
+            "order_interval_frequency":"1",
+            "order_interval_unit":"month",
+            "price":1039,
+            "product_title":"Bare Mood  20.00% Off Auto renew",
+            "product_variant_title":"Bare Mood  20.00% Off Auto renew",
+            "properties":[ ],
+            "quantity":1,
+            "shopify_product_id":505549586496,
+            "shopify_variant_id":5421279051840,
+            "status":"CANCELLED",
+            "variant_title":""
+         }
+      ],
+      "zip":"90025"
+   },
+   "customer":{  
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+   }
+}
+```
+
 One time products can not be cancelled however they can be deleted. Subscription items can be cancelled but not deleted. Find out more about cancelling subscriptions [here](#subscription_cancel). 
 
 **URL:** `{{ subscription | delete_one_time_product_url }}`
@@ -953,24 +1496,6 @@ One time products can not be cancelled however they can be deleted. Subscription
 * [Subscription](Theme-objects%3A-Subscription)
 
 **GET** via AJAX is not supported on this endpoint. Please refer to `subscription/<id>`
-
-> POST `{{ subscription | delete_one_time_product_url }}`
-<br>
-> Example input
-
-```javascript
-$.ajax({
-  url: '{{ subscription | delete_one_time_product_url }}',
-  type: 'post',
-  dataType: 'json'
-}).done(function(response) {
-  // Successful request made
-  console.log(response.responseJSON);
-}).fail(function(response) {
-  // Request failed
-  console.log(response.responseJSON.errors);
-});
-```
 
 ## Loop through the subscriptions
 
