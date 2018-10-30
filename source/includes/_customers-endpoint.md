@@ -4,36 +4,6 @@
 Provides essential customer information, as well as associated billing information. Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
 </aside>
 
-> Example input
-
-```liquid
-Welcome {{customer.name}}
-
-{{ customer.first_name }} {{ customer.last_name }}
-{{ customer.email}}
-
-{{ customer.billing_address1 }}
-{{ customer.billing_address2 }}
-{{ customer.billing_city }}, {{ customer.billing_province }}
-{{ customer.billing_zip }}
-{{ customer.billing_country }}
-```
-
-> Example output
-
-```html
-Welcome Mike Flynn
-
-Mike Flynn
-mike@gmail.com
-
-3030 Nebraska Avenue
-#301
-Los Angeles, California
-90404
-United States
-```
-
 Property | Definition
 --------- | -------
 <b>first_name</b> <br> string| `"first_name": "Mike"`<br>  The customer's first name.
@@ -79,45 +49,148 @@ $.ajax({
 > Example output
 
 ```javascript
-{
-  addresses: [
-    {
-      id: 1635,
-      first_name: 'Jacques',
-      last_name: 'Mayol',
-      address1: '105 Bigblue street',
-      address2: '',
-      company: '',
-      city: 'Venice',
-      province: 'California',
-      zip: 90291,
-      country: 'United States',
-      phone: 310334444,
-      cart_note: ''
-    }
-  ],
-  customer: {
-    name: "Jacques Mayol",
-    first_name: "Jacques",
-    last_name: "Mayol",
-    email: "jacques.mayol@rechargeapps.com",
-    hash: "1376da46186943db587b",
-    shopify_customer_id: "343646087",
-    billing_address1: "105 Bigblue street",
-    billing_address2: "Apt. 100",
-    billing_city: "Venice",
-    billing_company: "Dolphin Inc",
-    billing_country: "United States",
-    billing_first_name: "Jacques",
-    billing_last_name: "Mayol",
-    billing_phone: "3103334444",
-    billing_province: "California",
-    billing_zip: "90291",
-    has_credit_card_purchase: true,
-    has_error_charge: true,
-    customer_card: null,
-    customer_payment_type: "credit"
-  }
+{  
+   "addresses":[  
+      {  
+         "address1":"1933 Manning",
+         "address2":"204",
+         "cart_note":null,
+         "city":"los angeles",
+         "company":"bootstrap",
+         "country":"United States",
+         "discount_id":null,
+         "first_name":"Recharge",
+         "id":7976732,
+         "last_name":"Test",
+         "phone":"3103103101",
+         "province":"California",
+         "subscriptions":[  
+            {  
+               "address_id":7976732,
+               "allow_date_selection":true,
+               "allow_schedule_edit":true,
+               "charge_interval_frequency":null,
+               "charge_interval_unit":"",
+               "charges_made_on_item":1,
+               "id":11959565,
+               "interval_options":{  
+
+               },
+               "is_active":false,
+               "is_cancelled":true,
+               "is_expired":false,
+               "is_one_time_product":false,
+               "is_skippable":true,
+               "is_skipped":false,
+               "is_swappable":false,
+               "modifiable_properties":[  
+
+               ],
+               "next_charge_scheduled_at":null,
+               "number_of_charges":1,
+               "number_of_charges_until_expiration":null,
+               "order_interval_frequency":null,
+               "order_interval_unit":"",
+               "price":1299,
+               "product_title":"Bare Sleep",
+               "product_variant_title":"Bare Sleep",
+               "properties":[  
+
+               ],
+               "quantity":1,
+               "shopify_product_id":505545949248,
+               "shopify_variant_id":5421270171712,
+               "status":"CANCELLED",
+               "variant_title":""
+            }
+         ],
+         "zip":"90025"
+      }
+   ],
+   "customer":{  
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+   },
+   "subscriptions":[  
+      {  
+         "address":{  
+            "address1":"1933 Manning",
+            "address2":"204",
+            "cart_note":null,
+            "city":"los angeles",
+            "company":"bootstrap",
+            "country":"United States",
+            "discount_id":null,
+            "first_name":"Recharge",
+            "id":7976732,
+            "last_name":"Test",
+            "phone":"3103103101",
+            "province":"California",
+            "zip":"90025"
+         },
+         "address_id":7976732,
+         "allow_date_selection":true,
+         "allow_schedule_edit":true,
+         "charge_interval_frequency":"1",
+         "charge_interval_unit":"month",
+         "charges_made_on_item":1,
+         "id":11959568,
+         "interval_options":{  
+            "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+         },
+         "is_active":true,
+         "is_cancelled":false,
+         "is_expired":false,
+         "is_one_time_product":false,
+         "is_skippable":true,
+         "is_skipped":false,
+         "is_swappable":false,
+         "modifiable_properties":[  
+
+         ],
+         "next_charge_scheduled_at":"2018-11-29T00:00:00",
+         "number_of_charges":1,
+         "number_of_charges_until_expiration":5,
+         "order_interval_frequency":"1",
+         "order_interval_unit":"month",
+         "price":7000,
+         "product_title":"Bare Box - 3 Month Plan  Auto renew",
+         "product_variant_title":"Bare Box - 3 Month Plan  Auto renew - x-small",
+         "properties":[  
+            {  
+               "name":"shipping_interval_frequency",
+               "value":"1"
+            },
+            {  
+               "name":"shipping_interval_unit_type",
+               "value":"Months"
+            }
+         ],
+         "quantity":1,
+         "shopify_product_id":506020921408,
+         "shopify_variant_id":5424189177920,
+         "status":"ACTIVE",
+         "variant_title":"x-small"
+      }
+   ]
 }
 ```
 
@@ -139,6 +212,194 @@ $.ajax({
 ## Update customer
 Show current customer's information.
 
+> POST `{{ update_customer_url }}`
+<br>
+> Example input
+
+```javascript
+$.ajax({
+  url: '{{ update_customer_url }}',
+  type: 'post',
+  dataType: 'json',
+  data: {
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+  }
+}).done(function(response) {
+  // Successful request made
+  console.log(response.responseJSON);
+}).fail(function(response) {
+  // Request failed
+  console.log(response.responseJSON.errors);
+});
+```
+
+> Example output
+
+```javascript
+{  
+   "addresses":[  
+      {  
+         "address1":"1933 Manning",
+         "address2":"204",
+         "cart_note":null,
+         "city":"los angeles",
+         "company":"bootstrap",
+         "country":"United States",
+         "discount_id":null,
+         "first_name":"Recharge",
+         "id":7976732,
+         "last_name":"Test",
+         "phone":"3103103101",
+         "province":"California",
+         "subscriptions":[  
+            {  
+               "address_id":7976732,
+               "allow_date_selection":true,
+               "allow_schedule_edit":true,
+               "charge_interval_frequency":null,
+               "charge_interval_unit":"",
+               "charges_made_on_item":1,
+               "id":11959565,
+               "interval_options":{  
+
+               },
+               "is_active":false,
+               "is_cancelled":true,
+               "is_expired":false,
+               "is_one_time_product":false,
+               "is_skippable":true,
+               "is_skipped":false,
+               "is_swappable":false,
+               "modifiable_properties":[  
+
+               ],
+               "next_charge_scheduled_at":null,
+               "number_of_charges":1,
+               "number_of_charges_until_expiration":null,
+               "order_interval_frequency":null,
+               "order_interval_unit":"",
+               "price":1299,
+               "product_title":"Bare Sleep",
+               "product_variant_title":"Bare Sleep",
+               "properties":[  
+
+               ],
+               "quantity":1,
+               "shopify_product_id":505545949248,
+               "shopify_variant_id":5421270171712,
+               "status":"CANCELLED",
+               "variant_title":""
+            }
+         ],
+         "zip":"90025"
+      }
+   ],
+   "customer":{  
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+   },
+   "subscriptions":[  
+      {  
+         "address":{  
+            "address1":"1933 Manning",
+            "address2":"204",
+            "cart_note":null,
+            "city":"los angeles",
+            "company":"bootstrap",
+            "country":"United States",
+            "discount_id":null,
+            "first_name":"Recharge",
+            "id":7976732,
+            "last_name":"Test",
+            "phone":"3103103101",
+            "province":"California",
+            "zip":"90025"
+         },
+         "address_id":7976732,
+         "allow_date_selection":true,
+         "allow_schedule_edit":true,
+         "charge_interval_frequency":"1",
+         "charge_interval_unit":"month",
+         "charges_made_on_item":1,
+         "id":11959568,
+         "interval_options":{  
+            "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+         },
+         "is_active":true,
+         "is_cancelled":false,
+         "is_expired":false,
+         "is_one_time_product":false,
+         "is_skippable":true,
+         "is_skipped":false,
+         "is_swappable":false,
+         "modifiable_properties":[  
+
+         ],
+         "next_charge_scheduled_at":"2018-11-29T00:00:00",
+         "number_of_charges":1,
+         "number_of_charges_until_expiration":5,
+         "order_interval_frequency":"1",
+         "order_interval_unit":"month",
+         "price":7000,
+         "product_title":"Bare Box - 3 Month Plan  Auto renew",
+         "product_variant_title":"Bare Box - 3 Month Plan  Auto renew - x-small",
+         "properties":[  
+            {  
+               "name":"shipping_interval_frequency",
+               "value":"1"
+            },
+            {  
+               "name":"shipping_interval_unit_type",
+               "value":"Months"
+            }
+         ],
+         "quantity":1,
+         "shopify_product_id":506020921408,
+         "shopify_variant_id":5424189177920,
+         "status":"ACTIVE",
+         "variant_title":"x-small"
+      }
+   ]
+}
+```
+
 **URL:** `{{ update_customer_url }}`
 
 **Methods accepted:** `POST`
@@ -156,106 +417,28 @@ Show current customer's information.
 
 #### Available properties
 
-> POST `{{ update_customer_url }}`
-<br>
-> Example input
-
-```javascript
-$.ajax({
-  url: '{{ update_customer_url }}',
-  type: 'post',
-  dataType: 'json',
-  data: {
-    email: 'jacques.mayol@rechargeapps.com',
-    id: 11596544,
-    first_name: 'Jacques',
-    last_name: 'Mayol',
-    address1: '105 Bigblue street',
-    address2: '',
-    company: '',
-    city: 'Venice',
-    province: 'California',
-    zip: 90291,
-    country: 'United States',
-    phone: 310334444,
-    cart_note: ''
-  }
-}).done(function(response) {
-  // Successful request made
-  console.log(response.responseJSON);
-}).fail(function(response) {
-  // Request failed
-  console.log(response.responseJSON.errors);
-});
-```
-
-> Example output
-
-```javascript
-{
-  addresses: [
-    {
-      id: 11596544,
-      first_name: 'Jacques',
-      last_name: 'Mayol',
-      address1: '105 Bigblue street',
-      address2: '',
-      company: '',
-      city: 'Venice',
-      province: 'California',
-      zip: 90291,
-      country: 'United States',
-      phone: 310334444,
-      cart_note: ''
-    }
-  ],
-  customer: {
-    name: "Jacques Mayol",
-    first_name: "Jacques",
-    last_name: "Mayol",
-    email: "jacques.mayol@rechargeapps.com",
-    hash: "1376da46186943db587b",
-    shopify_customer_id: "343646087",
-    billing_address1: "105 Bigblue street",
-    billing_address2: "Apt. 100",
-    billing_city: "Venice",
-    billing_company: "Dolphin Inc",
-    billing_country: "United States",
-    billing_first_name: "Jacques",
-    billing_last_name: "Mayol",
-    billing_phone: "3103334444",
-    billing_province: "California",
-    billing_zip: "90291",
-    has_credit_card_purchase: true,
-    has_error_charge: true,
-    customer_card: null,
-    customer_payment_type: "credit"
-  }
-}
-```
-
 **Customer Information**
 
 |Input| Type| Name attribute|
----|---|---
+|:-------|:-------|:-------|
 |First Name (*optional*)| text| first_name|
 |Last name (*mandatory*)| text| last_name|
-|Email (*optional*)| text| email|
+|Email (*mandatory*)| text| email|
 
 **Billing address**
 
 |Input| Type| Name attribute|
----|---|---
-|First Name (*optional*)| text| first_name|
-|Last name (*mandatory*)| text| last_name|
-|Company (*optional*)| text| company|
-|Address line (*mandatory*)| text| address1|
-|Address 2 (*optional*)| text| address2|
-|City (*optional*)| text | city|
-|ZIP Code (*mandatory*)| text| zip|
-|Country (*optional*)| text| country|
-|Province State (*optional*)| text| province|
-|Phone (*optional*)| text| phone|
+|:-------|:-------|:-------|
+|First name (*optional*)| text| billing_first_name|
+|Last name (*optional*)| text| billing_last_name|
+|Billing address 1 (*optional*)| text| billing_address1|
+|Billing address 2 (*optional*)| text| billing_address2|
+|Company (*optional*)| text| billing_company|
+|City (*optional*)| text | billing_city|
+|State/province (*optional*)| text| billing_province|
+|Zip/postal code (*optional*)| text| billing_zip|
+|Country (*optional*)| text| billing_country|
+|Phone (*optional*)| text| billing_phone|
 
 ## Update customer card
 Show current customer's information.
@@ -266,7 +449,8 @@ Show current customer's information.
 
 **Template file:** `customer_card.html`
 
-#### Available objects
+**Available objects**
+
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
 * [Addresses](Theme-objects%3A-Address)

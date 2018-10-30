@@ -53,21 +53,6 @@ Property | Definition
 ## Create address
 Page with form to create a new address for current customer.
 
-**URL:** `{{ create_address_url }}`
-
-**Methods accepted:** `POST`
-
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/addresses/new`
-
-**Template file:** `address_new.html`
-
-**Available objects**
-
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Addresses](Theme-objects%3A-Addresses)
-* [Subscriptions](Theme-objects%3A-Subscriptions)
-
 > POST `{{ create_address_url }}`
 <br>
 > Example input
@@ -141,6 +126,21 @@ $.ajax({
   }
 }
 ```
+
+**URL:** `{{ create_address_url }}`
+
+**Methods accepted:** `POST`
+
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/addresses/new`
+
+**Template file:** `address_new.html`
+
+**Available objects**
+
+* [Store](Theme-objects%3A-Store)
+* [Customer](Theme-objects%3A-Customer)
+* [Addresses](Theme-objects%3A-Addresses)
+* [Subscriptions](Theme-objects%3A-Subscriptions)
 
 **Available properties**
 
