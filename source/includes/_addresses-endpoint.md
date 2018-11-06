@@ -63,17 +63,19 @@ $.ajax({
   type: 'post',
   dataType: 'json',
   data: {
-    first_name: 'Jacques',
-    last_name: 'Mayol',
-    address1: '105 Bigblue street',
-    address2: '',
-    company: '',
-    city: 'Venice',
-    province: 'California',
-    zip: 90291,
-    country: 'United States',
-    phone: 310334444,
-    cart_note: ''
+     "address1":"1933 Manning",
+     "address2":"204",
+     "cart_note":null,
+     "city":"los angeles",
+     "company":"bootstrap",
+     "country":"United States",
+     "discount_id":null,
+     "first_name":"Recharge",
+     "id":7976732,
+     "last_name":"Test",
+     "phone":"3103103101",
+     "province":"California",
+     "zip":"90025"
   }
 }).done(function(response) {
   // Successful request made
@@ -87,43 +89,45 @@ $.ajax({
 > Example output
 
 ```javascript
-{
-  addresses: {
-      id: 11596544,
-      first_name: 'Jacques',
-      last_name: 'Mayol',
-      address1: '105 Bigblue street',
-      address2: '',
-      company: '',
-      city: 'Venice',
-      province: 'California',
-      zip: 90291,
-      country: 'United States',
-      phone: 310334444,
-      cart_note: ''
-  },
-  customer: {
-    name: "Jacques Mayol",
-    first_name: "Jacques",
-    last_name: "Mayol",
-    email: "jacques.mayol@rechargeapps.com",
-    hash: "1376da46186943db587b",
-    shopify_customer_id: "343646087",
-    billing_address1: "105 Bigblue street",
-    billing_address2: "Apt. 100",
-    billing_city: "Venice",
-    billing_company: "Dolphin Inc",
-    billing_country: "United States",
-    billing_first_name: "Jacques",
-    billing_last_name: "Mayol",
-    billing_phone: "3103334444",
-    billing_province: "California",
-    billing_zip: "90291",
-    has_credit_card_purchase: true,
-    has_error_charge: true,
-    customer_card: null,
-    customer_payment_type: "credit"
-  }
+{  
+   "address":{  
+      "address1":"1933 Manning",
+      "address2":"204",
+      "cart_note":"",
+      "city":"los angeles",
+      "company":"bootstrap",
+      "country":"United States",
+      "discount_id":null,
+      "first_name":"Recharge",
+      "id":20519802,
+      "last_name":"Test",
+      "phone":"3103103101",
+      "province":"California",
+      "subscriptions":[ ],
+      "zip":"90025"
+   },
+   "customer":{  
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+   }
 }
 ```
 
@@ -162,20 +166,6 @@ $.ajax({
 ## Retrieve address
 Show details for the current address.
 
-**URL:** `{{ address | show_address_url }}` or `{{ address.id | show_address_url }}`
-
-**Methods accepted:** `GET`
-
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/addresses/<int:address_id>`
-
-**Template file:** `address.html`
-
-**Available objects**
-
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Address](Theme-objects%3A-Address)
-
 > GET `{{ address | show_address_url }}`
 <br>
 > Example input
@@ -197,62 +187,66 @@ $.ajax({
 > Example output
 
 ```javascript
-{
-  addresses: {
-      id: 1635,
-      first_name: 'Jacques',
-      last_name: 'Mayol',
-      address1: '105 Bigblue street',
-      address2: '',
-      company: '',
-      city: 'Venice',
-      province: 'California',
-      zip: 90291,
-      country: 'United States',
-      phone: 310334444,
-      cart_note: ''
-    },
-  customer: {
-    name: "Jacques Mayol",
-    first_name: "Jacques",
-    last_name: "Mayol",
-    email: "jacques.mayol@rechargeapps.com",
-    hash: "1376da46186943db587b",
-    shopify_customer_id: "343646087",
-    billing_address1: "105 Bigblue street",
-    billing_address2: "Apt. 100",
-    billing_city: "Venice",
-    billing_company: "Dolphin Inc",
-    billing_country: "United States",
-    billing_first_name: "Jacques",
-    billing_last_name: "Mayol",
-    billing_phone: "3103334444",
-    billing_province: "California",
-    billing_zip: "90291",
-    has_credit_card_purchase: true,
-    has_error_charge: true,
-    customer_card: null,
-    customer_payment_type: "credit"
-  }
+{  
+   "address":{  
+      "address1":"1933 Manning",
+      "address2":"204",
+      "cart_note":"",
+      "city":"los angeles",
+      "company":"bootstrap",
+      "country":"United States",
+      "discount_id":null,
+      "first_name":"Recharge",
+      "id":20519802,
+      "last_name":"Test",
+      "phone":"3103103101",
+      "province":"California",
+      "subscriptions":[  
+
+      ],
+      "zip":"90025"
+   },
+   "customer":{  
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+   }
 }
 ```
 
-## Update address
-Form to edit and update the current address.
+**URL:** `{{ address | show_address_url }}` or `{{ address.id | show_address_url }}`
 
-**URL:** `{{ address | update_address_url }}` or `{{ address.id | update_address_url }}`
+**Methods accepted:** `GET`
 
-**Methods accepted:** `POST`
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/addresses/<int:address_id>`
 
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/addresses/<int:address_id>/edit`
-
-**Template file:** `address_edit.html`
+**Template file:** `address.html`
 
 **Available objects**
 
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
 * [Address](Theme-objects%3A-Address)
+
+## Update address
+Form to edit and update the current address.
 
 > POST `{{ address | update_address_url }}`
 <br>
@@ -329,6 +323,20 @@ $.ajax({
 }
 ```
 
+**URL:** `{{ address | update_address_url }}` or `{{ address.id | update_address_url }}`
+
+**Methods accepted:** `POST`
+
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/addresses/<int:address_id>/edit`
+
+**Template file:** `address_edit.html`
+
+**Available objects**
+
+* [Store](Theme-objects%3A-Store)
+* [Customer](Theme-objects%3A-Customer)
+* [Address](Theme-objects%3A-Address)
+
 **Available properties**
 
 |Input| Type| Name attribute|
@@ -348,6 +356,7 @@ $.ajax({
 **GET** via AJAX is not supported on this endpoint. Please refer to `address/<id>`
 
 ## List addresses
+List all addresses for the current customer.
 
 > GET `{{ list_address_url }}`
 <br>
@@ -426,8 +435,6 @@ $.ajax({
 }
 ```
 
-List all addresses for the current customer.
-
 **URL:** `{{ list_address_url }}`
 
 **Methods accepted:** `GET`
@@ -447,14 +454,6 @@ If you perform a GET request with the data type of `json` on just about any URL,
 
 ## Apply discount
 Form to apply discount to current address.
-
-**URL:** `{{ address | apply_discount_to_address_url }}`
-
-**Methods accepted:** `POST`
-
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/addresses/<int:address_id>/apply_discount`
-
-**Template file:** `subscriptions.html`
 
 > POST `{{ address | apply_discount_to_address_url }}`
 <br>
@@ -476,6 +475,14 @@ $.ajax({
   console.log(response.responseJSON.errors);
 });
 ```
+
+**URL:** `{{ address | apply_discount_to_address_url }}`
+
+**Methods accepted:** `POST`
+
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/addresses/<int:address_id>/apply_discount`
+
+**Template file:** `subscriptions.html`
 
 **Available properties**
 
