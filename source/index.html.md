@@ -10,15 +10,15 @@ includes:
   - the-editor
   - changelog
   - template-syntax-and-semantics
-  - shop-endpoint
-  - customers-endpoint
-  - addresses-endpoint
-  - subscriptions-endpoint
-  - orders-endpoint
-  - search-endpoint
-  - delivery-schedule-endpoint
-  - discount-object
-  - math-filters
+  - shop
+  - customers
+  - addresses
+  - subscriptions
+  - orders
+  - search
+  - delivery-schedule
+  - discounts
+  - filters
 
 search: true
 ---

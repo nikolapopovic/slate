@@ -1,11 +1,5 @@
 # Addresses
 
-<aside class="notice">
- Addresses represents one of the many shipping locations a customer may have. Subscriptions are tied to a given address. Each customer can have multiple address objects (many-to-one) in the relationship. Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available. Not to be confused with a billing address, this is tied to individual subscription items. Most commonly used as a shipping address.
-</aside>
-
-![](images/address.png)
-
 > Example input
 
 ```liquid
@@ -27,6 +21,12 @@ ReCharge
 United States
 3103843698
 ```
+
+<aside class="notice">
+ Addresses represents one of the many shipping locations a customer may have. Subscriptions are tied to a given address. Each customer can have multiple address objects (many-to-one) in the relationship. Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available. Not to be confused with a billing address, this is tied to individual subscription items. Most commonly used as a shipping address.
+</aside>
+
+![](images/address.png)
 
 ### Address properties
 
@@ -493,14 +493,6 @@ $.ajax({
 ## Remove discount
 Form to remove discount applied to current address.
 
-**URL:** `{{ address | remove_discount_from_address_url }}`
-
-**Methods accepted:** `POST`
-
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/addresses/<int:address_id>/remove_discount`
-
-**Template file:** `subscriptions.html`
-
 > POST `{{ address | remove_discount_from_address_url }}`
 <br>
 > Example input
@@ -518,6 +510,14 @@ $.ajax({
   console.log(response.responseJSON.errors);
 });
 ```
+
+**URL:** `{{ address | remove_discount_from_address_url }}`
+
+**Methods accepted:** `POST`
+
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/addresses/<int:address_id>/remove_discount`
+
+**Template file:** `subscriptions.html`
 
 ## Loop through the addresses
 
