@@ -1,11 +1,5 @@
 # Shop
 
-<aside class="notice">
-  Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
-</aside>
-
-### Shop properties
-
 Property | Definition
 --------- | -------
 <b>name</b> <br> string| `"name": "baresupplements"`<br>  The name of shop.
@@ -29,7 +23,7 @@ Property | Definition
 <b>allow_customers_to_add_discounts</b> <br> boolean| `"allow_customers_to_add_discounts": true`<br> Returns boolean checking if store allows customers to add discount.
 <b>allow_customers_to_purchase_one_time_products</b> <br> boolean| `"allow_customers_to_purchase_one_time_products": true`<br> Returns boolean checking if store allows customers to purchase one time products.
 
-## Shop
+## Retrieve shop
 
 > GET `{{ show_store_url }}`
 <br>

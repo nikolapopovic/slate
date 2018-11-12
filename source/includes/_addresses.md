@@ -28,8 +28,6 @@ United States
 
 ![](images/address.png)
 
-### Address properties
-
 Property | Definition
 --------- | -------
 <b>first_name</b> <br> string| `"first_name": "Mike"`<br>  The customer’s first name associated with the address.

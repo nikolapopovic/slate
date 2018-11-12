@@ -1,11 +1,5 @@
 # Orders
 
-<aside class="notice">
-Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
-</aside>
-
-### Order properties
-
 Property | Definition
 --------- | -------
 <b>customer_id</b> <br> integer| `"customer_id": 8059036`<br> The unique numeric identifier of the customer.

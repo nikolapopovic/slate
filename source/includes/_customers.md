@@ -1,9 +1,5 @@
 # Customers
 
-<aside class="notice">
-Provides essential customer information, as well as associated billing information. Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
-</aside>
-
 Property | Definition
 --------- | -------
 <b>first_name</b> <br> string| `"first_name": "Mike"`<br>  The customer's first name.
@@ -36,7 +32,7 @@ Show current customer's information.
 $.ajax({
   url: '{{ show_customer_url }}',
   type: 'get',
-  dataType: 'json',
+  dataType: 'json'
 }).done(function(response) {
   // Successful request made
   console.log(response.responseJSON);
@@ -105,6 +101,61 @@ $.ajax({
             }
          ],
          "zip":"90025"
+      },
+      {  
+         "address1":"1933 Manning",
+         "address2":"204",
+         "cart_note":"",
+         "city":"los angeles",
+         "company":"bootstrap",
+         "country":"United States",
+         "discount_id":null,
+         "first_name":"Recharge",
+         "id":18586680,
+         "last_name":"Test",
+         "phone":"3103103101",
+         "province":"California",
+         "subscriptions":[
+            {  
+               "address_id":18586680,
+               "allow_date_selection":true,
+               "allow_schedule_edit":true,
+               "charge_interval_frequency":"2",
+               "charge_interval_unit":"week",
+               "charges_made_on_item":0,
+               "id":25771863,
+               "interval_options":{  
+                  "week":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+               },
+               "is_active":true,
+               "is_cancelled":false,
+               "is_expired":false,
+               "is_one_time_product":false,
+               "is_skippable":true,
+               "is_skipped":false,
+               "is_swappable":true,
+               "modifiable_properties":[  
+
+               ],
+               "next_charge_scheduled_at":"2018-12-26T00:00:00",
+               "number_of_charges":0,
+               "number_of_charges_until_expiration":null,
+               "order_interval_frequency":"2",
+               "order_interval_unit":"week",
+               "price":1039,
+               "product_title":"Bare Glow  20.00% Off Auto renew",
+               "product_variant_title":"Bare Glow  20.00% Off Auto renew",
+               "properties":[  
+
+               ],
+               "quantity":2,
+               "shopify_product_id":505640779840,
+               "shopify_variant_id":5421828603968,
+               "status":"ACTIVE",
+               "variant_title":""
+            }
+         ],
+         "zip":"90025"
       }
    ],
    "customer":{  
@@ -162,10 +213,8 @@ $.ajax({
          "is_one_time_product":false,
          "is_skippable":true,
          "is_skipped":false,
-         "is_swappable":false,
-         "modifiable_properties":[  
-
-         ],
+         "is_swappable":true,
+         "modifiable_properties":[ ],
          "next_charge_scheduled_at":"2018-11-29T00:00:00",
          "number_of_charges":1,
          "number_of_charges_until_expiration":5,
@@ -311,6 +360,61 @@ $.ajax({
             }
          ],
          "zip":"90025"
+      },
+      {  
+         "address1":"1933 Manning",
+         "address2":"204",
+         "cart_note":"",
+         "city":"los angeles",
+         "company":"bootstrap",
+         "country":"United States",
+         "discount_id":null,
+         "first_name":"Recharge",
+         "id":18586680,
+         "last_name":"Test",
+         "phone":"3103103101",
+         "province":"California",
+         "subscriptions":[
+            {  
+               "address_id":18586680,
+               "allow_date_selection":true,
+               "allow_schedule_edit":true,
+               "charge_interval_frequency":"2",
+               "charge_interval_unit":"week",
+               "charges_made_on_item":0,
+               "id":25771863,
+               "interval_options":{  
+                  "week":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+               },
+               "is_active":true,
+               "is_cancelled":false,
+               "is_expired":false,
+               "is_one_time_product":false,
+               "is_skippable":true,
+               "is_skipped":false,
+               "is_swappable":true,
+               "modifiable_properties":[  
+
+               ],
+               "next_charge_scheduled_at":"2018-12-26T00:00:00",
+               "number_of_charges":0,
+               "number_of_charges_until_expiration":null,
+               "order_interval_frequency":"2",
+               "order_interval_unit":"week",
+               "price":1039,
+               "product_title":"Bare Glow  20.00% Off Auto renew",
+               "product_variant_title":"Bare Glow  20.00% Off Auto renew",
+               "properties":[  
+
+               ],
+               "quantity":2,
+               "shopify_product_id":505640779840,
+               "shopify_variant_id":5421828603968,
+               "status":"ACTIVE",
+               "variant_title":""
+            }
+         ],
+         "zip":"90025"
       }
    ],
    "customer":{  
@@ -368,10 +472,8 @@ $.ajax({
          "is_one_time_product":false,
          "is_skippable":true,
          "is_skipped":false,
-         "is_swappable":false,
-         "modifiable_properties":[  
-
-         ],
+         "is_swappable":true,
+         "modifiable_properties":[ ],
          "next_charge_scheduled_at":"2018-11-29T00:00:00",
          "number_of_charges":1,
          "number_of_charges_until_expiration":5,

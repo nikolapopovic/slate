@@ -1,4 +1,4 @@
-# Discount object
+# Discounts
 
 > Example input
 

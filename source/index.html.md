@@ -18,7 +18,12 @@ includes:
   - search
   - delivery-schedule
   - discounts
+  - rules
+  - retention-strategies
+  - errors
+  - variants
   - filters
+  - widget
 
 search: true
 ---

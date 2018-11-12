@@ -1,28 +1,7 @@
 # Search endpoint
 
-<aside class="notice">
-  Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
-</aside>
-
-#### Directory
-* [products_search](#products_search)
-* [search_for_swap](#search_for_swap)
-
-## products_search
+## Product search
 Returns a list of all products available to be subscribed to.
-
-**URL:** `{{ product_search_url }}`
-
-**Methods accepted:** `GET`, `POST`
-
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/products/search`
-
-**Template file:** `products_search.html`
-
-#### Available objects
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Rules](Theme-objects%3A-Rules)
 
 > GET `{{ product_search_url }}`
 <br>
@@ -46,142 +25,136 @@ $.ajax({
 
 ```javascript
 {  
+   "customer":{  
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+   },
    "rules":[  
       {  
-         "handle":"test-prodcut-2",
-         "id":795150,
+         "discount_rate":null,
+         "handle":"bare-box-3-month-plan",
+         "id":659929,
          "interval_options":{  
             "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
          },
-         "modifiable_properties":[],
+         "modifiable_properties":[  
+
+         ],
+         "purchase_options":[  
+            "subscription"
+         ],
          "shopify_product":{  
-            "admin_graphql_api_id":"gid://shopify/Product/1304284594233",
-            "body_html":"",
-            "created_at":"2018-07-05T11:28:44-04:00",
-            "handle":"test-prodcut-2",
-            "id":1304284594233,
-            "image":null,
-            "images":[],
+            "admin_graphql_api_id":"gid://shopify/Product/506020921408",
+            "body_html":"<meta charset=\"utf-8\"><span>Looking to mix things up? Every month we'll send you a surprise box filled with all kinds of natural and organic goodies. Each box will contain speciality supplements, beauty supplies,\u00a0clothes and accessories, and many more products\u00a0to help you live your best life. All products are ethically and humanely sourced.</span>",
+            "created_at":"2018-02-16T11:01:02-05:00",
+            "handle":"bare-box-3-month-plan",
+            "id":506020921408,
+            "image":{  
+               "admin_graphql_api_id":"gid://shopify/ProductImage/1555302776896",
+               "alt":null,
+               "created_at":"2018-02-16T11:01:05-05:00",
+               "height":1060,
+               "id":1555302776896,
+               "position":1,
+               "product_id":506020921408,
+               "src":"https://cdn.shopify.com/s/files/1/3104/4618/products/surprise-box_7facd505-3d76-4ce9-8f33-99146e2fd4db.jpg?v=1518796865",
+               "updated_at":"2018-02-16T11:01:05-05:00",
+               "variant_ids":[  
+
+               ],
+               "width":1060
+            },
+            "images":[  
+               {  
+                  "admin_graphql_api_id":"gid://shopify/ProductImage/1555302776896",
+                  "alt":null,
+                  "created_at":"2018-02-16T11:01:05-05:00",
+                  "height":1060,
+                  "id":1555302776896,
+                  "position":1,
+                  "product_id":506020921408,
+                  "src":"https://cdn.shopify.com/s/files/1/3104/4618/products/surprise-box_7facd505-3d76-4ce9-8f33-99146e2fd4db.jpg?v=1518796865",
+                  "updated_at":"2018-02-16T11:01:05-05:00",
+                  "variant_ids":[  
+
+                  ],
+                  "width":1060
+               }
+            ],
             "options":[  
                {  
-                  "id":1844760412217,
-                  "name":"Title",
+                  "id":651242111040,
+                  "name":"T-Shirt Size",
                   "position":1,
-                  "product_id":1304284594233,
+                  "product_id":506020921408,
                   "values":[  
-                     "Default Title"
+                     "x-small",
+                     "small",
+                     "medium",
+                     "large",
+                     "x-large"
                   ]
                }
             ],
             "product_type":"",
-            "published_at":"2018-07-05T11:28:01-04:00",
+            "published_at":"2018-02-16T10:59:15-05:00",
             "published_scope":"web",
             "tags":"",
             "template_suffix":null,
-            "title":"test prodcut 2",
-            "updated_at":"2018-07-09T08:13:39-04:00",
+            "title":"Bare Box - 3 Month Plan",
+            "updated_at":"2018-02-16T15:15:11-05:00",
             "variants":[  
                {  
-                  "admin_graphql_api_id":"gid://shopify/ProductVariant/12218625949753",
+                  "admin_graphql_api_id":"gid://shopify/ProductVariant/5424189177920",
                   "barcode":"",
                   "compare_at_price":null,
-                  "created_at":"2018-07-05T11:28:44-04:00",
+                  "created_at":"2018-02-16T11:01:03-05:00",
                   "fulfillment_service":"manual",
-                  "grams":0,
-                  "id":12218625949753,
+                  "grams":1814,
+                  "id":5424189177920,
                   "image_id":null,
-                  "inventory_item_id":13031237648441,
+                  "inventory_item_id":5426924552256,
                   "inventory_management":null,
                   "inventory_policy":"deny",
                   "inventory_quantity":0,
                   "old_inventory_quantity":0,
-                  "option1":"Default Title",
+                  "option1":"x-small",
                   "option2":null,
                   "option3":null,
                   "position":1,
-                  "price":"10.00",
-                  "product_id":1304284594233,
+                  "price":"70.00",
+                  "product_id":506020921408,
                   "requires_shipping":true,
                   "sku":"",
                   "taxable":true,
-                  "title":"Default Title",
-                  "updated_at":"2018-07-09T08:14:51-04:00",
-                  "weight":0.0,
+                  "title":"x-small",
+                  "updated_at":"2018-10-29T09:20:45-04:00",
+                  "weight":4.0,
                   "weight_unit":"lb"
                }
             ],
-            "vendor":"blackestnight"
+            "vendor":"bare-supplements"
          },
-         "shopify_product_id":1304284594233,
-         "title":"test prodcut 2"
-      },
-      {  
-         "handle":"test-product",
-         "id":736695,
-         "interval_options":{  
-            "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-         },
-         "modifiable_properties":[],
-         "shopify_product":{  
-            "admin_graphql_api_id":"gid://shopify/Product/751915925561",
-            "body_html":"",
-            "created_at":"2018-05-10T14:09:19-04:00",
-            "handle":"test-product",
-            "id":751915925561,
-            "image":null,
-            "images":[],
-            "options":[  
-               {  
-                  "id":1081677217849,
-                  "name":"Title",
-                  "position":1,
-                  "product_id":751915925561,
-                  "values":[  
-                     "Default Title"
-                  ]
-               }
-            ],
-            "product_type":"",
-            "published_at":"2018-05-10T14:09:07-04:00",
-            "published_scope":"web",
-            "tags":"",
-            "template_suffix":null,
-            "title":"test product",
-            "updated_at":"2018-07-19T11:24:16-04:00",
-            "variants":[  
-               {  
-                  "admin_graphql_api_id":"gid://shopify/ProductVariant/7988821229625",
-                  "barcode":"",
-                  "compare_at_price":null,
-                  "created_at":"2018-05-10T14:09:19-04:00",
-                  "fulfillment_service":"manual",
-                  "grams":0,
-                  "id":7988821229625,
-                  "image_id":null,
-                  "inventory_item_id":8216722735161,
-                  "inventory_management":null,
-                  "inventory_policy":"deny",
-                  "inventory_quantity":-8,
-                  "old_inventory_quantity":-8,
-                  "option1":"Default Title",
-                  "option2":null,
-                  "option3":null,
-                  "position":1,
-                  "price":"0.00",
-                  "product_id":751915925561,
-                  "requires_shipping":true,
-                  "sku":"",
-                  "taxable":true,
-                  "title":"Default Title",
-                  "updated_at":"2018-07-19T11:24:16-04:00",
-                  "weight":0.0,
-                  "weight_unit":"lb"
-               }
-            ],
-            "vendor":"blackestnight"
-         },
-         "shopify_product_id":751915925561,
-         "title":"test product"
+         "shopify_product_id":506020921408,
+         "title":"Bare Box - 3 Month Plan"
       }
    ]
 }
@@ -199,7 +172,7 @@ $.ajax({
   type: 'post',
   dataType: 'json',
   data: {
-    q: "2"
+    q: "Glow"
   }
 }).done(function(response) {
   // Successful request made
@@ -214,87 +187,143 @@ $.ajax({
 
 ```javascript
 {  
+   "customer":{  
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+   },
    "rules":[  
       {  
-         "handle":"test-prodcut-2",
-         "id":795150,
+         "discount_rate":null,
+         "handle":"bare-glow",
+         "id":659848,
          "interval_options":{  
             "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
          },
-         "modifiable_properties":[],
+         "modifiable_properties":[  
+
+         ],
+         "purchase_options":[  
+            "one_time_product",
+            "subscription"
+         ],
          "shopify_product":{  
-            "admin_graphql_api_id":"gid://shopify/Product/1304284594233",
-            "body_html":"",
-            "created_at":"2018-07-05T11:28:44-04:00",
-            "handle":"test-prodcut-2",
-            "id":1304284594233,
-            "image":null,
-            "images":[],
+            "admin_graphql_api_id":"gid://shopify/Product/505640779840",
+            "body_html":"<p>Radiate beauty with Bare Glow, gummy supplements\u00a0made from organic sunflower seeds and black current seed oil. Your skin will feel vibrant and luxurious for days on end.</p>\n<p>Ingredients</p>\n<ul>\n<li>Sunflower seeds</li>\n<li>Black current seed oil</li>\n<li>Sunflower petals</li>\n</ul>",
+            "created_at":"2018-02-15T18:04:59-05:00",
+            "handle":"bare-glow",
+            "id":505640779840,
+            "image":{  
+               "admin_graphql_api_id":"gid://shopify/ProductImage/1553536057408",
+               "alt":null,
+               "created_at":"2018-02-15T18:05:01-05:00",
+               "height":1060,
+               "id":1553536057408,
+               "position":1,
+               "product_id":505640779840,
+               "src":"https://cdn.shopify.com/s/files/1/3104/4618/products/glow.jpg?v=1518735901",
+               "updated_at":"2018-02-15T18:05:01-05:00",
+               "variant_ids":[  
+
+               ],
+               "width":1060
+            },
+            "images":[  
+               {  
+                  "admin_graphql_api_id":"gid://shopify/ProductImage/1553536057408",
+                  "alt":null,
+                  "created_at":"2018-02-15T18:05:01-05:00",
+                  "height":1060,
+                  "id":1553536057408,
+                  "position":1,
+                  "product_id":505640779840,
+                  "src":"https://cdn.shopify.com/s/files/1/3104/4618/products/glow.jpg?v=1518735901",
+                  "updated_at":"2018-02-15T18:05:01-05:00",
+                  "variant_ids":[  
+
+                  ],
+                  "width":1060
+               }
+            ],
             "options":[  
                {  
-                  "id":1844760412217,
+                  "id":650668933184,
                   "name":"Title",
                   "position":1,
-                  "product_id":1304284594233,
+                  "product_id":505640779840,
                   "values":[  
                      "Default Title"
                   ]
                }
             ],
             "product_type":"",
-            "published_at":"2018-07-05T11:28:01-04:00",
+            "published_at":"2018-02-15T18:04:32-05:00",
             "published_scope":"web",
             "tags":"",
             "template_suffix":null,
-            "title":"test prodcut 2",
-            "updated_at":"2018-07-09T08:13:39-04:00",
+            "title":"Bare Glow",
+            "updated_at":"2018-02-16T10:35:59-05:00",
             "variants":[  
                {  
-                  "admin_graphql_api_id":"gid://shopify/ProductVariant/12218625949753",
+                  "admin_graphql_api_id":"gid://shopify/ProductVariant/5421828603968",
                   "barcode":"",
                   "compare_at_price":null,
-                  "created_at":"2018-07-05T11:28:44-04:00",
+                  "created_at":"2018-02-15T18:04:59-05:00",
                   "fulfillment_service":"manual",
-                  "grams":0,
-                  "id":12218625949753,
+                  "grams":907,
+                  "id":5421828603968,
                   "image_id":null,
-                  "inventory_item_id":13031237648441,
+                  "inventory_item_id":5424520134720,
                   "inventory_management":null,
                   "inventory_policy":"deny",
-                  "inventory_quantity":0,
-                  "old_inventory_quantity":0,
+                  "inventory_quantity":1,
+                  "old_inventory_quantity":1,
                   "option1":"Default Title",
                   "option2":null,
                   "option3":null,
                   "position":1,
-                  "price":"10.00",
-                  "product_id":1304284594233,
+                  "price":"12.99",
+                  "product_id":505640779840,
                   "requires_shipping":true,
-                  "sku":"",
+                  "sku":"123459",
                   "taxable":true,
                   "title":"Default Title",
-                  "updated_at":"2018-07-09T08:14:51-04:00",
-                  "weight":0.0,
-                  "weight_unit":"lb"
+                  "updated_at":"2018-09-11T20:29:49-04:00",
+                  "weight":32.0,
+                  "weight_unit":"oz"
                }
             ],
-            "vendor":"blackestnight"
+            "vendor":"bare-supplements"
          },
-         "shopify_product_id":1304284594233,
-         "title":"test prodcut 2"
+         "shopify_product_id":505640779840,
+         "title":"Bare Glow"
       }
    ]
 }
 ```
 
-## search_for_swap
-Presents a list for the intention of swapping the current subscription with a new product. Routes to [subscription_new](Theme-endpoints%3A-Subscription#subscription_new) will have a new variable available to them, `swap_subscription_id`.
-
-**URL:** `{{ subscription | search_for_swap_url }}` or `{{ subscription.id | search_for_swap_url }}`
+**URL:** `{{ product_search_url }}`
 
 **Methods accepted:** `GET`, `POST`
 
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/products/search?swap_subscription_id=<int:swap_subscription_id>`
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/products/search`
 
 **Template file:** `products_search.html`
 
@@ -302,6 +331,9 @@ Presents a list for the intention of swapping the current subscription with a ne
 * [Store](Theme-objects%3A-Store)
 * [Customer](Theme-objects%3A-Customer)
 * [Rules](Theme-objects%3A-Rules)
+
+## Search for swap
+Presents a list for the intention of swapping the current subscription with a new product. Routes to [subscription_new](Theme-endpoints%3A-Subscription#subscription_new) will have a new variable available to them, `swap_subscription_id`.
 
 > GET `{{ subscription | search_for_swap_url }}`
 <br>
@@ -327,142 +359,133 @@ $.ajax({
 
 ```javascript
 {  
+   "customer":{  
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+   },
    "rules":[  
       {  
-         "handle":"test-prodcut-2",
-         "id":795150,
+         "discount_rate":null,
+         "handle":"bare-glow",
+         "id":659848,
          "interval_options":{  
             "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
          },
-         "modifiable_properties":[],
+         "modifiable_properties":[  
+
+         ],
+         "purchase_options":[  
+            "one_time_product",
+            "subscription"
+         ],
          "shopify_product":{  
-            "admin_graphql_api_id":"gid://shopify/Product/1304284594233",
-            "body_html":"",
-            "created_at":"2018-07-05T11:28:44-04:00",
-            "handle":"test-prodcut-2",
-            "id":1304284594233,
-            "image":null,
-            "images":[],
+            "admin_graphql_api_id":"gid://shopify/Product/505640779840",
+            "body_html":"<p>Radiate beauty with Bare Glow, gummy supplements\u00a0made from organic sunflower seeds and black current seed oil. Your skin will feel vibrant and luxurious for days on end.</p>\n<p>Ingredients</p>\n<ul>\n<li>Sunflower seeds</li>\n<li>Black current seed oil</li>\n<li>Sunflower petals</li>\n</ul>",
+            "created_at":"2018-02-15T18:04:59-05:00",
+            "handle":"bare-glow",
+            "id":505640779840,
+            "image":{  
+               "admin_graphql_api_id":"gid://shopify/ProductImage/1553536057408",
+               "alt":null,
+               "created_at":"2018-02-15T18:05:01-05:00",
+               "height":1060,
+               "id":1553536057408,
+               "position":1,
+               "product_id":505640779840,
+               "src":"https://cdn.shopify.com/s/files/1/3104/4618/products/glow.jpg?v=1518735901",
+               "updated_at":"2018-02-15T18:05:01-05:00",
+               "variant_ids":[  
+
+               ],
+               "width":1060
+            },
+            "images":[  
+               {  
+                  "admin_graphql_api_id":"gid://shopify/ProductImage/1553536057408",
+                  "alt":null,
+                  "created_at":"2018-02-15T18:05:01-05:00",
+                  "height":1060,
+                  "id":1553536057408,
+                  "position":1,
+                  "product_id":505640779840,
+                  "src":"https://cdn.shopify.com/s/files/1/3104/4618/products/glow.jpg?v=1518735901",
+                  "updated_at":"2018-02-15T18:05:01-05:00",
+                  "variant_ids":[  
+
+                  ],
+                  "width":1060
+               }
+            ],
             "options":[  
                {  
-                  "id":1844760412217,
+                  "id":650668933184,
                   "name":"Title",
                   "position":1,
-                  "product_id":1304284594233,
+                  "product_id":505640779840,
                   "values":[  
                      "Default Title"
                   ]
                }
             ],
             "product_type":"",
-            "published_at":"2018-07-05T11:28:01-04:00",
+            "published_at":"2018-02-15T18:04:32-05:00",
             "published_scope":"web",
             "tags":"",
             "template_suffix":null,
-            "title":"test prodcut 2",
-            "updated_at":"2018-07-09T08:13:39-04:00",
+            "title":"Bare Glow",
+            "updated_at":"2018-02-16T10:35:59-05:00",
             "variants":[  
                {  
-                  "admin_graphql_api_id":"gid://shopify/ProductVariant/12218625949753",
+                  "admin_graphql_api_id":"gid://shopify/ProductVariant/5421828603968",
                   "barcode":"",
                   "compare_at_price":null,
-                  "created_at":"2018-07-05T11:28:44-04:00",
+                  "created_at":"2018-02-15T18:04:59-05:00",
                   "fulfillment_service":"manual",
-                  "grams":0,
-                  "id":12218625949753,
+                  "grams":907,
+                  "id":5421828603968,
                   "image_id":null,
-                  "inventory_item_id":13031237648441,
+                  "inventory_item_id":5424520134720,
                   "inventory_management":null,
                   "inventory_policy":"deny",
-                  "inventory_quantity":0,
-                  "old_inventory_quantity":0,
+                  "inventory_quantity":1,
+                  "old_inventory_quantity":1,
                   "option1":"Default Title",
                   "option2":null,
                   "option3":null,
                   "position":1,
-                  "price":"10.00",
-                  "product_id":1304284594233,
+                  "price":"12.99",
+                  "product_id":505640779840,
                   "requires_shipping":true,
-                  "sku":"",
+                  "sku":"123459",
                   "taxable":true,
                   "title":"Default Title",
-                  "updated_at":"2018-07-09T08:14:51-04:00",
-                  "weight":0.0,
-                  "weight_unit":"lb"
+                  "updated_at":"2018-09-11T20:29:49-04:00",
+                  "weight":32.0,
+                  "weight_unit":"oz"
                }
             ],
-            "vendor":"blackestnight"
+            "vendor":"bare-supplements"
          },
-         "shopify_product_id":1304284594233,
-         "title":"test prodcut 2"
-      },
-      {  
-         "handle":"test-product",
-         "id":736695,
-         "interval_options":{  
-            "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-         },
-         "modifiable_properties":[],
-         "shopify_product":{  
-            "admin_graphql_api_id":"gid://shopify/Product/751915925561",
-            "body_html":"",
-            "created_at":"2018-05-10T14:09:19-04:00",
-            "handle":"test-product",
-            "id":751915925561,
-            "image":null,
-            "images":[],
-            "options":[  
-               {  
-                  "id":1081677217849,
-                  "name":"Title",
-                  "position":1,
-                  "product_id":751915925561,
-                  "values":[  
-                     "Default Title"
-                  ]
-               }
-            ],
-            "product_type":"",
-            "published_at":"2018-05-10T14:09:07-04:00",
-            "published_scope":"web",
-            "tags":"",
-            "template_suffix":null,
-            "title":"test product",
-            "updated_at":"2018-07-19T11:24:16-04:00",
-            "variants":[  
-               {  
-                  "admin_graphql_api_id":"gid://shopify/ProductVariant/7988821229625",
-                  "barcode":"",
-                  "compare_at_price":null,
-                  "created_at":"2018-05-10T14:09:19-04:00",
-                  "fulfillment_service":"manual",
-                  "grams":0,
-                  "id":7988821229625,
-                  "image_id":null,
-                  "inventory_item_id":8216722735161,
-                  "inventory_management":null,
-                  "inventory_policy":"deny",
-                  "inventory_quantity":-8,
-                  "old_inventory_quantity":-8,
-                  "option1":"Default Title",
-                  "option2":null,
-                  "option3":null,
-                  "position":1,
-                  "price":"0.00",
-                  "product_id":751915925561,
-                  "requires_shipping":true,
-                  "sku":"",
-                  "taxable":true,
-                  "title":"Default Title",
-                  "updated_at":"2018-07-19T11:24:16-04:00",
-                  "weight":0.0,
-                  "weight_unit":"lb"
-               }
-            ],
-            "vendor":"blackestnight"
-         },
-         "shopify_product_id":751915925561,
-         "title":"test product"
+         "shopify_product_id":505640779840,
+         "title":"Bare Glow"
       }
    ]
 }
@@ -490,143 +513,93 @@ $.ajax({
 
 ```javascript
 {  
-   "rules":[  
-      {  
-         "handle":"test-prodcut-2",
-         "id":795150,
-         "interval_options":{  
-            "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-         },
-         "modifiable_properties":[],
-         "shopify_product":{  
-            "admin_graphql_api_id":"gid://shopify/Product/1304284594233",
-            "body_html":"",
-            "created_at":"2018-07-05T11:28:44-04:00",
-            "handle":"test-prodcut-2",
-            "id":1304284594233,
-            "image":null,
-            "images":[],
-            "options":[  
-               {  
-                  "id":1844760412217,
-                  "name":"Title",
-                  "position":1,
-                  "product_id":1304284594233,
-                  "values":[  
-                     "Default Title"
-                  ]
-               }
-            ],
-            "product_type":"",
-            "published_at":"2018-07-05T11:28:01-04:00",
-            "published_scope":"web",
-            "tags":"",
-            "template_suffix":null,
-            "title":"test prodcut 2",
-            "updated_at":"2018-07-09T08:13:39-04:00",
-            "variants":[  
-               {  
-                  "admin_graphql_api_id":"gid://shopify/ProductVariant/12218625949753",
-                  "barcode":"",
-                  "compare_at_price":null,
-                  "created_at":"2018-07-05T11:28:44-04:00",
-                  "fulfillment_service":"manual",
-                  "grams":0,
-                  "id":12218625949753,
-                  "image_id":null,
-                  "inventory_item_id":13031237648441,
-                  "inventory_management":null,
-                  "inventory_policy":"deny",
-                  "inventory_quantity":0,
-                  "old_inventory_quantity":0,
-                  "option1":"Default Title",
-                  "option2":null,
-                  "option3":null,
-                  "position":1,
-                  "price":"10.00",
-                  "product_id":1304284594233,
-                  "requires_shipping":true,
-                  "sku":"",
-                  "taxable":true,
-                  "title":"Default Title",
-                  "updated_at":"2018-07-09T08:14:51-04:00",
-                  "weight":0.0,
-                  "weight_unit":"lb"
-               }
-            ],
-            "vendor":"blackestnight"
-         },
-         "shopify_product_id":1304284594233,
-         "title":"test prodcut 2"
+   "customer":{  
+      "billing_address1":"607 Midvale Ave",
+      "billing_address2":"",
+      "billing_city":"Los Angeles",
+      "billing_company":"ReCharge",
+      "billing_country":"United States",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
+      "billing_province":"California",
+      "billing_zip":"90024",
+      "customer_card":null,
+      "customer_payment_type":"credit",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
+      "has_credit_card_purchase":true,
+      "has_error_charge":false,
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
+   },
+   "subscription":{  
+      "address":{  
+         "address1":"1933 Manning",
+         "address2":"204",
+         "cart_note":"",
+         "city":"los angeles",
+         "company":"bootstrap",
+         "country":"United States",
+         "discount_id":null,
+         "first_name":"Recharge",
+         "id":18586680,
+         "last_name":"Test",
+         "phone":"3103103101",
+         "province":"California",
+         "zip":"90025"
       },
-      {  
-         "handle":"test-product",
-         "id":736695,
-         "interval_options":{  
-            "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-         },
-         "modifiable_properties":[],
-         "shopify_product":{  
-            "admin_graphql_api_id":"gid://shopify/Product/751915925561",
-            "body_html":"",
-            "created_at":"2018-05-10T14:09:19-04:00",
-            "handle":"test-product",
-            "id":751915925561,
-            "image":null,
-            "images":[],
-            "options":[  
-               {  
-                  "id":1081677217849,
-                  "name":"Title",
-                  "position":1,
-                  "product_id":751915925561,
-                  "values":[  
-                     "Default Title"
-                  ]
-               }
-            ],
-            "product_type":"",
-            "published_at":"2018-05-10T14:09:07-04:00",
-            "published_scope":"web",
-            "tags":"",
-            "template_suffix":null,
-            "title":"test product",
-            "updated_at":"2018-07-19T11:24:16-04:00",
-            "variants":[  
-               {  
-                  "admin_graphql_api_id":"gid://shopify/ProductVariant/7988821229625",
-                  "barcode":"",
-                  "compare_at_price":null,
-                  "created_at":"2018-05-10T14:09:19-04:00",
-                  "fulfillment_service":"manual",
-                  "grams":0,
-                  "id":7988821229625,
-                  "image_id":null,
-                  "inventory_item_id":8216722735161,
-                  "inventory_management":null,
-                  "inventory_policy":"deny",
-                  "inventory_quantity":-8,
-                  "old_inventory_quantity":-8,
-                  "option1":"Default Title",
-                  "option2":null,
-                  "option3":null,
-                  "position":1,
-                  "price":"0.00",
-                  "product_id":751915925561,
-                  "requires_shipping":true,
-                  "sku":"",
-                  "taxable":true,
-                  "title":"Default Title",
-                  "updated_at":"2018-07-19T11:24:16-04:00",
-                  "weight":0.0,
-                  "weight_unit":"lb"
-               }
-            ],
-            "vendor":"blackestnight"
-         },
-         "shopify_product_id":751915925561,
-         "title":"test product"
-      }
-   ]
+      "address_id":18586680,
+      "allow_date_selection":true,
+      "allow_schedule_edit":true,
+      "charge_interval_frequency":"1",
+      "charge_interval_unit":"month",
+      "charges_made_on_item":0,
+      "id":25769634,
+      "interval_options":{  
+         "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+      },
+      "is_active":true,
+      "is_cancelled":false,
+      "is_expired":false,
+      "is_one_time_product":false,
+      "is_skippable":true,
+      "is_skipped":false,
+      "is_swappable":true,
+      "modifiable_properties":[  
+
+      ],
+      "next_charge_scheduled_at":"2018-12-26T00:00:00",
+      "number_of_charges":0,
+      "number_of_charges_until_expiration":null,
+      "order_interval_frequency":"1",
+      "order_interval_unit":"month",
+      "price":3000,
+      "product_title":"Bare Box - Month-to-Month Plan  Auto renew",
+      "product_variant_title":"Bare Box - Month-to-Month Plan  Auto renew - x-small",
+      "properties":[  
+
+      ],
+      "quantity":1,
+      "shopify_product_id":505993330752,
+      "shopify_variant_id":5424049422400,
+      "status":"ACTIVE",
+      "variant_title":"x-small"
+   }
 }
 ```
+
+**URL:** `{{ subscription | search_for_swap_url }}` or `{{ subscription.id | search_for_swap_url }}`
+
+**Methods accepted:** `GET`, `POST`
+
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/products/search?swap_subscription_id=<int:swap_subscription_id>`
+
+**Template file:** `products_search.html`
+
+#### Available objects
+* [Store](Theme-objects%3A-Store)
+* [Customer](Theme-objects%3A-Customer)
+* [Rules](Theme-objects%3A-Rules)

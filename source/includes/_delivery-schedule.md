@@ -1,29 +1,22 @@
-# Delivery schedule endpoint
+# Delivery schedule
 
-<aside class="notice">
-  Data objects available are limited by endpoint. Double-check your URL if a certain set of data isn't available.
-</aside>
+Property | Definition
+--------- | -------
+<b>{{ date }}</b> <br> datetime| `"date": "2018-07-17T00:00:00"`<br> 
+<b>{{ delivery }}</b> <br> string| `"id": " "`<br> 
+<b>{{ delivery.shipment_type }}</b> <br> string| `"shipment_type": "PROJECTED_CHARGE"`<br> 
+<b>{{ delivery.is_skippable }}</b> <br> boolean| `"is_skippable": true`<br> 
+<b>{{ delivery.is_skipped }}</b> <br> boolean| `"is_skipped": false`<br> 
+<b>{{ delivery.title }}</b> <br> string| `"title": "20.00% Off Auto renew"` <br> 
+<b>{{ delivery.price }}</b>  <br> integer|  `"price": 4.5` <br>
+<b>{{ delivery.shipment_id }}</b> <br> integer| `"shipment_id": "none"`<br> 
+<b>{{ delivery.charge_id }}</b> <br> integer| `"charge_id": 95591664`<br> 
+<b>{{ delivery.charge_type }}</b> <br> string| `"charge_type": "QUEUED_CHARGE"`<br> 
+<b>{{ delivery.subscription }}</b> <br> object| `"subscription": `<br> See Subscriptions object.
+<b>{{ delivery.subscription.address }}</b> <br> object| `"subscription.address": `<br> See Address object.
 
-**Directory**
-
-* [delivery_schedule](#delivery_schedule)
-
-## delivery_schedule
+## Delivery schedule
 Show current customer's information.
-
-**URL:** `{{ delivery_schedule }}`
-
-**Methods accepted:** `GET`
-
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/delivery_schedule`
-
-**Template file:** `delivery_schedule.html`
-
-**Available objects**
-
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Delivery schedule](Theme-objects%3A-Delivery-schedule)
 
 > GET `{{ delivery_schedule }}`
 <br>
@@ -47,82 +40,84 @@ $.ajax({
 
 
 ```javascript
-{   
+{  
    "customer":{  
-      "billing_address1":"3030 nebraska street",
+      "billing_address1":"607 Midvale Ave",
       "billing_address2":"",
       "billing_city":"Los Angeles",
-      "billing_company":"Recharge",
+      "billing_company":"ReCharge",
       "billing_country":"United States",
-      "billing_first_name":"Test",
-      "billing_last_name":"Recharge",
-      "billing_phone":"3103103101",
+      "billing_first_name":"Corey",
+      "billing_last_name":"Capetillo",
+      "billing_phone":"5623095450",
       "billing_province":"California",
-      "billing_zip":"90025",
+      "billing_zip":"90024",
       "customer_card":null,
       "customer_payment_type":"credit",
-      "email":"lmlorem@yahoo.com",
-      "first_name":"Test",
+      "email":"corey@rechargeapps.com",
+      "first_name":"Corey",
       "has_credit_card_purchase":true,
       "has_error_charge":false,
-      "hash":"288243b8e422869a44d9fe",
-      "last_name":"Recharge",
-      "name":"Test Recharge",
-      "shopify_customer_id":"2586884299"
+      "hash":"818762670d14f56b6f39fd7",
+      "last_name":"Capetillo",
+      "name":"Corey Capetillo",
+      "shopify_customer_id":"391100760128"
    },
    "delivery_schedule":[  
       {  
-         "date":"2018-09-26T00:00:00",
+         "date":"2018-11-29T00:00:00",
          "delivery":[  
             {  
-               "charge_id":73322052,
+               "charge_id":95010549,
                "charge_type":"QUEUED_CHARGE",
                "is_skippable":true,
                "is_skipped":false,
-               "price":8.0,
+               "price":10.39,
                "shipment_id":"none",
                "shipment_type":"PROJECTED_SHIPMENT",
                "subscription":{  
                   "address":{  
-                     "address1":"Cr 35 No 29",
-                     "address2":"",
+                     "address1":"1933 Manning",
+                     "address2":"204",
                      "cart_note":null,
-                     "city":"Bogota",
-                     "company":"",
-                     "country":"Colombia",
-                     "first_name":"Lorena the third",
-                     "id":325524,
-                     "last_name":"Maldonado",
-                     "phone":"0868758888",
-                     "province":"",
-                     "zip":""
+                     "city":"los angeles",
+                     "company":"bootstrap",
+                     "country":"United States",
+                     "discount_id":null,
+                     "first_name":"Recharge",
+                     "id":7976732,
+                     "last_name":"Test",
+                     "phone":"3103103101",
+                     "province":"California",
+                     "zip":"90025"
                   },
-                  "address_id":325524,
-                  "allow_date_selection":false,
+                  "address_id":7976732,
+                  "allow_date_selection":true,
                   "allow_schedule_edit":true,
-                  "charge_interval_frequency":"9",
+                  "charge_interval_frequency":"1",
                   "charge_interval_unit":"month",
                   "charges_made_on_item":1,
-                  "id":412339,
+                  "id":11959568,
                   "interval_options":{  
                      "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
                   },
+                  "is_active":true,
+                  "is_cancelled":false,
+                  "is_expired":false,
+                  "is_one_time_product":false,
                   "is_skippable":true,
                   "is_skipped":false,
-                  "modifiable_properties":[ ],
-                  "next_charge_scheduled_at":null,
+                  "is_swappable":false,
+                  "modifiable_properties":[  ],
+                  "next_charge_scheduled_at":"2018-11-29T00:00:00",
                   "number_of_charges":1,
-                  "number_of_charges_until_expiration":null,
+                  "number_of_charges_until_expiration":5,
                   "order_interval_frequency":"1",
                   "order_interval_unit":"month",
-                  "price":340000,
-                  "product_title":"lorenaupdate",
-                  "product_variant_title":"lorenaupdate - 2 / 3",
+                  "price":7000,
+                  "product_title":"Bare Box - 3 Month Plan  Auto renew",
+                  "product_variant_title":"Bare Box - 3 Month Plan  Auto renew - x-small",
                   "properties":[  
-                     {  
-                        "name":"subscription_id",
-                        "value":"13189"
-                     },
                      {  
                         "name":"shipping_interval_frequency",
                         "value":"1"
@@ -133,14 +128,29 @@ $.ajax({
                      }
                   ],
                   "quantity":1,
-                  "shopify_product_id":2147483647,
-                  "shopify_variant_id":16347635201,
-                  "status":"CANCELLED",
-                  "variant_title":"2 / 3"
-               }
+                  "shopify_product_id":506020921408,
+                  "shopify_variant_id":5424189177920,
+                  "status":"ACTIVE",
+                  "variant_title":"x-small"
+               },
+               "title":"Bare Box - 3 Month Plan  Auto renew"
             }
-          ]
-        }
-      ]
-    }
+         ]
+      }
+   ]
+}
 ```
+
+**URL:** `{{ delivery_schedule }}`
+
+**Methods accepted:** `GET`
+
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/delivery_schedule`
+
+**Template file:** `delivery_schedule.html`
+
+**Available objects**
+
+* [Store](Theme-objects%3A-Store)
+* [Customer](Theme-objects%3A-Customer)
+* [Delivery schedule](Theme-objects%3A-Delivery-schedule)
