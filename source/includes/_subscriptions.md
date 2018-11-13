@@ -278,7 +278,7 @@ $.ajax({
 }
 ```
 
-**URL:** `{{ subscription | show_subscription_url }}` or `{{ subscription.id | show_subscription_url }}`
+**URL:** `{{ subscription | show_subscription_url }}`
 
 **Methods accepted:** `GET`
 
@@ -398,7 +398,7 @@ $.ajax({
 }
 ```
 
-**URL:** `{{ subscription | update_subscription_url }}` or `{{ subscription.id | update_subscription_url }}`
+**URL:** `{{ subscription | update_subscription_url }}`
 
 **Methods accepted:** `POST`
 
@@ -519,9 +519,9 @@ $.ajax({
 }
 ```
 
-**URL:** `{{ subscription | subscription_charge_date_url }}` or `{{ subscription.id | subscription_charge_date_url }}`
+**URL:** `{{ subscription | subscription_charge_date_url }}`
 
-**Methods accepted:** `GET, POST`
+**Methods accepted:** `POST`
 
 **Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>/change_charge_date`
 
@@ -533,9 +533,6 @@ $.ajax({
 * [Customer](Theme-objects%3A-Customer)
 * [Subscription](Theme-objects%3A-Subscription)
 * [Variants](Theme-objects%3A-Variants)
-
-
-**GET** via AJAX is not supported on this endpoint. Please refer to `subscription/<id>`
 
 ## Cancel subscription
 Cancel the current subscription.
@@ -687,7 +684,7 @@ $.ajax({
 }
 ```
 
-**URL:** `{{ subscription | cancel_subscription_url }}` or `{{ subscription.id | cancel_subscription_url }}`
+**URL:** `{{ subscription | cancel_subscription_url }}`
 
 **Methods accepted:** `GET, POST`
 
@@ -802,7 +799,7 @@ $.ajax({
 }
 ```
 
-**URL:** `{{ subscription | activate_subscription_url }}` or `{{ subscription.id | activate_subscription_url }}`
+**URL:** `{{ subscription | activate_subscription_url }}`
 
 **Methods accepted:** `POST`
 
@@ -1162,7 +1159,7 @@ $.ajax({
 
 ##  Swap subscription
 
-**URL:** `{{ subscription | search_for_swap_url }} or {{ subscription.id | search_for_swap_url }}`
+**URL:** `{{ subscription | search_for_swap_url }}`
 
 **Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions/swap?previous_item_id=xxxx`
 

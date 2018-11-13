@@ -229,7 +229,7 @@ $.ajax({
 }
 ```
 
-**URL:** `{{ address | show_address_url }}` or `{{ address.id | show_address_url }}`
+**URL:** `{{ address | show_address_url }}`
 
 **Methods accepted:** `GET`
 
@@ -321,7 +321,7 @@ $.ajax({
 }
 ```
 
-**URL:** `{{ address | update_address_url }}` or `{{ address.id | update_address_url }}`
+**URL:** `{{ address | update_address_url }}`
 
 **Methods accepted:** `POST`
 

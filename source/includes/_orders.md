@@ -112,7 +112,7 @@ $.ajax({
 }
 ```
 
-**URL:** `{{ order | show_order_url }}` or `{{ order.id | show_order_url }}`
+**URL:** `{{ order | show_order_url }}`
 
 **Methods accepted:** `GET`
 

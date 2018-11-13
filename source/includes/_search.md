@@ -591,7 +591,7 @@ $.ajax({
 }
 ```
 
-**URL:** `{{ subscription | search_for_swap_url }}` or `{{ subscription.id | search_for_swap_url }}`
+**URL:** `{{ subscription | search_for_swap_url }}`
 
 **Methods accepted:** `GET`, `POST`
 
