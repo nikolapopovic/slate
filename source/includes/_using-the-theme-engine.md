@@ -43,7 +43,7 @@ Each theme in the **Theme list** will have a gear icon at the end of each table 
 
 ### Preview theme
 
-#### Theme preview requires that your store has a subscription customer.
+<b> Theme preview requires that your store has a subscription customer. </b>
 
 The preview theme link will launch a new window with a URL parameter (`preview_theme=<theme.id>`) that will allow you to preview your theme without having to publish it.
 
@@ -123,7 +123,7 @@ The page will reload, with your deleted theme no longer available.
 
 The code editor window will allow you to edit the files that make up the Customer Portal theme. Using a combination of Liquid, HTML, CSS and JavaScript, you can customize the look and feel of your customer's subscription management pages.
 
-Extensive documentation for the various data objects you have access to, as well as a complete reference of available routes (URLs) and data filters, visit our [Developer documentation]().
+Extensive documentation for the various data objects you have access to, as well as a complete reference of available routes (URLs) and data filters, visit our [Developer documentation](#using-the-theme-engine).
 
 ![](images/90-code-editor.png)
 
@@ -139,7 +139,7 @@ Clicking on a file name will load it into the code window, allowing you to revie
 
 ### Add new file
 
-Adding a new file will allow you to create a file that will allow you to organize your theme's code into more manageable parts. Reference our [Developer documentation]() for information on how to include a file into another template.
+Adding a new file will allow you to create a file that will allow you to organize your theme's code into more manageable parts. Reference our [Developer documentation](#using-the-theme-engine) for information on how to include a file into another template.
 
 **1.** Locate the bottom of the **Theme files** list
 **2.** Click the **Add new file** link.
@@ -168,7 +168,7 @@ While the code window can't replace a full-featured IDE, it is an excellent repl
 
 The code editor allows for HTML and Liquid code. With acceptance of HTML, that means you can also use CSS and JavaScript, as long as they're wrapped in the required encapsulating tags: `<style>...</style>` and `<script>...</script>`.
 
-#### The code window features:
+<b> The code window features: </b>
 
 * Syntax highlighting
 * Code folding

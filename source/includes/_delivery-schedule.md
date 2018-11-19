@@ -1,9 +1,13 @@
 # Delivery schedule
 
+<aside class="notice">
+ Delivery schedule dates are when your order will be placed. Future deliveries will be added to your schedule as the date approaches.
+</aside>
+
 Property | Definition
 --------- | -------
 <b>{{ date }}</b> <br> datetime| `"date": "2018-07-17T00:00:00"`<br> 
-<b>{{ delivery }}</b> <br> string| `"id": " "`<br> 
+<b>{{ delivery }}</b> <br> string| `"id": ""`<br> 
 <b>{{ delivery.shipment_type }}</b> <br> string| `"shipment_type": "PROJECTED_CHARGE"`<br> 
 <b>{{ delivery.is_skippable }}</b> <br> boolean| `"is_skippable": true`<br> 
 <b>{{ delivery.is_skipped }}</b> <br> boolean| `"is_skipped": false`<br> 
@@ -16,7 +20,6 @@ Property | Definition
 <b>{{ delivery.subscription.address }}</b> <br> object| `"subscription.address": `<br> See Address object.
 
 ## Delivery schedule
-Show current customer's information.
 
 > GET `{{ delivery_schedule }}`
 <br>
@@ -26,7 +29,7 @@ Show current customer's information.
 $.ajax({
   url: '{{ delivery_schedule }}',
   type: 'get',
-  dataType: 'json',
+  dataType: 'json'
 }).done(function(response) {
   // Successful request made
   console.log(response.responseJSON);
@@ -37,7 +40,6 @@ $.ajax({
 ```
 
 > Example output
-
 
 ```javascript
 {  
@@ -107,8 +109,8 @@ $.ajax({
                   "is_one_time_product":false,
                   "is_skippable":true,
                   "is_skipped":false,
-                  "is_swappable":false,
-                  "modifiable_properties":[  ],
+                  "is_swappable":true,
+                  "modifiable_properties":[ ],
                   "next_charge_scheduled_at":"2018-11-29T00:00:00",
                   "number_of_charges":1,
                   "number_of_charges_until_expiration":5,
@@ -151,6 +153,6 @@ $.ajax({
 
 **Available objects**
 
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Delivery schedule](Theme-objects%3A-Delivery-schedule)
+* [Store](#shop)
+* [Customer](#customers)
+* [Delivery schedule](#delivery-schedule)

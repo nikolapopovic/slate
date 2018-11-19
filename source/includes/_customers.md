@@ -1,25 +1,51 @@
 # Customers
 
+> Example input
+
+```liquid
+{{ customer.billing_first_name }} {{ customer.billing_last_name }}<br>
+{% if customer.billing_company %}
+   {{ customer.billing_company }}<br>
+{% endif %}
+{{ customer.billing_address1 }} {{ customer.billing_address2 }}<br>
+{{ customer.billing_city }} {{ customer.billing_province }} {{ customer.billing_zip }}<br>
+{{ customer.billing_country }}<br>
+```
+
+> Example input
+
+```liquid
+Corey Capetillo
+ReCharge
+607 Midvale Ave
+Los Angeles California 90024
+United States
+```
+
+<aside class="notice">
+ Customer represents a customer account with a shop.
+</aside>
+
 Property | Definition
 --------- | -------
-<b>first_name</b> <br> string| `"first_name": "Mike"`<br>  The customer's first name.
-<b>last_name</b> <br> string| `"last_name": "Flynn"`<br>  The customer's last name.
-<b>name</b> <br> string| `"name": "Mike Flynn"`<br>  The customer's name.
-<b>email</b> <br> string|  `"email": "mike@gmail.com"` <br> The email address of the customer.
-<b>hash</b>  <br> string |  `"hash": "143806234a9ff87a8d9e"` <br> The unique string identifier used in a customers portal link.
-<b>billing_first_name</b> <br> string| `"billing_first_name": "Mike"`<br>  The customer's billing first name.
-<b>billing_last_name</b> <br> string| `"billing_last_name": "Flynn"`<br>  The customer's billing last name.
-<b>billing_company</b> <br> string| `"billing_company": "ReCharge"`<br>  The customer's billing company.
-<b>billing_address1</b> <br> string| `"billing_address1": "3030 Nebraska Avenue"`<br> The customer's billing address.
-<b>billing_address2</b> <br> string| `"billing_address2": "#301"`<br>  An additional field for the customer's billing address.
-<b>billing_city</b> <br> string| `"billing_city": "Los Angeles"`<br> The customer's billing city.
-<b>billing_province</b> <br> string| `"billing_province": "California"`<br>   The customer's billing province or state name.
-<b>billing_zip</b> <br> string| `"billing_zip": "90404"`<br> The customer's billing zip or postal code.
-<b>billing_country</b> <br> string| `"billing_country": "United States"`<br>   The customer's billing country.
-<b>has_credit_card_purchase</b> <br> boolean| `"has_credit_card_purchase": "true"` <br> Returns boolean for customer's card.
-<b>shopify_customer_id</b> <br> string| `"shopify_customer_id": "207119551"` <br> Shopify's unique identifier for the customer.
-<b>customer_payment_type</b> <br> string| `"customer_payment_type": "Credit Card"` <br> Type of customer card.
-<b>customer_card</b> <br> string| `"customer_card": "3301"` <br> Number of customer card.
+<b>{{ first_name }}</b> <br> string| `"first_name": "Corey"`<br>  The customer's first name.
+<b>{{ last_nam }}e</b> <br> string| `"last_name": "Capetillo"`<br>  The customer's last name.
+<b>{{ name }}</b> <br> string| `"name": "Corey Capetillo"`<br>  The customer's name.
+<b>{{ email }}</b> <br> string|  `"email": "corey@rechargeapps.com"` <br> The email address of the customer.
+<b>{{ hash }}</b>  <br> string |  `"hash": "818762670d14f56b6f39fd7"` <br> The unique string identifier used in a customers portal link.
+<b>{{ billing_first_name }}</b> <br> string| `"billing_first_name": "Corey"`<br>  The customer's billing first name.
+<b>{{ billing_last_name }}</b> <br> string| `"billing_last_name": "Capetillo"`<br>  The customer's billing last name.
+<b>{{ billing_company }}</b> <br> string| `"billing_company": "ReCharge"`<br>  The customer's billing company.
+<b>{{ billing_address1 }}</b> <br> string| `"billing_address1": "607 Midvale Ave"`<br> The customer's billing address.
+<b>{{ billing_address2 }}</b> <br> string| `"billing_address2": " "`<br>  An additional field for the customer's billing address.
+<b>{{ billing_city }}</b> <br> string| `"billing_city": "Los Angeles"`<br> The customer's billing city.
+<b>{{ billing_province }}</b> <br> string| `"billing_province": "California"`<br>   The customer's billing province or state name.
+<b>{{ billing_zip }}</b> <br> string| `"billing_zip": "90024"`<br> The customer's billing zip or postal code.
+<b>{{ billing_country }}</b> <br> string| `"billing_country": "United States"`<br>   The customer's billing country.
+<b>{{ has_credit_card_purchase }}</b> <br> boolean| `"has_credit_card_purchase": true` <br> Returns boolean for customer's card.
+<b>{{ shopify_customer_id }}</b> <br> string| `"shopify_customer_id": "391100760128"` <br> Shopify's unique identifier for the customer.
+<b>{{ customer_payment_type }}</b> <br> string| `"customer_payment_type": "credit"` <br> Type of customer card.
+<b>{{ customer_card }}</b> <br> string| `"customer_card": null` <br> Number of customer card.
 
 ## Retrieve customer
 Show current customer's information.
@@ -69,9 +95,7 @@ $.ajax({
                "charge_interval_unit":"",
                "charges_made_on_item":1,
                "id":11959565,
-               "interval_options":{  
-
-               },
+               "interval_options":{ },
                "is_active":false,
                "is_cancelled":true,
                "is_expired":false,
@@ -79,9 +103,7 @@ $.ajax({
                "is_skippable":true,
                "is_skipped":false,
                "is_swappable":false,
-               "modifiable_properties":[  
-
-               ],
+               "modifiable_properties":[ ],
                "next_charge_scheduled_at":null,
                "number_of_charges":1,
                "number_of_charges_until_expiration":null,
@@ -90,9 +112,7 @@ $.ajax({
                "price":1299,
                "product_title":"Bare Sleep",
                "product_variant_title":"Bare Sleep",
-               "properties":[  
-
-               ],
+               "properties":[ ],
                "quantity":1,
                "shopify_product_id":505545949248,
                "shopify_variant_id":5421270171712,
@@ -106,8 +126,8 @@ $.ajax({
          "address1":"1933 Manning",
          "address2":"204",
          "cart_note":"",
-         "city":"los angeles",
-         "company":"bootstrap",
+         "city":"Los Angeles",
+         "company":"",
          "country":"United States",
          "discount_id":null,
          "first_name":"Recharge",
@@ -115,43 +135,39 @@ $.ajax({
          "last_name":"Test",
          "phone":"3103103101",
          "province":"California",
-         "subscriptions":[
+         "subscriptions":[  
             {  
                "address_id":18586680,
                "allow_date_selection":true,
                "allow_schedule_edit":true,
-               "charge_interval_frequency":"2",
-               "charge_interval_unit":"week",
+               "charge_interval_frequency":"1",
+               "charge_interval_unit":"month",
                "charges_made_on_item":0,
-               "id":25771863,
+               "id":24221298,
                "interval_options":{  
-                  "week":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+                  "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
                },
-               "is_active":true,
-               "is_cancelled":false,
+               "is_active":false,
+               "is_cancelled":true,
                "is_expired":false,
                "is_one_time_product":false,
                "is_skippable":true,
                "is_skipped":false,
-               "is_swappable":true,
-               "modifiable_properties":[  
-
-               ],
-               "next_charge_scheduled_at":"2018-12-26T00:00:00",
+               "is_swappable":false,
+               "modifiable_properties":[ ],
+               "next_charge_scheduled_at":null,
                "number_of_charges":0,
                "number_of_charges_until_expiration":null,
-               "order_interval_frequency":"2",
-               "order_interval_unit":"week",
+               "order_interval_frequency":"1",
+               "order_interval_unit":"month",
                "price":1039,
-               "product_title":"Bare Glow  20.00% Off Auto renew",
-               "product_variant_title":"Bare Glow  20.00% Off Auto renew",
-               "properties":[  
-
-               ],
-               "quantity":2,
-               "shopify_product_id":505640779840,
-               "shopify_variant_id":5421828603968,
-               "status":"ACTIVE",
+               "product_title":"Bare Memory  20.00% Off Auto renew",
+               "product_variant_title":"Bare Memory  20.00% Off Auto renew",
+               "properties":[ ],
+               "quantity":1,
+               "shopify_product_id":505638748224,
+               "shopify_variant_id":5421822509120,
+               "status":"CANCELLED",
                "variant_title":""
             }
          ],
@@ -253,10 +269,10 @@ $.ajax({
 
 **Available objects**
 
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Addresses](Theme-objects%3A-Address)
-* [Subscriptions](Theme-objects%3A-Subscriptions)
+* [Store](#shop)
+* [Customer](#customers)
+* [Addresses](#addresses)
+* [Subscriptions](#subscriptions)
 
 ## Update customer
 Show current customer's information.
@@ -328,9 +344,7 @@ $.ajax({
                "charge_interval_unit":"",
                "charges_made_on_item":1,
                "id":11959565,
-               "interval_options":{  
-
-               },
+               "interval_options":{ },
                "is_active":false,
                "is_cancelled":true,
                "is_expired":false,
@@ -338,9 +352,7 @@ $.ajax({
                "is_skippable":true,
                "is_skipped":false,
                "is_swappable":false,
-               "modifiable_properties":[  
-
-               ],
+               "modifiable_properties":[ ],
                "next_charge_scheduled_at":null,
                "number_of_charges":1,
                "number_of_charges_until_expiration":null,
@@ -349,9 +361,7 @@ $.ajax({
                "price":1299,
                "product_title":"Bare Sleep",
                "product_variant_title":"Bare Sleep",
-               "properties":[  
-
-               ],
+               "properties":[ ],
                "quantity":1,
                "shopify_product_id":505545949248,
                "shopify_variant_id":5421270171712,
@@ -365,8 +375,8 @@ $.ajax({
          "address1":"1933 Manning",
          "address2":"204",
          "cart_note":"",
-         "city":"los angeles",
-         "company":"bootstrap",
+         "city":"Los Angeles",
+         "company":"",
          "country":"United States",
          "discount_id":null,
          "first_name":"Recharge",
@@ -374,43 +384,39 @@ $.ajax({
          "last_name":"Test",
          "phone":"3103103101",
          "province":"California",
-         "subscriptions":[
+         "subscriptions":[  
             {  
                "address_id":18586680,
                "allow_date_selection":true,
                "allow_schedule_edit":true,
-               "charge_interval_frequency":"2",
-               "charge_interval_unit":"week",
+               "charge_interval_frequency":"1",
+               "charge_interval_unit":"month",
                "charges_made_on_item":0,
-               "id":25771863,
+               "id":24221298,
                "interval_options":{  
-                  "week":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+                  "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
                },
-               "is_active":true,
-               "is_cancelled":false,
+               "is_active":false,
+               "is_cancelled":true,
                "is_expired":false,
                "is_one_time_product":false,
                "is_skippable":true,
                "is_skipped":false,
-               "is_swappable":true,
-               "modifiable_properties":[  
-
-               ],
-               "next_charge_scheduled_at":"2018-12-26T00:00:00",
+               "is_swappable":false,
+               "modifiable_properties":[ ],
+               "next_charge_scheduled_at":null,
                "number_of_charges":0,
                "number_of_charges_until_expiration":null,
-               "order_interval_frequency":"2",
-               "order_interval_unit":"week",
+               "order_interval_frequency":"1",
+               "order_interval_unit":"month",
                "price":1039,
-               "product_title":"Bare Glow  20.00% Off Auto renew",
-               "product_variant_title":"Bare Glow  20.00% Off Auto renew",
-               "properties":[  
-
-               ],
-               "quantity":2,
-               "shopify_product_id":505640779840,
-               "shopify_variant_id":5421828603968,
-               "status":"ACTIVE",
+               "product_title":"Bare Memory  20.00% Off Auto renew",
+               "product_variant_title":"Bare Memory  20.00% Off Auto renew",
+               "properties":[ ],
+               "quantity":1,
+               "shopify_product_id":505638748224,
+               "shopify_variant_id":5421822509120,
+               "status":"CANCELLED",
                "variant_title":""
             }
          ],
@@ -512,25 +518,18 @@ $.ajax({
 
 **Available objects**
 
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Addresses](Theme-objects%3A-Address)
-* [Subscriptions](Theme-objects%3A-Subscriptions)
+* [Store](#shop)
+* [Customer](#customers)
+* [Addresses](#addresses)
+* [Subscriptions](#subscriptions)
 
-#### Available properties
-
-**Customer Information**
+<b> Available properties </b>
 
 |Input| Type| Name attribute|
 |:-------|:-------|:-------|
 |First Name (*optional*)| text| first_name|
 |Last name (*mandatory*)| text| last_name|
 |Email (*mandatory*)| text| email|
-
-**Billing address**
-
-|Input| Type| Name attribute|
-|:-------|:-------|:-------|
 |First name (*optional*)| text| billing_first_name|
 |Last name (*optional*)| text| billing_last_name|
 |Billing address 1 (*optional*)| text| billing_address1|
@@ -547,13 +546,13 @@ Show current customer's information.
 
 **URL:** `{{ update_card_url }}`
 
-**Route:** `/tools/recurring/customer_portal/<customer_hash>/card`
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/card`
 
 **Template file:** `customer_card.html`
 
 **Available objects**
 
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Addresses](Theme-objects%3A-Address)
-* [Subscriptions](Theme-objects%3A-Subscriptions)
+* [Store](#shop)
+* [Customer](#customers)
+* [Addresses](#addresses)
+* [Subscriptions](#subscriptions)

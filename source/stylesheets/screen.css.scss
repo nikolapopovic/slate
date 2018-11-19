@@ -25,15 +25,15 @@ under the License.
 ////////////////////////////////////////////////////////////////////////////////
 
 html, body {
-  color: $main-text;
-  padding: 0;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  @extend %default-font;
-  background-color: $main-bg;
-  height: 100%;
-  -webkit-text-size-adjust: none; /* Never autoresize text */
+ color: $main-text;
+ padding: 0;
+ margin: 0;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ @extend %default-font;
+ background-color: $main-bg;
+ height: 100%;
+ -webkit-text-size-adjust: none; /* Never autoresize text */
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -403,21 +403,24 @@ html, body {
       text-align: left;
       vertical-align: top;
       line-height: 1.6;
-      code {
-        white-space: nowrap;
-      }
     }
 
     th {
       padding: 5px 10px;
       border-bottom: 1px solid #ccc;
+      border-top: 1px solid #ccc;
       vertical-align: bottom;
     }
 
     td {
       padding: 10px;
-    }
+      border-bottom: 1px solid #6a9fb5;
+      border-left: 1px solid #6a9fb5;
+      border-top: 1px solid #6a9fb5;
+      border-right: 1px solid #6a9fb5;
 
+    }
+    
     tr:last-child {
       border-bottom: 1px solid #ccc;
     }

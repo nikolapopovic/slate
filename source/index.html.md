@@ -5,24 +5,25 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
 
 includes:
-  - getting-started
-  - switching
-  - the-editor
+  - the-theme-engine
+  - enabling-the-theme-engine
+  - using-the-theme-engine
   - changelog
-  - template-syntax-and-semantics
-  - shop
-  - customers
   - addresses
-  - subscriptions
-  - orders
-  - search
+  - customers
   - delivery-schedule
   - discounts
-  - rules
-  - retention-strategies
   - errors
-  - variants
   - filters
+  - orders
+  - retention-strategies
+  - rules
+  - search
+  - shop
+  - subscriptions
+  - template-syntax-and-semantics
+
+  - variants
   - widget
 
 search: true
