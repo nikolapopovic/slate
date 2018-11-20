@@ -1,7 +1,7 @@
 # Delivery schedule
 
 <aside class="notice">
- Delivery schedule dates are when your order will be placed. Future deliveries will be added to your schedule as the date approaches.
+ Delivery schedule is under development and object properties are subject to change. Delivery schedule dates are when your order will be placed. Future deliveries will be added to your schedule as the date approaches.
 </aside>
 
 Property | Definition

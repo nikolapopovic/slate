@@ -29,7 +29,7 @@ United States
 Property | Definition
 --------- | -------
 <b>{{ first_name }}</b> <br> string| `"first_name": "Corey"`<br>  The customer's first name.
-<b>{{ last_nam }}e</b> <br> string| `"last_name": "Capetillo"`<br>  The customer's last name.
+<b>{{ last_name }}</b> <br> string| `"last_name": "Capetillo"`<br>  The customer's last name.
 <b>{{ name }}</b> <br> string| `"name": "Corey Capetillo"`<br>  The customer's name.
 <b>{{ email }}</b> <br> string|  `"email": "corey@rechargeapps.com"` <br> The email address of the customer.
 <b>{{ hash }}</b>  <br> string |  `"hash": "818762670d14f56b6f39fd7"` <br> The unique string identifier used in a customers portal link.

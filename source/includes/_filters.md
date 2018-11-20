@@ -1,13 +1,5 @@
 # Filters
 
-**Directory**
-
-* [Date filters](#date-filters)
-* [Math filters](#math-filters)
-* [Money filters](#money-filters)
-* [String filters](#string-filters)
-* [URL filters](#url-filters)
-
 ## Date filters
 Converts a timestamp into another date format.
 
@@ -26,6 +18,10 @@ August 5, 2018
 _date_ accepts the same parameters as Python's _time strftime_ method. You can find a [list of the shorthand formats](https://www.tutorialspoint.com/html/time_strftime.htm) in Python's documentation or use a site like [strfti.me](http://www.strfti.me/).
 
 ## Math filters
+
+Filter | Input | Output | Definition 
+--------- | ------- | --------- | -------
+<b>abs</b> | {{ -17 &mid; abs }} | 17 | This is absoulute filter
 
 > Example input abs
 
