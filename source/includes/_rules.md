@@ -12,7 +12,7 @@ Property | Definition
 <b>{{ rule.purchase_options }}</b> <br> string| `"purchase_options": " "`<br> 
 
 ## Loop through the rules
-Loop through the Rules dictionary to access individual [Rule](Theme-Objects%3A-Rule) object.
+Loop through the Rules dictionary to access individual [Rule](#rules) object.
 
 > Example input
 

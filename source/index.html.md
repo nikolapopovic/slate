@@ -22,7 +22,6 @@ includes:
   - shop
   - subscriptions
   - template-syntax-and-semantics
-
   - variants
   - widget
 

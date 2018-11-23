@@ -2,10 +2,11 @@
 
 Property | Definition
 --------- | -------
-<b>{{ retention_strategy.reason }}</b> <br> string| `"reason": " "`<br> 
-<b>{{ retention_strategy.prevention_text }}</b> <br> string| `"prevention_text": " "`<br> 
-<b>{{ retention_strategy.incentive_type }}</b> <br> string| `"incentive_type": " "`<br> 
-<b>{{ retention_strategy.discount_code }}</b> <br> string| `"discount_code": " "`<br> 
+<b>{{ retention_strategy.id }}</b> <br> integer| `"id": 764562`<br> 
+<b>{{ retention_strategy.reason }}</b> <br> string| `"reason": "I already have more than I need"`<br> 
+<b>{{ retention_strategy.prevention_text }}</b> <br> string| `"prevention_text": "If you have more than you need, we can skip your upcoming order."`<br> 
+<b>{{ retention_strategy.incentive_type }}</b> <br> string| `"incentive_type": "skip_charge"`<br> 
+<b>{{ retention_strategy.discount_code }}</b> <br> string| `"discount_code": null`<br> 
 
 ## Retention strategy
 Cancel the current subscription providing retention strategy.
@@ -116,21 +117,25 @@ $.ajax({
 
 **Available objects**
 
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Address](Theme-objects%3A-Address)
-* [Subscription](Theme-objects%3A-Subscription)
-* [Variants](Theme-objects%3A-Variants)
-* [Retention strategies](Theme-objects%3A-Retention-strategies)
+* [Store](#shop)
+* [Customer](#customers)
+* [Address](#addresses)
+* [Subscription](#subscriptions)
+* [Variants](#variants)
+* [Retention strategies](#retention-strategies)
 
 ## Loop through the retention strategies
-Loop through the Retention Strategies dictionary to access individual [Retention strategy](Theme-Objects%3A-Retention-strategy) object.
+Loop through the Retention Strategies dictionary to access individual [Retention strategy](#retention-strategies) object.
 
 > Example input
 
 ```liquid
-{% for strategy in retention_strategies %}
-	{{ strategy.type }}
-{% endfor %}
+{{ retention_strategy.prevention_text }}
+```
+
+> Example output
+
+```html
+Please help us process your request by telling us why you're cancelling.
 ```
 
