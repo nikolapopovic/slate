@@ -71,19 +71,19 @@ Filter | Input | Output | Definition
 
 Filter | Input | Output
 --------- | ------- | -------
-<b>activate_subscription_url</b> | {{ subscription  &mid; activate_subscription_url }} | tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>/activate
-<b>apply_discount_url</b> | {{ subscription  &mid; apply_discount_url }} | tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>/apply_discount
-<b>cancel_subscription_url</b> | {{ subscription  &mid; cancel_subscription_url }} | tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>/cancel
-<b>create_address_url</b> | {{ create_address_url }} | tools/recurring/customer_portal/<stringcustomer_hash>/addresses/new
-<b>create_subscription_url</b> | {{ create_subscription_url }} | tools/recurring/customer_portal/<string:customer_hash>/subscriptions/new
+<b>activate_subscription_url</b> | {{ subscription  &mid; activate_subscription_url }} | tools/recurring/customer_portal/&#60;string&#58;customer_hash&#62;/subscriptions/&#60;int&#58;subscription_id&#62;/activate
+<b>apply_discount_url</b> | {{ subscription  &mid; apply_discount_url }} | tools/recurring/customer_portal/&#60;string&#58;customer_hash&#62;/subscriptions/&#60;int&#58;subscription_id&#62;/apply_discount
+<b>cancel_subscription_url</b> | {{ subscription  &mid; cancel_subscription_url }} | tools/recurring/customer_portal/&#60;string&#58;customer_hash&#62;/subscriptions/&#60;int&#58;subscription_id&#62;/cancel
+<b>create_address_url</b> | {{ create_address_url }} | tools/recurring/customer_portal/&#60;string&#58;customer_hash&#62;/addresses/new
+<b>create_subscription_url</b> | {{ create_subscription_url }} | ttools/recurring/customer_portal/&#60;string&#58;customer_hash&#62;/subscriptions/new
 <b>img_url</b> | {{ subscription.shopify_product  &mid; img_url('300x300') }} <br> {{ subscription.shopify_product.image &mid; img_url('200x200') }} <br> {{ subscription.shopify_product.image.src &mid; img_url }} | https://cdn.shopify.com/s/files/1/1/1/products/IconTShirt_300x300.jpg <br> https://cdn.shopify.com/s/files/1/1/1/products/IconTShirt_200x200.jpg <br> https://cdn.shopify.com/s/files/1/1/1/products/IconTShirt_100x100.jpg
-<b>list_addresses_url</b> | {{ list_addresses_url }} | tools/recurring/customer_portal/<string:customer_hash>/addresses
-<b>list_subscriptions_url</b> | {{ list_subscriptions_url }} | tools/recurring/customer_portal/<string:customer_hash>/subscriptions
-<b>show_address_url</b> | {{ address  &mid; show_address_url }} | tools/recurring/customer_portal/<string:customer_hash>/addresses/<int:address_id>
-<b>show_customer_url</b> | {{ show_customer_url }} | tools/recurring/customer_portal/<string:customer_hash>
-<b>show_subscription_url</b> | {{ subscription  &mid; show_subscription_url }} | tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>
-<b>update_address_url</b> | {{ address  &mid; update_address_url }} | tools/recurring/customer_portal/<string:customer_hash>/addresses/<int:address_id>/edit
-<b>update_subscription_url</b> | {{ subscription  &mid; update_subscription_url }} | /tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>/edit
+<b>list_addresses_url</b> | {{ list_addresses_url }} | tools/recurring/customer_portal/&#60;string&#58;customer_hash&#62;/addresses
+<b>list_subscriptions_url</b> | {{ list_subscriptions_url }} | tools/recurring/customer_portal/&#60;string&#58;customer_hash&#62;/subscriptions
+<b>show_address_url</b> | {{ address  &mid; show_address_url }} | tools/recurring/customer_portal/&#60;string&#58;customer_hash&#62;/addresses/&#60;int&#58;address_id&#62;
+<b>show_customer_url</b> | {{ show_customer_url }} | tools/recurring/customer_portal/&#60;string&#58;customer_hash&#62;
+<b>show_subscription_url</b> | {{ subscription  &mid; show_subscription_url }} | tools/recurring/customer_portal/&#60;string&#58;customer_hash&#62;/subscriptions/&#60;int&#58;subscription_id&#62;
+<b>update_address_url</b> | {{ address  &mid; update_address_url }} | tools/recurring/customer_portal/&#60;string&#58;customer_hash&#62;/addresses/&#60;int&#58;address_id&#62;/edit
+<b>update_subscription_url</b> | {{ subscription  &mid; update_subscription_url }} | tools/recurring/customer_portal/&#60;string&#58;customer_hash&#62;/subscriptions/&#60;int&#58;subscription_id&#62;/edit
 <b>url_encode</b> | {{ "https://rechargepayments.com"  &mid; url_encode }} | https%3A%2F%2Frechargepayments.com
 <b>url_escape</b> | {{ "https://rechargepayments.com/!@#$%^&*()"  &mid; url_escape }} | https://rechargepayments.com/!@%23$%25%5E&*()
 <b>url_param_escape</b> | {{ "support@rechargeapps.com"  &mid; url_param_escape }} | support%40rechargeapps.com

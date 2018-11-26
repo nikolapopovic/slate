@@ -1,4 +1,4 @@
-# Search endpoint
+# Search products
 
 ## Product search
 Returns a list of all products available to be subscribed to.
@@ -11,7 +11,7 @@ Returns a list of all products available to be subscribed to.
 $.ajax({
   url: '{{ product_search_url }}',
   type: 'get',
-  dataType: 'json',
+  dataType: 'json'
 }).done(function(response) {
   // Successful request made
   console.log(response.responseJSON);
@@ -327,13 +327,14 @@ $.ajax({
 
 **Template file:** `products_search.html`
 
-#### Available objects
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Rules](Theme-objects%3A-Rules)
+**Available objects**
+
+* [Store](#shop)
+* [Customer](#customers)
+* [Rules](#rules)
 
 ## Search for swap
-Presents a list for the intention of swapping the current subscription with a new product. Routes to [subscription_new](Theme-endpoints%3A-Subscription#subscription_new) will have a new variable available to them, `swap_subscription_id`.
+Presents a list for the intention of swapping the current subscription with a new product. Routes to [subscription_new](#create-subscription) will have a new variable available to them, `swap_subscription_id`.
 
 > GET `{{ subscription | search_for_swap_url }}`
 <br>
@@ -345,7 +346,7 @@ Unlike `products_search`, `search_for_swap` has reference to the product you are
 $.ajax({
   url: '{{ subscription | search_for_swap_url }}',
   type: 'get',
-  dataType: 'json',
+  dataType: 'json'
 }).done(function(response) {
   // Successful request made
   console.log(response.responseJSON);
@@ -499,7 +500,7 @@ $.ajax({
 $.ajax({
   url: '{{ subscription | search_for_swap_url }}',
   type: 'post',
-  dataType: 'json',
+  dataType: 'json'
 }).done(function(response) {
   // Successful request made
   console.log(response.responseJSON);
@@ -599,7 +600,8 @@ $.ajax({
 
 **Template file:** `products_search.html`
 
-#### Available objects
-* [Store](Theme-objects%3A-Store)
-* [Customer](Theme-objects%3A-Customer)
-* [Rules](Theme-objects%3A-Rules)
+**Available objects**
+
+* [Store](#shop)
+* [Customer](#customers)
+* [Rules](#rules)

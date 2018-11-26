@@ -33,7 +33,7 @@ Property | Definition
 $.ajax({
   url: '{{ show_store_url }}',
   type: 'get',
-  dataType: 'json',
+  dataType: 'json'
 }).done(function(response) {
   // Successful request made
   console.log(response.responseJSON);
@@ -41,7 +41,6 @@ $.ajax({
   // Request failed
   console.log(response.responseJSON.errors);
 });
-
 ```
 
 > Example output
@@ -56,24 +55,23 @@ $.ajax({
       "allow_customers_to_change_variants":true,
       "allow_customers_to_edit_address":true,
       "allow_customers_to_edit_upcoming_date":true,
+      "allow_customers_to_purchase_one_time_products":true,
       "allow_customers_to_reactivate":true,
       "allow_customers_to_skip_delivery":true,
       "allow_customers_to_swap_products":true,
       "allow_customers_to_view_delivery_schedule":true,
       "cancellation_email_contact":"",
-      "countries":[  
-
-      ],
+      "countries":[ ],
       "currency":"USD",
       "customer_adjust_frequency_rule":"Any",
       "customer_can_cancel_after_x_charges":0,
-      "domain":"test_store.myshopify.com",
-      "email":"test@rechargeapps.com",
-      "force_customer_portal_accounts":true,
+      "domain":"bare-supplements.myshopify.com",
+      "email":"oisin@rechargeapps.com",
+      "force_customer_portal_accounts":false,
       "legacy_css_footer":"",
       "legacy_css_header":"",
-      "name":"blackestnight",
-      "permanent_domain":"test_store.myshopify.com",
+      "name":"bare-supplements",
+      "permanent_domain":"bare-supplements.myshopify.com",
       "show_discount_input":1
    }
 }
@@ -91,4 +89,4 @@ Show current customer's information.
 
 **Available objects**
 
-* [Store](Theme-objects%3A-Store)
+* [Store](#shop)

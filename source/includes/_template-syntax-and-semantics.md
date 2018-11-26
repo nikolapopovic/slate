@@ -14,11 +14,6 @@ There are a few possible types of delimiters that can used in our templates. The
 
 Control Flow Tags determine which block of code should be executed.
 
-### Directory
-
-* [if](#if)
-* [elif / else](#elif--else)
-
 ### if 
 
 > Example input
@@ -60,14 +55,25 @@ Hey Michael!
 
 Adds more conditions within an `if` or `unless` block.
 
+### escaping
+
+> Example input
+
+```liquid
+{% raw %}
+  {% for product in collections.frontpage.products %}
+    {{ product.title }}
+  {% endfor %}
+{% endraw %}
+```
+
+ReCharge uses its own form of liquid syntax called Jinja. Sometimes it is desireable — even necessary — to use Shopify’s liquid, if you need access to Shopify objects or filters. In order to invoke Shopify code, you’ll need to wrap the specific block of code in {% raw %} tags, so our renderer will ignore it and Shopify will instead attempt to parse it.
+
+For more information on Shopify liquid, see [Shopify liquid objects](https://help.shopify.com/en/themes/liquid/objects)
+
 ## Iteration Tags
 
 Iteration Tags are used to run a block of code repeatedly.
-
-#### Directory
-
-* [for](#for)
-
 
 ### for
 
@@ -89,13 +95,6 @@ Repeatedly executes a block of code.
 ## Theme Tags
 
 Theme Tags have various functions including: leaving comments, including files, extending files, etc.
-
-#### Directory
-
-* [comment](#comment)
-* [extends](#extends)
-* [include](#include)
-
 
 ### comment
 
@@ -137,11 +136,6 @@ The `include` statement is useful to include a template and return the rendered 
 
 Variable Tags are used to create new Liquid variables.
 
-#### Directory
-
-* [set](#set)
-
-
 ### set
 
 > Example input
@@ -160,7 +154,7 @@ My favorite food is apples.
 
 Creates a new variable. 
 
-> Example inputt
+> Example input
 
 ```liquid
 {% set my_variable = false %}
@@ -169,7 +163,7 @@ Creates a new variable.
 {% endif %}
 ```
 
-> Example outpu
+> Example output
 
 ```html
 This statement is valid.
