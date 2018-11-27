@@ -1,5 +1,5 @@
 # Variants
-The variant from Shopify. [https://help.shopify.com/api/reference/product_variant](https://help.shopify.com/api/reference/product_variant) with these additional properties:
+The variant from [Shopify](https://help.shopify.com/api/reference/product_variant) with this additional property:
 
 Property | Definition
 --------- | -------
