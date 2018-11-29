@@ -14,7 +14,7 @@ Property | Definition
 ## Loop through the rules
 Loop through the Rules dictionary to access individual [Rule](#rules) object.
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {% for rule in rules %}
@@ -22,7 +22,7 @@ Loop through the Rules dictionary to access individual [Rule](#rules) object.
 {% endfor %}
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```
 1001

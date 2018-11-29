@@ -16,7 +16,7 @@ Control Flow Tags determine which block of code should be executed.
 
 ### if 
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {% if store.name == 'Bare Supplements' %}
@@ -24,7 +24,7 @@ Control Flow Tags determine which block of code should be executed.
 {% endif %}
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```html
 Welcome to Bare Supplements!
@@ -34,7 +34,7 @@ Executes a block of code only if a certain condition is met (that is, if the res
 
 ### elsif / else
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 <!-- If customer.first_name is equal to 'Michael' -->
@@ -47,7 +47,7 @@ Executes a block of code only if a certain condition is met (that is, if the res
 {% endif %}
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```html
 Hey Michael!
@@ -57,7 +57,7 @@ Adds more conditions within an `if` or `unless` block.
 
 ### escaping
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {% raw %}
@@ -77,7 +77,7 @@ Iteration Tags are used to run a block of code repeatedly.
 
 ### for
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {% for order in orders %}
@@ -85,7 +85,7 @@ Iteration Tags are used to run a block of code repeatedly.
 {% endfor %}
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```html
 1001
@@ -98,13 +98,13 @@ Theme Tags have various functions including: leaving comments, including files, 
 
 ### comment
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 My name is {# some comment #} ReCharge.
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```html
 My name is ReCharge.
@@ -114,7 +114,7 @@ Allows you to leave un-rendered code inside a Theme Editor files. Any text withi
 
 ### extends
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {% extends "base.html" %}
@@ -124,7 +124,7 @@ The `extends` tag should be the first tag in the template as it tells the engine
 
 ### include
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {% include '_errors.html' %}
@@ -138,7 +138,7 @@ Variable Tags are used to create new Liquid variables.
 
 ### set
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {% set favorite_food = 'apples' %}
@@ -146,7 +146,7 @@ Variable Tags are used to create new Liquid variables.
 My favorite food is {{ favorite_food }}.
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```html
 My favorite food is apples.
@@ -154,7 +154,7 @@ My favorite food is apples.
 
 Creates a new variable. 
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {% set my_variable = false %}
@@ -163,7 +163,7 @@ Creates a new variable.
 {% endif %}
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```html
 This statement is valid.

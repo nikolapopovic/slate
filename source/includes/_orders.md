@@ -30,7 +30,7 @@ Show details for the current order.
 
 > GET `{{ order | show_order_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -46,7 +46,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -151,7 +151,7 @@ List history of orders placed by the current customer.
 
 > GET `{{ list_orders_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -167,7 +167,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -273,7 +273,7 @@ $.ajax({
 
 Loop through the Orders dictionary to access individual [Order](#orders) object.
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {% for order in orders %}
@@ -281,7 +281,7 @@ Loop through the Orders dictionary to access individual [Order](#orders) object.
 {% endfor %}
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```
 1001

@@ -1,12 +1,12 @@
 # Discounts
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 Discount ID is {{ discount.id }}. Discount {{ discount.code }} is applied.
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```html
 Discount ID is 1231. Discount 2off is applied.

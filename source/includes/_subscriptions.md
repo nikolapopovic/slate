@@ -40,7 +40,7 @@ A form to create a new subscription for the current customer.
 
 > POST `{{ create_subscription_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -64,7 +64,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -173,7 +173,7 @@ Show details for the current subscription.
 
 > GET `{{ subscription | show_subscription_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -189,7 +189,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -285,20 +285,19 @@ $.ajax({
 ## Update subscription
 Edit the properties of the current subscription.
 
-> POST `{{ subscription | update_subscription_url }}`
+> POST `{{ subscription | show_subscription_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
-  url: '{{ subscription | update_subscription_url }}',
+  url: '{{ subscription | show_subscription_url }}',
   type: 'post',
   dataType: 'json',
   data: {
-    order_interval_frequency: 2,
-    order_interval_unit: 'week',
-    shopify_variant_id: 5421828603968,
-    quantity: 2
+    order_interval_frequency: 20,
+    order_interval_unit: 'day',
+    quantity: 1
   }
 }).done(function(response) {
   // Successful request made
@@ -309,7 +308,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -339,27 +338,27 @@ $.ajax({
       "address":{  
          "address1":"1933 Manning",
          "address2":"204",
-         "cart_note":null,
-         "city":"los angeles",
-         "company":"bootstrap",
+         "cart_note":"",
+         "city":"Los Angeles",
+         "company":"",
          "country":"United States",
-         "discount_id":10986334,
+         "discount_id":null,
          "first_name":"Recharge",
-         "id":7976732,
+         "id":18586680,
          "last_name":"Test",
          "phone":"3103103101",
          "province":"California",
          "zip":"90025"
       },
-      "address_id":7976732,
+      "address_id":18586680,
       "allow_date_selection":true,
       "allow_schedule_edit":true,
-      "charge_interval_frequency":"2",
-      "charge_interval_unit":"week",
+      "charge_interval_frequency":"20",
+      "charge_interval_unit":"day",
       "charges_made_on_item":0,
-      "id":28609606,
+      "id":25769358,
       "interval_options":{  
-         "week":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+         "day":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90]
       },
       "is_active":true,
       "is_cancelled":false,
@@ -372,28 +371,28 @@ $.ajax({
       "next_charge_scheduled_at":"2018-12-26T00:00:00",
       "number_of_charges":0,
       "number_of_charges_until_expiration":null,
-      "order_interval_frequency":"2",
-      "order_interval_unit":"week",
-      "price":1039,
-      "product_title":"Bare Memory  20.00% Off Auto renew",
-      "product_variant_title":"Bare Memory  20.00% Off Auto renew",
+      "order_interval_frequency":"20",
+      "order_interval_unit":"day",
+      "price":7000,
+      "product_title":"Bare Box - 3 Month Plan  Auto renew",
+      "product_variant_title":"Bare Box - 3 Month Plan  Auto renew - x-small",
       "properties":[ ],
-      "quantity":2,
-      "shopify_product_id":505638748224,
-      "shopify_variant_id":5421822509120,
+      "quantity":1,
+      "shopify_product_id":506020921408,
+      "shopify_variant_id":5424189177920,
       "status":"ACTIVE",
-      "variant_title":""
+      "variant_title":"x-small"
    }
 }
 ```
 
-**URL:** `{{ subscription | update_subscription_url }}`
+**URL:** `{{ subscription | show_subscription_url }}`
 
 **Methods accepted:** `POST`
 
-**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>/edit`
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>`
 
-**Template file:** `subscription_edit.html`
+**Template file:** `subscription.html`
 
 **Available objects**
 
@@ -407,7 +406,7 @@ Set the date of the subscription's next charge.
 
 > POST `{{ subscription | subscription_charge_date_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -426,7 +425,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -524,7 +523,7 @@ Cancel the current subscription.
 
 > GET `{{ subscription | cancel_subscription_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -540,7 +539,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -690,7 +689,7 @@ Activate or re-activate the current subscription
 
 > POST `{{ subscription | activate_subscription_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -706,7 +705,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -804,7 +803,7 @@ List all subscriptions for the current customer.
 
 > GET `{{ list_subscriptions_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -820,7 +819,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -1003,7 +1002,7 @@ $.ajax({
 
 > POST `{{ subscription | delete_one_time_product_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -1019,7 +1018,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  

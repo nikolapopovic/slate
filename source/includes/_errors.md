@@ -8,13 +8,13 @@ Property | Definition
 
 ## Loop through the Errors
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {{ errors }}
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {

@@ -13,7 +13,7 @@ Cancel the current subscription providing retention strategy.
 
 > POST `{{ subscription | retention_strategy_url(retention_strategy) }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -29,7 +29,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -127,13 +127,13 @@ $.ajax({
 ## Loop through the retention strategies
 Loop through the Retention Strategies dictionary to access individual [Retention strategy](#retention-strategies) object.
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {{ retention_strategy.prevention_text }}
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```html
 Please help us process your request by telling us why you're cancelling.

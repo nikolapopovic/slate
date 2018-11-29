@@ -5,7 +5,7 @@ Returns a list of all products available to be subscribed to.
 
 > GET `{{ product_search_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -21,7 +21,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -160,7 +160,7 @@ $.ajax({
 
 > POST `{{ product_search_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 To refine the search results by `product.title`, use the parameter `q` or pass `q` as part of the data parameter on the AJAX post.
 
@@ -181,7 +181,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -336,7 +336,7 @@ Presents a list for the intention of swapping the current subscription with a ne
 
 > GET `{{ subscription | search_for_swap_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 Unlike `products_search`, `search_for_swap` has reference to the product you are swapping.
 
@@ -354,7 +354,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -492,7 +492,7 @@ $.ajax({
 
 > POST `{{ subscription | search_for_swap_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -508,7 +508,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  

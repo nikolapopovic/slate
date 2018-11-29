@@ -7,7 +7,7 @@ Property | Definition
 
 ## Loop through the Variants
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {% for variant in variants %}
@@ -15,7 +15,7 @@ Property | Definition
 {% endfor %}
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```
 $3.00

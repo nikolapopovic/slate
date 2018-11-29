@@ -1,6 +1,6 @@
 # Addresses
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {{ address.first_name }} {{ address.last_name }}<br>
@@ -11,7 +11,7 @@
 {{ address.phone }}
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```html
 Recharge Test
@@ -53,7 +53,7 @@ Page with form to create a new address for current customer.
 
 > POST `{{ create_address_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -65,7 +65,7 @@ $.ajax({
      "address2":"204",
      "cart_note":null,
      "city":"los angeles",
-     "company":"bootstrap",`
+     "company":"bootstrap",
      "country":"United States",
      "discount_id":null,
      "first_name":"Recharge",
@@ -84,7 +84,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -159,14 +159,12 @@ $.ajax({
 |ZIP/Postal Code (*optional*)| text| zip|
 |Phone Number (*optional*)| text| phone|
 
-**GET** via AJAX is not supported on this endpoint. Please refer to `address/<id>`
-
 ## Retrieve address
 Show details for the current address.
 
 > GET `{{ address | show_address_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -182,7 +180,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -241,12 +239,14 @@ $.ajax({
 * [Customer](#customers)
 * [Address](#addresses)
 
+**JSON:** Appending `.json` to the end of this GET request will return JSON data of the objects available on that route.
+
 ## Update address
 Form to edit and update the current address.
 
 > POST `{{ address | update_address_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -277,7 +277,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -387,14 +387,12 @@ $.ajax({
 |Province State (*optional*)| text| province|
 |Phone (*optional*)| text| phone|
 
-**GET** via AJAX is not supported on this endpoint. Please refer to `address/<id>`
-
 ## List addresses
 List all addresses for the current customer.
 
 > GET `{{ list_address_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -410,7 +408,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -556,14 +554,14 @@ $.ajax({
 * [Addresses](#addresses)
 * [Subscriptions](#subscriptions)
 
-If you perform a GET request with the data type of `json` on just about any URL, or append the `.json` extension to the URL, you'll receive a JSON object of the data available.
+**JSON:** Appending `.json` to the end of this GET request will return JSON data of the objects available on that route.
 
 ## Apply discount
 Form to apply discount to current address.
 
 > POST `{{ address | apply_discount_to_address_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -582,7 +580,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -681,7 +679,7 @@ Form to remove discount applied to current address.
 
 > POST `{{ address | remove_discount_from_address_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -697,7 +695,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -842,7 +840,7 @@ $.ajax({
 
 ## Loop through the addresses
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {% for address in addresses %}
@@ -850,7 +848,7 @@ $.ajax({
 {% endfor %}
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```html
 123 Miracle Ave

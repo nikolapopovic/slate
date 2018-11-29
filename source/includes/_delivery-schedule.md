@@ -23,7 +23,7 @@ Property | Definition
 
 > GET `{{ delivery_schedule }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -39,7 +39,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -156,3 +156,5 @@ $.ajax({
 * [Store](#shop)
 * [Customer](#customers)
 * [Delivery schedule](#delivery-schedule)
+
+**JSON:** Appending `.json` to the end of this GET request will return JSON data of the objects available on that route.

@@ -1,6 +1,6 @@
 # Customers
 
-> Example input
+> EXAMPLE REQUEST
 
 ```liquid
 {{ customer.billing_first_name }} {{ customer.billing_last_name }}<br>
@@ -12,7 +12,7 @@
 {{ customer.billing_country }}<br>
 ```
 
-> Example input
+> EXAMPLE RESPONSE
 
 ```liquid
 Corey Capetillo
@@ -40,9 +40,11 @@ Property | Definition
 <b>{{ billing_address2 }}</b> <br> string| `"billing_address2": " "`<br>  An additional field for the customer's billing address.
 <b>{{ billing_city }}</b> <br> string| `"billing_city": "Los Angeles"`<br> The customer's billing city.
 <b>{{ billing_province }}</b> <br> string| `"billing_province": "California"`<br>   The customer's billing province or state name.
+<b>{{ billing_phone }}</b> <br> string| `"billing_phone": "5623095450"`<br> The customer’s billing phone number.
 <b>{{ billing_zip }}</b> <br> string| `"billing_zip": "90024"`<br> The customer's billing zip or postal code.
 <b>{{ billing_country }}</b> <br> string| `"billing_country": "United States"`<br>   The customer's billing country.
 <b>{{ has_credit_card_purchase }}</b> <br> boolean| `"has_credit_card_purchase": true` <br> Returns boolean for customer's card.
+<b>{{ has_error_charge }}</b> <br> boolean| `"has_error_charge": false` <br> Returns boolean checking if customer has error charge.
 <b>{{ shopify_customer_id }}</b> <br> string| `"shopify_customer_id": "391100760128"` <br> Shopify's unique identifier for the customer.
 <b>{{ customer_payment_type }}</b> <br> string| `"customer_payment_type": "credit"` <br> Type of customer card.
 <b>{{ customer_card }}</b> <br> string| `"customer_card": null` <br> Number of customer card.
@@ -52,7 +54,7 @@ Show current customer's information.
 
 > GET `{{ show_customer_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -68,7 +70,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -274,12 +276,14 @@ $.ajax({
 * [Addresses](#addresses)
 * [Subscriptions](#subscriptions)
 
+**JSON:** Appending `.json` to the end of this GET request will return JSON data of the objects available on that route.
+
 ## Update customer
 Show current customer's information.
 
 > POST `{{ update_customer_url }}`
 <br>
-> Example input
+> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -317,7 +321,7 @@ $.ajax({
 });
 ```
 
-> Example output
+> EXAMPLE RESPONSE
 
 ```javascript
 {  
@@ -523,7 +527,7 @@ $.ajax({
 * [Addresses](#addresses)
 * [Subscriptions](#subscriptions)
 
-<b> Available properties </b>
+**Available properties**
 
 |Input| Type| Name attribute|
 |:-------|:-------|:-------|
