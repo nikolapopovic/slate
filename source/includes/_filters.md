@@ -19,17 +19,21 @@ _date_ accepts the same parameters as Python's _time strftime_ method. You can f
 
 ## Math filters
 
+<aside class="notice">
+ Math filters allow you to apply mathematical tasks. Math filters can be linked and, as with any other filters, are applied in order of left to right.
+</aside>
+
 Filter | Input | Output | Definition 
 --------- | ------- | --------- | -------
-<b>abs</b> | {{ -17 &mid; abs }} | 17 | This is absoulute filter
-<b>ceil</b> | {{ 4.6 &mid; ceil }} | 5 | This is ceil filter
-<b>divided_by</b> | {{ 200 &mid; divided_by(10) }} | 20 | This is divided_by filter
-<b>floor</b> | {{ 4.6 &mid; floor }} | 4 | This is floor filter
-<b>minus</b> | {{ 200 &mid; minus(15) }} | 185 | This is minus filter
-<b>modulo</b> | {{ 15 &mid; modulo(5) }} | 2 | This is modulo filter
-<b>plus</b> | {{ 200 &mid; plus(15) }} | 215 | This is plus filter
-<b>round</b> | {{ 4.6  &mid; round }} | 5 | This is round filter
-<b>times</b> | {{ 200  &mid; times(1.15) }} | 230 | This is times filter
+<b>abs</b> | {{ -17 &mid; abs }} | 17 | Returns the absolute value of a number.
+<b>ceil</b> | {{ 4.6 &mid; ceil }} <br> {{ 4.3 &mid; ceil }} | 5 <br> 5 | Rounds an output up to the nearest integer.
+<b>divided_by</b> | <!-- subscription.price = 200 --> <br> {{ 200 &mid; divided_by(10) }} | 20 | Divides an output by a number. The output is rounded down to the nearest integer.
+<b>floor</b> | {{ 4.6 &mid; floor }} <br> {{ 4.3 &mid; floor }} | 4 <br> 4 | Subtracts a number from an output.
+<b>minus</b> | <!-- subscription.price = 200 --> <br> {{ 200 &mid; minus(15) }} | 185 | Subtracts a number from an output.
+<b>plus</b> | <!-- subscription.price = 200 --> <br> {{ 200 &mid; plus(15) }} | 215 | Adds a number to an output.
+<b>modulo</b> | {{ 12 &mid; modulo(5) }} | 2 | Divides an output by a number and returns the remainder.
+<b>round</b> | {{ 4.6  &mid; round }} <br> {{ 4.3  &mid; round }} <br> {{ 4.5612  &mid; round(2) }} | 5.0 <br> 5.0 <br> 4.56 | Rounds the output to the nearest integer or specified number of decimals.
+<b>times</b> | <!-- subscription.price = 200 --> <br> {{ subscription.price  &mid; times(1.15) }} | 230 | Multiplies an output by a number.
 
 ## Money filters
 
