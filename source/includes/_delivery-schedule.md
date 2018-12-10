@@ -17,7 +17,7 @@ Property | Definition
 <b>{{ delivery.charge_id }}</b> <br> integer| `"charge_id": 95591664`<br> 
 <b>{{ delivery.charge_type }}</b> <br> string| `"charge_type": "QUEUED_CHARGE"`<br> 
 <b>{{ delivery.subscription }}</b> <br> object| `"subscription": `<br> See Subscriptions object.
-<b>{{ delivery.subscription.address }}</b> <br> object| `"subscription.address": `<br> See Address object.
+<b>{{ delivery.subscription.address }}</b> <br> object| `"subscription.address": `<br> See [Address object](#addresses).
 
 ## Delivery schedule
 

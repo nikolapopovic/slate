@@ -61,19 +61,16 @@ $.ajax({
   type: 'post',
   dataType: 'json',
   data: {
-     "address1":"1933 Manning",
-     "address2":"204",
-     "cart_note":null,
-     "city":"los angeles",
-     "company":"bootstrap",
-     "country":"United States",
-     "discount_id":null,
-     "first_name":"Recharge",
-     "id":7976732,
-     "last_name":"Test",
-     "phone":"3103103101",
-     "province":"California",
-     "zip":"90025"
+    "address1":"1933 Manning",
+    "address2":"204",
+    "city":"Los Angeles",
+    "company":"Bootstrap",
+    "country":"United States",
+    "first_name":"Recharge",
+    "last_name":"Test",
+    "phone":"3103103101",
+    "province":"California",
+    "zip":"90025"
   }
 }).done(function(response) {
   // Successful request made
@@ -92,16 +89,16 @@ $.ajax({
       "address1":"1933 Manning",
       "address2":"204",
       "cart_note":"",
-      "city":"los angeles",
-      "company":"bootstrap",
+      "city":"Los Angeles",
+      "company":"Bootstrap",
       "country":"United States",
       "discount_id":null,
       "first_name":"Recharge",
-      "id":20519802,
+      "id":23246832,
       "last_name":"Test",
       "phone":"3103103101",
       "province":"California",
-      "subscriptions":[ ],
+      "subscriptions":[  ],
       "zip":"90025"
    },
    "customer":{  
@@ -188,16 +185,16 @@ $.ajax({
       "address1":"1933 Manning",
       "address2":"204",
       "cart_note":"",
-      "city":"los angeles",
-      "company":"bootstrap",
+      "city":"Los Angeles",
+      "company":"Bootstrap",
       "country":"United States",
       "discount_id":null,
       "first_name":"Recharge",
-      "id":20519802,
+      "id":23246832,
       "last_name":"Test",
       "phone":"3103103101",
       "province":"California",
-      "subscriptions":[ ],
+      "subscriptions":[  ],
       "zip":"90025"
    },
    "customer":{  
@@ -255,18 +252,15 @@ $.ajax({
   dataType: 'json',
   data: {
     "address1":"1933 Manning",
-     "address2":"204",
-     "cart_note":null,
-     "city":"Los Angeles",
-     "company":"",
-     "country":"United States",
-     "discount_id":null,
-     "first_name":"Recharge",
-     "id":7976732,
-     "last_name":"Test",
-     "phone":"3103103101",
-     "province":"California",
-     "zip":"90025"
+    "address2":"204",
+    "city":"Los Angeles",
+    "company":"ReCharge",
+    "country":"United States",
+    "first_name":"Recharge",
+    "last_name":"Test",
+    "phone":"3103103101",
+    "province":"California",
+    "zip":"90025"
 }
 }).done(function(response) {
   // Successful request made
@@ -286,50 +280,15 @@ $.ajax({
       "address2":"204",
       "cart_note":"",
       "city":"Los Angeles",
-      "company":"",
+      "company":"ReCharge",
       "country":"United States",
       "discount_id":null,
       "first_name":"Recharge",
-      "id":18586680,
+      "id":23246832,
       "last_name":"Test",
       "phone":"3103103101",
       "province":"California",
-      "subscriptions":[  
-         {  
-            "address_id":18586680,
-            "allow_date_selection":true,
-            "allow_schedule_edit":true,
-            "charge_interval_frequency":"1",
-            "charge_interval_unit":"month",
-            "charges_made_on_item":0,
-            "id":24221298,
-            "interval_options":{  
-               "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-            },
-            "is_active":false,
-            "is_cancelled":true,
-            "is_expired":false,
-            "is_one_time_product":false,
-            "is_skippable":true,
-            "is_skipped":false,
-            "is_swappable":false,
-            "modifiable_properties":[ ],
-            "next_charge_scheduled_at":null,
-            "number_of_charges":0,
-            "number_of_charges_until_expiration":null,
-            "order_interval_frequency":"1",
-            "order_interval_unit":"month",
-            "price":1039,
-            "product_title":"Bare Memory  20.00% Off Auto renew",
-            "product_variant_title":"Bare Memory  20.00% Off Auto renew",
-            "properties":[ ],
-            "quantity":1,
-            "shopify_product_id":505638748224,
-            "shopify_variant_id":5421822509120,
-            "status":"CANCELLED",
-            "variant_title":""
-         }
-      ],
+      "subscriptions":[  ],
       "zip":"90025"
    },
    "customer":{  
@@ -377,15 +336,15 @@ $.ajax({
 ---|---|---
 |First Name (*optional*)| text| first_name|
 |Last name (*mandatory*)| text| last_name|
-|Company (*optional*)| text| company|
-|Address line (*mandatory*)| text| address1|
+|Address 1 (*mandatory*)| text| address1|
 |Address 2 (*optional*)| text| address2|
-|Company (*optional*)| text| address2|
-|City (*optional*)| text | city|
-|ZIP Code (*mandatory*)| text| zip|
-|Country (*optional*)| text| country|
-|Province State (*optional*)| text| province|
+|Company (*optional*)| text| company|
+|City (*optional*)| text| city|
+|State/province (*optional*)| text | province|
+|ZIP/postal code (*optional*)| text| zip|
+|Country (*mandatory*)| text| country|
 |Phone (*optional*)| text| phone|
+|Cart note (*optional*)| text| cart_note|
 
 ## List addresses
 List all addresses for the current customer.
@@ -414,104 +373,36 @@ $.ajax({
 {  
    "addresses":[  
       {  
-         "address1":"1933 Manning",
-         "address2":"204",
-         "cart_note":null,
-         "city":"los angeles",
-         "company":"bootstrap",
-         "country":"United States",
-         "discount_id":null,
-         "first_name":"Recharge",
-         "id":7976732,
-         "last_name":"Test",
-         "phone":"3103103101",
-         "province":"California",
-         "subscriptions":[  
-            {  
-               "address_id":7976732,
-               "allow_date_selection":true,
-               "allow_schedule_edit":true,
-               "charge_interval_frequency":null,
-               "charge_interval_unit":"",
-               "charges_made_on_item":1,
-               "id":11959565,
-               "interval_options":{ },
-               "is_active":false,
-               "is_cancelled":true,
-               "is_expired":false,
-               "is_one_time_product":false,
-               "is_skippable":true,
-               "is_skipped":false,
-               "is_swappable":false,
-               "modifiable_properties":[ ],
-               "next_charge_scheduled_at":null,
-               "number_of_charges":1,
-               "number_of_charges_until_expiration":null,
-               "order_interval_frequency":null,
-               "order_interval_unit":"",
-               "price":1299,
-               "product_title":"Bare Sleep",
-               "product_variant_title":"Bare Sleep",
-               "properties":[ ],
-               "quantity":1,
-               "shopify_product_id":505545949248,
-               "shopify_variant_id":5421270171712,
-               "status":"CANCELLED",
-               "variant_title":""
-            }
-         ],
-         "zip":"90025"
+        "address1":"1933 Manning",
+        "address2":"204",
+        "cart_note":"",
+        "city":"Los Angeles",
+        "company":"ReCharge",
+        "country":"United States",
+        "discount_id":null,
+        "first_name":"Recharge",
+        "id":23246832,
+        "last_name":"Test",
+        "phone":"3103103101",
+        "province":"California",
+        "subscriptions":[ ],
+        "zip":"90025"
       },
       {  
-         "address1":"1933 Manning",
-         "address2":"204",
-         "cart_note":"",
-         "city":"Los Angeles",
-         "company":"",
-         "country":"United States",
-         "discount_id":null,
-         "first_name":"Recharge",
-         "id":18586680,
-         "last_name":"Test",
-         "phone":"3103103101",
-         "province":"California",
-         "subscriptions":[  
-            {  
-               "address_id":18586680,
-               "allow_date_selection":true,
-               "allow_schedule_edit":true,
-               "charge_interval_frequency":"1",
-               "charge_interval_unit":"month",
-               "charges_made_on_item":0,
-               "id":24221298,
-               "interval_options":{  
-                  "month":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-               },
-               "is_active":false,
-               "is_cancelled":true,
-               "is_expired":false,
-               "is_one_time_product":false,
-               "is_skippable":true,
-               "is_skipped":false,
-               "is_swappable":false,
-               "modifiable_properties":[ ],
-               "next_charge_scheduled_at":null,
-               "number_of_charges":0,
-               "number_of_charges_until_expiration":null,
-               "order_interval_frequency":"1",
-               "order_interval_unit":"month",
-               "price":1039,
-               "product_title":"Bare Memory  20.00% Off Auto renew",
-               "product_variant_title":"Bare Memory  20.00% Off Auto renew",
-               "properties":[ ],
-               "quantity":1,
-               "shopify_product_id":505638748224,
-               "shopify_variant_id":5421822509120,
-               "status":"CANCELLED",
-               "variant_title":""
-            }
-         ],
-         "zip":"90025"
+        "address1":"1933 Manning",
+        "address2":"204",
+        "cart_note":"",
+        "city":"Los Angeles",
+        "company":"",
+        "country":"United States",
+        "discount_id":null,
+        "first_name":"Recharge",
+        "id":18586680,
+        "last_name":"Test",
+        "phone":"3103103101",
+        "province":"California",
+        "subscriptions":[  ],
+        "zip":"90025"
       }
    ],
    "customer":{  
@@ -781,9 +672,7 @@ $.ajax({
                "is_skippable":true,
                "is_skipped":false,
                "is_swappable":false,
-               "modifiable_properties":[  
-
-               ],
+               "modifiable_properties":[ ],
                "next_charge_scheduled_at":null,
                "number_of_charges":0,
                "number_of_charges_until_expiration":null,
@@ -792,9 +681,7 @@ $.ajax({
                "price":1039,
                "product_title":"Bare Memory  20.00% Off Auto renew",
                "product_variant_title":"Bare Memory  20.00% Off Auto renew",
-               "properties":[  
-
-               ],
+               "properties":[ ],
                "quantity":1,
                "shopify_product_id":505638748224,
                "shopify_variant_id":5421822509120,

@@ -331,6 +331,8 @@ $.ajax({
 * [Customer](#customers)
 * [Rules](#rules)
 
+**JSON:** Appending `.json` to the end of this GET request will return JSON data of the objects available on that route.
+
 ## Search for swap
 Presents a list for the intention of swapping the current subscription with a new product. Routes to [subscription_new](#create-subscription) will have a new variable available to them, `swap_subscription_id`.
 

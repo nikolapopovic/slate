@@ -146,6 +146,8 @@ $.ajax({
 * [Customer](#customers)
 * [Order](#orders)
 
+**JSON:** Appending `.json` to the end of this GET request will return JSON data of the objects available on that route.
+
 ## List orders
 List history of orders placed by the current customer.
 
@@ -268,6 +270,8 @@ $.ajax({
 * [Store](#shop)
 * [Customer](#customers)
 * [Orders](#orders)
+
+**JSON:** Appending `.json` to the end of this GET request will return JSON data of the objects available on that route.
 
 ## Loop through the orders
 

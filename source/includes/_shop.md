@@ -90,3 +90,5 @@ Show current customer's information.
 **Available objects**
 
 * [Store](#shop)
+
+**JSON:** Appending `.json` to the end of this GET request will return JSON data of the objects available on that route.

@@ -26,6 +26,8 @@ United States
  Customer represents a customer account with a shop.
 </aside>
 
+**Customer information**
+
 Property | Definition
 --------- | -------
 <b>{{ first_name }}</b> <br> string| `"first_name": "Corey"`<br>  The customer's first name.
@@ -33,6 +35,21 @@ Property | Definition
 <b>{{ name }}</b> <br> string| `"name": "Corey Capetillo"`<br>  The customer's name.
 <b>{{ email }}</b> <br> string|  `"email": "corey@rechargeapps.com"` <br> The email address of the customer.
 <b>{{ hash }}</b>  <br> string |  `"hash": "818762670d14f56b6f39fd7"` <br> The unique string identifier used in a customers portal link.
+
+**Payment details**
+
+Property | Definition
+--------- | -------
+<b>{{ has_credit_card_purchase }}</b> <br> boolean| `"has_credit_card_purchase": true` <br> Returns boolean for customer's card.
+<b>{{ has_error_charge }}</b> <br> boolean| `"has_error_charge": false` <br> Returns boolean checking if customer has error charge.
+<b>{{ shopify_customer_id }}</b> <br> string| `"shopify_customer_id": "391100760128"` <br> Shopify's unique identifier for the customer.
+<b>{{ customer_payment_type }}</b> <br> string| `"customer_payment_type": "credit"` <br> Type of customer card.
+<b>{{ customer_card }}</b> <br> string| `"customer_card": null` <br> Number of customer card.
+
+**Billing address**
+
+Property | Definition
+--------- | -------
 <b>{{ billing_first_name }}</b> <br> string| `"billing_first_name": "Corey"`<br>  The customer's billing first name.
 <b>{{ billing_last_name }}</b> <br> string| `"billing_last_name": "Capetillo"`<br>  The customer's billing last name.
 <b>{{ billing_company }}</b> <br> string| `"billing_company": "ReCharge"`<br>  The customer's billing company.
@@ -43,11 +60,6 @@ Property | Definition
 <b>{{ billing_phone }}</b> <br> string| `"billing_phone": "5623095450"`<br> The customer’s billing phone number.
 <b>{{ billing_zip }}</b> <br> string| `"billing_zip": "90024"`<br> The customer's billing zip or postal code.
 <b>{{ billing_country }}</b> <br> string| `"billing_country": "United States"`<br>   The customer's billing country.
-<b>{{ has_credit_card_purchase }}</b> <br> boolean| `"has_credit_card_purchase": true` <br> Returns boolean for customer's card.
-<b>{{ has_error_charge }}</b> <br> boolean| `"has_error_charge": false` <br> Returns boolean checking if customer has error charge.
-<b>{{ shopify_customer_id }}</b> <br> string| `"shopify_customer_id": "391100760128"` <br> Shopify's unique identifier for the customer.
-<b>{{ customer_payment_type }}</b> <br> string| `"customer_payment_type": "credit"` <br> Type of customer card.
-<b>{{ customer_card }}</b> <br> string| `"customer_card": null` <br> Number of customer card.
 
 ## Retrieve customer
 Show current customer's information.
@@ -529,11 +541,18 @@ $.ajax({
 
 **Available properties**
 
+**Customer Information**
+
 |Input| Type| Name attribute|
 |:-------|:-------|:-------|
 |First Name (*optional*)| text| first_name|
 |Last name (*mandatory*)| text| last_name|
 |Email (*mandatory*)| text| email|
+
+**Billing address**
+
+|Input| Type| Name attribute|
+|:-------|:-------|:-------|
 |First name (*optional*)| text| billing_first_name|
 |Last name (*optional*)| text| billing_last_name|
 |Billing address 1 (*optional*)| text| billing_address1|
