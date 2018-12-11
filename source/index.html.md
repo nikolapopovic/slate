@@ -2,7 +2,7 @@
 title: ReCharge Theme Engine Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - javascript
+  - JavaScript
 
 includes:
   - the-theme-engine

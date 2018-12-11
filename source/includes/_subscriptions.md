@@ -846,6 +846,43 @@ $.ajax({
 * [Addresses](#addresses)
 * [Subscription](#subscriptions)
 
+## Subscription set next charge date
+
+**URL:** `{{ subscription | subscription_charge_date_url }}`
+
+**Methods accepted:** `POST`
+
+**Route:** `/tools/recurring/customer_portal/<string:customer_hash>/subscriptions/<int:subscription_id>/set_next_charge_date`
+
+**Template file:**
+
+**Available objects**
+
+* [Store](#shop)
+* [Customer](#customers)
+* [Addresses](#addresses)
+* [Subscription](#subscriptions)
+* [Variants](#variants)
+
+> POST `{{ subscription | subscription_charge_date_url }}`
+<br>
+> EXAMPLE REQUEST
+
+$.ajax({
+ url: '{{ subscription | subscription_charge_date_url }}',
+ type: 'post',
+ dataType: 'json',
+ data: {
+   next_charge_date: "2018-11-24",
+ }
+}).done(function(response) {
+ // Successful request made
+ console.log(response.responseJSON);
+}).fail(function(response) {
+ // Request failed
+ console.log(response.responseJSON.errors);
+});
+
 ## Skip subscription
 
 **URL:** `{{ subscription | skip_subscription_url }}`

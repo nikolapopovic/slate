@@ -1,7 +1,5 @@
 # Welcome to ReCharge Theme Engine docs
 
-
-
 ## The widget
 
 The Subscription Widget is the first point of contact many of your customers will encounter ReCharge. The challenge for the widget is getting it to function against an endless sea of variables, including theme types, browser versions, and plugins.

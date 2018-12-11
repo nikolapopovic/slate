@@ -30,23 +30,23 @@ United States
 
 Property | Definition
 --------- | -------
-<b>{{ first_name }}</b> <br> string| `"first_name": "Recharge"`<br>  The customer’s first name associated with the address.
-<b>{{ last_name }}</b> <br> string| `"last_name": "Test"`<br>  The customer’s last name associated with the address.
-<b>{{ company }}</b> <br> string| `"company": "Bootstrap"`<br>  The company associated with the address.
-<b>{{ address1 }}</b> <br> string|  `"address1": "1993 Manning"` <br> The street associated with the address.
-<b>{{ address2 }}</b>  <br> string |  `"address2": "204"` <br> Any additional information associated with the address.
-<b>{{ city }}</b> <br> string| `"city": "Los Angeles"`<br>  The city associated with the address.
-<b>{{ province }}</b> <br> string| `"province": "California"`<br>  The state or province associated with the address.
-<b>{{ zip }}</b> <br> string| `"zip": "90025"`<br>  The zip or postal code associated with the address.
-<b>{{ country }}</b> <br> string| `"country": "United States"`<br> The country associated with the address.
-<b>{{ phone }}</b> <br> string| `"phone": "3103103101"`<br>  The phone number associated with the address.
-<b>{{ id }}</b> <br> integer| `"id": 7976732`<br> Unique numeric identifier for the address.
-<b>{{ discount_id }}</b> <br> string| `"discount_id": null`<br>   Id of discount that is applied on the address.
-<b>{{ discount_amount }}</b> <br> string| `"discount_amount": ""`<br> The discounted amount to be applied.
-<b>{{ discount }}</b> <br> string| `"discount": ""`<br>   Returns [Discount object](#discounts).
-<b>{{ has_active_subscriptions }}</b> <br> boolean| `"has_active_subscriptions": true` <br> Returns boolean checking if address has active subscriptions.
-<b>{{ has_active_one_time_products }} (BETA)</b> <br> boolean| `"has_active_one_time_products": true` <br> Returns boolean checking if address has active one time products.
-<b>{{ has_active_items_include_cancelled_and_expired }}</b> <br> boolean| `"has_active_items_include_cancelled_and_expired": true` <br> Returns boolean checking if address has active items including cancelled and expired.
+<b>first_name</b> <br> string| `"first_name": "Recharge"`<br>  The customer’s first name associated with the address.
+<b>last_name</b> <br> string| `"last_name": "Test"`<br>  The customer’s last name associated with the address.
+<b>company</b> <br> string| `"company": "Bootstrap"`<br>  The company associated with the address.
+<b>address1</b> <br> string|  `"address1": "1993 Manning"` <br> The street associated with the address.
+<b>address2</b>  <br> string |  `"address2": "204"` <br> Any additional information associated with the address.
+<b>city</b> <br> string| `"city": "Los Angeles"`<br>  The city associated with the address.
+<b>province</b> <br> string| `"province": "California"`<br>  The state or province associated with the address.
+<b>zip</b> <br> string| `"zip": "90025"`<br>  The zip or postal code associated with the address.
+<b>country</b> <br> string| `"country": "United States"`<br> The country associated with the address.
+<b>phone</b> <br> string| `"phone": "3103103101"`<br>  The phone number associated with the address.
+<b>id</b> <br> integer| `"id": 7976732`<br> Unique numeric identifier for the address.
+<b>discount_id</b> <br> string| `"discount_id": null`<br>   Id of discount that is applied on the address.
+<b>discount_amount</b> <br> string| `"discount_amount": ""`<br> The discounted amount to be applied.
+<b>discount</b> <br> string| `"discount": ""`<br>   Returns [Discount object](#discounts).
+<b>has_active_subscriptions</b> <br> boolean| `"has_active_subscriptions": true` <br> Returns boolean checking if address has active subscriptions.
+<b>has_active_one_time_products (BETA)</b> <br> boolean| `"has_active_one_time_products": true` <br> Returns boolean checking if address has active one time products.
+<b>has_active_items_include_cancelled_and_expired</b> <br> boolean| `"has_active_items_include_cancelled_and_expired": true` <br> Returns boolean checking if address has active items including cancelled and expired.
 
 ## Create address
 Page with form to create a new address for current customer.

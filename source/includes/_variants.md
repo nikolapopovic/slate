@@ -3,7 +3,7 @@ The variant from [Shopify](https://help.shopify.com/api/reference/product_varian
 
 Property | Definition
 --------- | -------
-<b>{{ variant.subscription_price }}</b> <br> string| `"subscription_price": " "`<br> 
+<b>variant.subscription_price</b> <br> string| `"subscription_price": " "`<br> 
 
 ## Loop through the Variants
 

@@ -2,11 +2,11 @@
 
 Property | Definition
 --------- | -------
-<b>{{ retention_strategy.id }}</b> <br> integer| `"id": 764562`<br> 
-<b>{{ retention_strategy.reason }}</b> <br> string| `"reason": "I already have more than I need"`<br> 
-<b>{{ retention_strategy.prevention_text }}</b> <br> string| `"prevention_text": "If you have more than you need, we can skip your upcoming order."`<br> 
-<b>{{ retention_strategy.incentive_type }}</b> <br> string| `"incentive_type": "skip_charge"`<br> 
-<b>{{ retention_strategy.discount_code }}</b> <br> string| `"discount_code": null`<br> 
+<b>retention_strategy.id</b> <br> integer| `"id": 764562`<br> 
+<b>retention_strategy.reason</b> <br> string| `"reason": "I already have more than I need"`<br> 
+<b>retention_strategy.prevention_text</b> <br> string| `"prevention_text": "If you have more than you need, we can skip your upcoming order."`<br> 
+<b>retention_strategy.incentive_type</b> <br> string| `"incentive_type": "skip_charge"`<br> 
+<b>retention_strategy.discount_code</b> <br> string| `"discount_code": null`<br> 
 
 ## Retention strategy
 Cancel the current subscription providing retention strategy.

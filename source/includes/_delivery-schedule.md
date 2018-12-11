@@ -1,23 +1,41 @@
 # Delivery schedule
 
+> EXAMPLE REQUEST
+
+```liquid
+{% for delivery in shipment.delivery %}
+   {% if loop.index == 1 %}
+      Deliver to
+      {{ delivery.subscription.address.address1 }}
+      {{ delivery.subscription.address.address2 }}
+   {% endif %}
+{% endfor %}
+```
+
+> EXAMPLE RESPONSE
+
+```html
+Deliver to 1993 Manning
+```
+
 <aside class="notice">
  Delivery schedule is under development and object properties are subject to change. Delivery schedule dates are when your order will be placed. Future deliveries will be added to your schedule as the date approaches.
 </aside>
 
 Property | Definition
 --------- | -------
-<b>{{ date }}</b> <br> datetime| `"date": "2018-07-17T00:00:00"`<br> 
-<b>{{ delivery }}</b> <br> string| `"id": ""`<br> 
-<b>{{ delivery.shipment_type }}</b> <br> string| `"shipment_type": "PROJECTED_CHARGE"`<br> 
-<b>{{ delivery.is_skippable }}</b> <br> boolean| `"is_skippable": true`<br> 
-<b>{{ delivery.is_skipped }}</b> <br> boolean| `"is_skipped": false`<br> 
-<b>{{ delivery.title }}</b> <br> string| `"title": "20.00% Off Auto renew"` <br> 
-<b>{{ delivery.price }}</b>  <br> integer|  `"price": 4.5` <br>
-<b>{{ delivery.shipment_id }}</b> <br> integer| `"shipment_id": "none"`<br> 
-<b>{{ delivery.charge_id }}</b> <br> integer| `"charge_id": 95591664`<br> 
-<b>{{ delivery.charge_type }}</b> <br> string| `"charge_type": "QUEUED_CHARGE"`<br> 
-<b>{{ delivery.subscription }}</b> <br> object| `"subscription": `<br> See Subscriptions object.
-<b>{{ delivery.subscription.address }}</b> <br> object| `"subscription.address": `<br> See [Address object](#addresses).
+<b>date</b> <br> datetime| `"date": "2018-07-17T00:00:00"`<br> 
+<b>delivery</b> <br> string| `"id": ""`<br> 
+<b>delivery.shipment_type</b> <br> string| `"shipment_type": "PROJECTED_CHARGE"`<br> 
+<b>delivery.is_skippable</b> <br> boolean| `"is_skippable": true`<br> 
+<b>delivery.is_skipped</b> <br> boolean| `"is_skipped": false`<br> 
+<b>delivery.title</b> <br> string| `"title": "20.00% Off Auto renew"` <br> 
+<b>delivery.price</b>  <br> integer|  `"price": 4.5` <br>
+<b>delivery.shipment_id</b> <br> integer| `"shipment_id": "none"`<br> 
+<b>delivery.charge_id</b> <br> integer| `"charge_id": 95591664`<br> 
+<b>delivery.charge_type</b> <br> string| `"charge_type": "QUEUED_CHARGE"`<br> 
+<b>delivery.subscription</b> <br> object| `"subscription": `<br> See Subscriptions object.
+<b>delivery.subscription.address</b> <br> object| `"subscription.address": `<br> See [Address object](#addresses).
 
 ## Delivery schedule
 

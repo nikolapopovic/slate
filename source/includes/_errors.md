@@ -3,8 +3,8 @@ Error is under development and object properties are subject to change.
 
 Property | Definition
 --------- | -------
-<b>{{ error.input }}</b> <br> string| `"input": "email"`<br> 
-<b>{{ error.message }}</b> <br> string| `"message": "["must be at least 3 characters", "cannot contain a space"]"` <br>  `{'quantity': [u'Not a valid integer value', u'Number must be at least 1.']} `<br> 
+<b>error.input</b> <br> string| `"input": "email"`<br> 
+<b>error.message</b> <br> string| `"message": "["must be at least 3 characters", "cannot contain a space"]"` <br>  `{'quantity': [u'Not a valid integer value', u'Number must be at least 1.']} `<br> 
 
 ## Loop through the Errors
 
