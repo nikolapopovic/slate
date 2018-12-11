@@ -26,10 +26,7 @@ Property | Definition
 <b>shipping_address</b> | `"address1": "1933 Manning"`<br>`"address2": "204"`<br>`"city": "Los Angeles"`<br>`"province": "California"`<br>`"first_name": "Corey"`<br>`"last_name": "Capetillo"`<br>`"zip": 90025`<br>`"company": "bootstrap"`<br>`"phone": 3103103101`<br>`"country": "United States"`<br><br>The mailing address where the order will be shipped to:<br><ul><li>[string] address1: The street address of the shipping address.</li><li>[string] address2: An optional additional field for the street address of the shipping address.</li><li>[string] city: The city of the shipping address.</li><li>[string] company: The company of the person associated with the shipping address.</li><li>[string] country: The name of the country of the shipping address.</li><li>[string] first_name: The first name of the person associated with the shipping address.</li><li>[string] last_name: The last name of the person associated with the shipping address.</li><li>[string] phone: The phone number associated with the shipping address.</li><li>[string] province: The name of the state or province of the shipping address.</li><li> [string] zip: The zip or postal code of the shipping address.</li></ul>
 
 ## Retrieve order
-Show details for the current order.
 
-> GET `{{ order | show_order_url }}`
-<br>
 > EXAMPLE REQUEST
 
 ```javascript
@@ -131,6 +128,12 @@ $.ajax({
    }
 }
 ```
+
+Show details for the current order.
+
+> GET `{{ order | show_order_url }}`
+
+<br>
 
 **URL:** `{{ order | show_order_url }}`
 
