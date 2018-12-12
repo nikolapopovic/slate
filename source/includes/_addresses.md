@@ -48,6 +48,7 @@ Property | Definition
 <b>has_active_one_time_products (BETA)</b> <br> boolean| `"has_active_one_time_products": true` <br> Returns boolean checking if address has active one time products.
 <b>has_active_items_include_cancelled_and_expired</b> <br> boolean| `"has_active_items_include_cancelled_and_expired": true` <br> Returns boolean checking if address has active items including cancelled and expired.
 
+
 ## Create address
 
 > POST `{{ create_address_url }}`

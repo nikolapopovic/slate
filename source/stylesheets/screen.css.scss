@@ -559,7 +559,14 @@ html, body {
 
 body > div.page-wrapper > div.content > blockquote {
   margin-top: -73px;
-  border-top: 1px solid #ccc; 
+  border-top: 1px solid #ccc;
+  + pre {
+  margin-bottom: 73px;
+  }
+}
+
+h1 + blockquote {
+    margin-top: 0px !important;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
