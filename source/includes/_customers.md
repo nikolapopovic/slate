@@ -62,11 +62,8 @@ Property | Definition
 <b>billing_country</b> <br> string| `"billing_country": "United States"`<br>   The customer's billing country.
 
 ## Retrieve customer
-Show current customer's information.
 
 > GET `{{ show_customer_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -273,6 +270,8 @@ $.ajax({
 }
 ```
 
+Show current customer's information.
+
 **URL:** `{{ show_customer_url }}`
 
 **Methods accepted:** `GET`
@@ -291,11 +290,8 @@ $.ajax({
 **JSON:** Appending `.json` to the end of this GET request will return JSON data of the objects available on that route.
 
 ## Update customer
-Show current customer's information.
 
 > POST `{{ show_customer_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -523,6 +519,8 @@ $.ajax({
    ]
 }
 ```
+
+Show current customer's information.
 
 **URL:** `{{ show_customer_url }}`
 

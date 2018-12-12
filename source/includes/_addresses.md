@@ -49,11 +49,8 @@ Property | Definition
 <b>has_active_items_include_cancelled_and_expired</b> <br> boolean| `"has_active_items_include_cancelled_and_expired": true` <br> Returns boolean checking if address has active items including cancelled and expired.
 
 ## Create address
-Page with form to create a new address for current customer.
 
 > POST `{{ create_address_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -126,6 +123,8 @@ $.ajax({
 }
 ```
 
+Page with form to create a new address for current customer.
+
 **URL:** `{{ create_address_url }}`
 
 **Methods accepted:** `POST`
@@ -157,11 +156,8 @@ $.ajax({
 |Phone Number (*optional*)| text| phone|
 
 ## Retrieve address
-Show details for the current address.
 
 > GET `{{ address | show_address_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -222,6 +218,8 @@ $.ajax({
 }
 ```
 
+Show details for the current address.
+
 **URL:** `{{ address | show_address_url }}`
 
 **Methods accepted:** `GET`
@@ -239,11 +237,8 @@ $.ajax({
 **JSON:** Appending `.json` to the end of this GET request will return JSON data of the objects available on that route.
 
 ## Update address
-Form to edit and update the current address.
 
 > POST `{{ address | update_address_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -316,6 +311,8 @@ $.ajax({
 }
 ```
 
+Form to edit and update the current address.
+
 **URL:** `{{ address | update_address_url }}`
 
 **Methods accepted:** `POST`
@@ -347,11 +344,8 @@ $.ajax({
 |Cart note (*optional*)| text| cart_note|
 
 ## List addresses
-List all addresses for the current customer.
 
 > GET `{{ list_address_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -430,6 +424,8 @@ $.ajax({
 }
 ```
 
+List all addresses for the current customer.
+
 **URL:** `{{ list_address_url }}`
 
 **Methods accepted:** `GET`
@@ -448,11 +444,8 @@ $.ajax({
 **JSON:** Appending `.json` to the end of this GET request will return JSON data of the objects available on that route.
 
 ## Apply discount
-Form to apply discount to current address.
 
 > POST `{{ address | apply_discount_to_address_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -551,6 +544,8 @@ $.ajax({
 }
 ```
 
+Form to apply discount to current address.
+
 **URL:** `{{ address | apply_discount_to_address_url }}`
 
 **Methods accepted:** `POST`
@@ -566,11 +561,8 @@ $.ajax({
 |Discount Code (*mandatory*)| text| discount_code|
 
 ## Remove discount
-Form to remove discount applied to current address.
 
 > POST `{{ address | remove_discount_from_address_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -716,6 +708,8 @@ $.ajax({
    }
 }
 ```
+
+Form to remove discount applied to current address.
 
 **URL:** `{{ address | remove_discount_from_address_url }}`
 

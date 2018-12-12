@@ -36,11 +36,8 @@ Property | Definition
 <b>shopify_variant_id</b> <br> integer| `"shopify_variant_id": 3844924611`<br> The id of the Shopify product variant.
 
 ## Create subscription
-A form to create a new subscription for the current customer.
 
 > POST `{{ create_subscription_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -142,6 +139,8 @@ $.ajax({
 }
 ```
 
+A form to create a new subscription for the current customer.
+
 **URL:** `{{ create_subscription_url }}`
 
 **Methods accepted:** `POST`
@@ -169,11 +168,8 @@ $.ajax({
 |Address ID(*mandatory*)| text| address_id|
 
 ## Retrieve subscription
-Show details for the current subscription.
 
 > GET `{{ subscription | show_subscription_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -267,6 +263,8 @@ $.ajax({
 }
 ```
 
+Show details for the current subscription.
+
 **URL:** `{{ subscription | show_subscription_url }}`
 
 **Methods accepted:** `GET`
@@ -283,11 +281,8 @@ $.ajax({
 * [Variants](#variants)
 
 ## Update subscription
-Edit the properties of the current subscription.
 
 > POST `{{ subscription | show_subscription_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -386,6 +381,8 @@ $.ajax({
 }
 ```
 
+Edit the properties of the current subscription.
+
 **URL:** `{{ subscription | show_subscription_url }}`
 
 **Methods accepted:** `POST`
@@ -402,11 +399,8 @@ $.ajax({
 * [Variants](#variants)
 
 ## Cancel subscription
-Cancel the current subscription.
 
 > GET `{{ subscription | cancel_subscription_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -551,6 +545,8 @@ $.ajax({
 }
 ```
 
+Cancel the current subscription.
+
 **URL:** `{{ subscription | cancel_subscription_url }}`
 
 **Methods accepted:** `GET, POST`
@@ -568,11 +564,8 @@ $.ajax({
 * [Variants](#variants)
 
 ## Activate subscription
-Activate or re-activate the current subscription
 
 > POST `{{ subscription | activate_subscription_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -666,6 +659,8 @@ $.ajax({
 }
 ```
 
+Activate or re-activate the current subscription.
+
 **URL:** `{{ subscription | activate_subscription_url }}`
 
 **Methods accepted:** `POST`
@@ -682,11 +677,8 @@ $.ajax({
 * [Variants](#variants)
 
 ## List subscriptions
-List all subscriptions for the current customer.
 
 > GET `{{ list_subscriptions_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -831,6 +823,8 @@ $.ajax({
 }
 ```
 
+List all subscriptions for the current customer.
+
 **URL:** `{{ list_subscriptions_url }}`
 
 **Methods accepted:** `GET`
@@ -865,9 +859,8 @@ $.ajax({
 * [Variants](#variants)
 
 > POST `{{ subscription | subscription_charge_date_url }}`
-<br>
-> EXAMPLE REQUEST
 
+```javascript
 $.ajax({
  url: '{{ subscription | subscription_charge_date_url }}',
  type: 'post',
@@ -882,6 +875,7 @@ $.ajax({
  // Request failed
  console.log(response.responseJSON.errors);
 });
+```
 
 ## Skip subscription
 
@@ -921,8 +915,6 @@ $.ajax({
 ## Delete one time product (BETA)
 
 > POST `{{ subscription | delete_one_time_product_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -1078,8 +1070,6 @@ One time products can not be cancelled however they can be deleted. Subscription
 
 ## Loop through the subscriptions
 
-Loop through the Subscriptions dictionary to access individual [Subscription](#subscriptions) object.
-
 ##### Input
 ```liquid
 {% for subscription in subscriptions %}
@@ -1095,3 +1085,5 @@ SUCCESS
 ERROR
 CANCELLED
 ```
+
+Loop through the Subscriptions dictionary to access individual [Subscription](#subscriptions) object.

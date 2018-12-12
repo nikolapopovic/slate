@@ -557,6 +557,11 @@ html, body {
   }
 }
 
+body > div.page-wrapper > div.content > blockquote {
+  margin-top: -73px;
+  border-top: 1px solid #ccc; 
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // RESPONSIVE DESIGN
 ////////////////////////////////////////////////////////////////////////////////
@@ -620,3 +625,4 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+

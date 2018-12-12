@@ -27,7 +27,7 @@ Property | Definition
 
 ## Retrieve order
 
-> EXAMPLE REQUEST
+> GET `{{ order | show_order_url }}`
 
 ```javascript
 $.ajax({
@@ -131,10 +131,6 @@ $.ajax({
 
 Show details for the current order.
 
-> GET `{{ order | show_order_url }}`
-
-<br>
-
 **URL:** `{{ order | show_order_url }}`
 
 **Methods accepted:** `GET`
@@ -152,11 +148,8 @@ Show details for the current order.
 **JSON:** Appending `.json` to the end of this GET request will return JSON data of the objects available on that route.
 
 ## List orders
-List history of orders placed by the current customer.
 
 > GET `{{ list_orders_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -260,6 +253,8 @@ $.ajax({
 }
 ```
 
+List history of orders placed by the current customer.
+
 **URL:** `{{ list_orders_url }}`
 
 **Methods accepted:** `GET`
@@ -278,8 +273,6 @@ $.ajax({
 
 ## Loop through the orders
 
-Loop through the Orders dictionary to access individual [Order](#orders) object.
-
 > EXAMPLE REQUEST
 
 ```liquid
@@ -295,3 +288,5 @@ Loop through the Orders dictionary to access individual [Order](#orders) object.
 1002
 1003
 ```
+
+Loop through the Orders dictionary to access individual [Order](#orders) object.

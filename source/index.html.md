@@ -1,9 +1,6 @@
 ---
 title: ReCharge Theme Engine Reference
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - JavaScript
-
 includes:
   - the-theme-engine
   - enabling-the-theme-engine

@@ -1,11 +1,8 @@
 # Search products
 
 ## Product search
-Returns a list of all products available to be subscribed to.
 
 > GET `{{ product_search_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -159,10 +156,6 @@ $.ajax({
 ```
 
 > POST `{{ product_search_url }}`
-<br>
-> EXAMPLE REQUEST
-
-To refine the search results by `product.title`, use the parameter `q` or pass `q` as part of the data parameter on the AJAX post.
 
 ```javascript
 $.ajax({
@@ -317,6 +310,8 @@ $.ajax({
 }
 ```
 
+To refine the search results by `product.title`, use the parameter `q` or pass `q` as part of the data parameter on the AJAX post.
+
 **URL:** `{{ product_search_url }}`
 
 **Methods accepted:** `GET`, `POST`
@@ -334,13 +329,8 @@ $.ajax({
 **JSON:** Appending `.json` to the end of this GET request will return JSON data of the objects available on that route.
 
 ## Search for swap
-Presents a list for the intention of swapping the current subscription with a new product. Routes to [subscription_new](#create-subscription) will have a new variable available to them, `swap_subscription_id`.
 
 > GET `{{ subscription | search_for_swap_url }}`
-<br>
-> EXAMPLE REQUEST
-
-Unlike `products_search`, `search_for_swap` has reference to the product you are swapping.
 
 ```javascript
 $.ajax({
@@ -493,8 +483,6 @@ $.ajax({
 ```
 
 > POST `{{ subscription | search_for_swap_url }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -591,6 +579,11 @@ $.ajax({
    }
 }
 ```
+<aside class="notice">
+Presents a list for the intention of swapping the current subscription with a new product. Routes to [subscription_new](#create-subscription) will have a new variable available to them, `swap_subscription_id`.
+
+Unlike `products_search`, `search_for_swap` has reference to the product you are swapping.
+</aside>
 
 **URL:** `{{ subscription | search_for_swap_url }}`
 

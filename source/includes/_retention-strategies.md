@@ -9,11 +9,8 @@ Property | Definition
 <b>retention_strategy.discount_code</b> <br> string| `"discount_code": null`<br> 
 
 ## Retention strategy
-Cancel the current subscription providing retention strategy.
 
 > POST `{{ subscription | retention_strategy_url(retention_strategy) }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
@@ -107,6 +104,8 @@ $.ajax({
 }
 ```
 
+Cancel the current subscription providing retention strategy.
+
 **URL:** `{{ subscription | retention_strategy_url(retention_strategy) }}`
 
 **Methods accepted:** `POST`
@@ -125,7 +124,6 @@ $.ajax({
 * [Retention strategies](#retention-strategies)
 
 ## Loop through the retention strategies
-Loop through the Retention Strategies dictionary to access individual [Retention strategy](#retention-strategies) object.
 
 > EXAMPLE REQUEST
 
@@ -139,3 +137,4 @@ Loop through the Retention Strategies dictionary to access individual [Retention
 Please help us process your request by telling us why you're cancelling.
 ```
 
+Loop through the Retention Strategies dictionary to access individual [Retention strategy](#retention-strategies) object.

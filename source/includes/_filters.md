@@ -1,7 +1,6 @@
 # Filters
 
 ## Date filters
-Converts a timestamp into another date format.
 
 > Example input
 
@@ -14,6 +13,8 @@ Converts a timestamp into another date format.
 ```html
 August 5, 2018
 ```
+
+Converts a timestamp into another date format.
 
 _date_ accepts the same parameters as Python's _time strftime_ method. You can find a [list of the shorthand formats](https://www.tutorialspoint.com/html/time_strftime.htm) in Python's documentation or use a site like [strfti.me](http://www.strfti.me/).
 

@@ -12,7 +12,6 @@ Property | Definition
 <b>rule.purchase_options</b> <br> string| `"purchase_options": "subscription"`<br> Determines is the product one time or subscription. The valid values are "subscription" and "one_time_product".
 
 ## Loop through the rules
-Loop through the Rules dictionary to access individual [Rule](#rules) object.
 
 > EXAMPLE REQUEST
 
@@ -29,3 +28,5 @@ Loop through the Rules dictionary to access individual [Rule](#rules) object.
 1002
 1003
 ```
+
+Loop through the Rules dictionary to access individual [Rule](#rules) object.

@@ -40,8 +40,6 @@ Property | Definition
 ## Delivery schedule
 
 > GET `{{ delivery_schedule }}`
-<br>
-> EXAMPLE REQUEST
 
 ```javascript
 $.ajax({
